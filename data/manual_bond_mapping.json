@@ -1,7 +1,992 @@
 {
   "metadata": {
     "description": "人工補充債券主檔，更新程式不得自動覆蓋或刪除",
-    "updated_at": null
+    "updated_at": "2026-08-04T08:50:37.479Z"
   },
-  "bonds": {}
+  "bonds": {
+    "A05104": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A05104",
+      "maturity_date": "2026-03-04",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A05111": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A05111",
+      "maturity_date": "2026-09-07",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A08103": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A08103",
+      "maturity_date": "2029-02-13",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A08106": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A08106",
+      "maturity_date": "2029-06-26",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A08109": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A08109",
+      "maturity_date": "2029-10-14",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A09102": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A09102",
+      "maturity_date": "2040-01-17",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A09103": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A09103",
+      "maturity_date": "2030-02-21",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A09104": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A09104",
+      "maturity_date": "2040-03-09",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A09108": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A09108",
+      "maturity_date": "2040-09-18",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A10101": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A10101",
+      "maturity_date": "2026-01-13",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A10108": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A10108",
+      "maturity_date": "2026-07-29",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A13103": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A13103",
+      "maturity_date": "2029-01-29",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A13105": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A13105",
+      "maturity_date": "2029-04-25",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A13108": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A13108",
+      "maturity_date": "2029-09-13",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A13201": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A13201",
+      "maturity_date": "2026-03-15",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A14101": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A14101",
+      "maturity_date": "2030-01-09",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A14104": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A14104",
+      "maturity_date": "2030-03-12",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A14108": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A14108",
+      "maturity_date": "2030-07-16",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A15108": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A15108",
+      "maturity_date": "2031-09-04",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A15202": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A15202",
+      "maturity_date": "2028-04-17",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A15202R": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A15202R",
+      "maturity_date": "2028-04-17",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A95102": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A95102",
+      "maturity_date": "2026-02-24",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A95107": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A95107",
+      "maturity_date": "2026-11-10",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A98102": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A98102",
+      "maturity_date": "2029-02-16",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A98105": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A98105",
+      "maturity_date": "2029-08-13",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "A99104": {
+      "issuer_name": "中央政府",
+      "coupon_rate": 0,
+      "bond_code": "A99104",
+      "maturity_date": "2030-02-22",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B95150": {
+      "issuer_name": "中租迪和",
+      "coupon_rate": 0,
+      "bond_code": "B95150",
+      "maturity_date": "2029-04-23",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G11466": {
+      "issuer_name": "中信金",
+      "coupon_rate": 0,
+      "bond_code": "G11466",
+      "maturity_date": "2029-06-26",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G13438": {
+      "issuer_name": "中國輸出",
+      "coupon_rate": 0,
+      "bond_code": "G13438",
+      "maturity_date": "2026-10-25",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B801AH": {
+      "issuer_name": "中鋼",
+      "coupon_rate": 0,
+      "bond_code": "B801AH",
+      "maturity_date": "2029-01-23",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B801AT": {
+      "issuer_name": "中鋼",
+      "coupon_rate": 0,
+      "bond_code": "B801AT",
+      "maturity_date": "2030-04-29",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B85413": {
+      "issuer_name": "中龍鋼鐵",
+      "coupon_rate": 0,
+      "bond_code": "B85413",
+      "maturity_date": "2029-08-27",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G10836": {
+      "issuer_name": "元大銀行",
+      "coupon_rate": 0,
+      "bond_code": "G10836",
+      "maturity_date": "2029-06-05",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B9A507": {
+      "issuer_name": "日月光投控",
+      "coupon_rate": 0,
+      "bond_code": "B9A507",
+      "maturity_date": "2029-05-13",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B87114": {
+      "issuer_name": "日勝生",
+      "coupon_rate": 0,
+      "bond_code": "B87114",
+      "maturity_date": "2029-07-29",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G107C5": {
+      "issuer_name": "台北富邦",
+      "coupon_rate": 0,
+      "bond_code": "G107C5",
+      "maturity_date": "2026-09-28",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "HE1502": {
+      "issuer_name": "台南市政府",
+      "coupon_rate": 0,
+      "bond_code": "HE1502",
+      "maturity_date": "2029-04-28",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B402BL": {
+      "issuer_name": "台塑",
+      "coupon_rate": 0,
+      "bond_code": "B402BL",
+      "maturity_date": "2030-06-27",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B402BP": {
+      "issuer_name": "台塑",
+      "coupon_rate": 0,
+      "bond_code": "B402BP",
+      "maturity_date": "2029-12-10",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B712FT": {
+      "issuer_name": "台塑石化",
+      "coupon_rate": 0,
+      "bond_code": "B712FT",
+      "maturity_date": "2026-09-12",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B6A305": {
+      "issuer_name": "台達電",
+      "coupon_rate": 0,
+      "bond_code": "B6A305",
+      "maturity_date": "2026-04-27",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B71898": {
+      "issuer_name": "中油",
+      "coupon_rate": 0,
+      "bond_code": "B71898",
+      "maturity_date": "2026-06-18",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B718AQ": {
+      "issuer_name": "中油",
+      "coupon_rate": 0,
+      "bond_code": "B718AQ",
+      "maturity_date": "2029-06-21",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B718AW": {
+      "issuer_name": "中油",
+      "coupon_rate": 0,
+      "bond_code": "B718AW",
+      "maturity_date": "2029-09-18",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B718AZ": {
+      "issuer_name": "中油",
+      "coupon_rate": 0,
+      "bond_code": "B718AZ",
+      "maturity_date": "2029-10-24",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B718B3": {
+      "issuer_name": "中油",
+      "coupon_rate": 0,
+      "bond_code": "B718B3",
+      "maturity_date": "2029-12-19",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B718B6": {
+      "issuer_name": "中油",
+      "coupon_rate": 0,
+      "bond_code": "B718B6",
+      "maturity_date": "2030-05-22",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903BO": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903BO",
+      "maturity_date": "2030-06-16",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903WY": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903WY",
+      "maturity_date": "2026-04-26",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903X4": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903X4",
+      "maturity_date": "2026-09-10",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903XU": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903XU",
+      "maturity_date": "2026-06-15",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903XX": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903XX",
+      "maturity_date": "2026-11-15",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903Y0": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903Y0",
+      "maturity_date": "2026-12-15",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903YW": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903YW",
+      "maturity_date": "2026-04-20",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903Z1": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903Z1",
+      "maturity_date": "2026-06-15",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903Z3": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903Z3",
+      "maturity_date": "2030-06-15",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903ZH": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903ZH",
+      "maturity_date": "2029-04-25",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B903ZP": {
+      "issuer_name": "台電",
+      "coupon_rate": 0,
+      "bond_code": "B903ZP",
+      "maturity_date": "2029-07-19",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618BS": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618BS",
+      "maturity_date": "2030-04-15",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618BV": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618BV",
+      "maturity_date": "2030-05-29",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618CF": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618CF",
+      "maturity_date": "2026-06-25",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618CK": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618CK",
+      "maturity_date": "2026-08-19",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618CP": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618CP",
+      "maturity_date": "2026-10-05",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618CS": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618CS",
+      "maturity_date": "2026-12-09",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618D8": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618D8",
+      "maturity_date": "2029-08-25",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618DT": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618DT",
+      "maturity_date": "2029-03-15",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618DV": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618DV",
+      "maturity_date": "2029-05-17",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618DX": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618DX",
+      "maturity_date": "2030-03-28",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B618E2": {
+      "issuer_name": "台積電",
+      "coupon_rate": 0,
+      "bond_code": "B618E2",
+      "maturity_date": "2030-07-09",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B98612": {
+      "issuer_name": "玉山金",
+      "coupon_rate": 0,
+      "bond_code": "B98612",
+      "maturity_date": "2030-06-24",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G11840": {
+      "issuer_name": "兆豐銀行",
+      "coupon_rate": 0,
+      "bond_code": "G11840",
+      "maturity_date": "2029-10-07",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B9AF03": {
+      "issuer_name": "光鼎",
+      "coupon_rate": 0,
+      "bond_code": "B9AF03",
+      "maturity_date": "2029-06-04",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B88102": {
+      "issuer_name": "全坤建",
+      "coupon_rate": 0,
+      "bond_code": "B88102",
+      "maturity_date": "2029-04-07",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B20169": {
+      "issuer_name": "亞泥",
+      "coupon_rate": 0,
+      "bond_code": "B20169",
+      "maturity_date": "2030-04-29",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B69108": {
+      "issuer_name": "和碩",
+      "coupon_rate": 0,
+      "bond_code": "B69108",
+      "maturity_date": "2026-06-13",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B86914": {
+      "issuer_name": "和潤企業",
+      "coupon_rate": 0,
+      "bond_code": "B86914",
+      "maturity_date": "2029-03-30",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B86916": {
+      "issuer_name": "和潤企業",
+      "coupon_rate": 0,
+      "bond_code": "B86916",
+      "maturity_date": "2029-05-28",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B99419": {
+      "issuer_name": "南山人壽",
+      "coupon_rate": 0,
+      "bond_code": "B99419",
+      "maturity_date": "2041-04-28",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B401D6": {
+      "issuer_name": "南亞",
+      "coupon_rate": 0,
+      "bond_code": "B401D6",
+      "maturity_date": "2029-06-24",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B401DU": {
+      "issuer_name": "南亞",
+      "coupon_rate": 0,
+      "bond_code": "B401DU",
+      "maturity_date": "2030-05-20",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B68125": {
+      "issuer_name": "南亞科",
+      "coupon_rate": 0,
+      "bond_code": "B68125",
+      "maturity_date": "2029-04-11",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "HB1502": {
+      "issuer_name": "高雄市政府",
+      "coupon_rate": 0,
+      "bond_code": "HB1502",
+      "maturity_date": "2029-06-10",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G10324": {
+      "issuer_name": "高雄銀",
+      "coupon_rate": 0,
+      "bond_code": "G10324",
+      "maturity_date": "2029-04-27",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B64614": {
+      "issuer_name": "國巨",
+      "coupon_rate": 0,
+      "bond_code": "B64614",
+      "maturity_date": "2027-01-12",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B97506": {
+      "issuer_name": "第一金",
+      "coupon_rate": 0,
+      "bond_code": "B97506",
+      "maturity_date": "2029-10-30",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B30449": {
+      "issuer_name": "統一",
+      "coupon_rate": 0,
+      "bond_code": "B30449",
+      "maturity_date": "2026-06-02",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B30456": {
+      "issuer_name": "統一",
+      "coupon_rate": 0,
+      "bond_code": "B30456",
+      "maturity_date": "2030-04-18",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B30463": {
+      "issuer_name": "統一",
+      "coupon_rate": 0,
+      "bond_code": "B30463",
+      "maturity_date": "2030-04-18",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B97876": {
+      "issuer_name": "富邦金",
+      "coupon_rate": 0,
+      "bond_code": "B97876",
+      "maturity_date": "2029-10-15",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B97885": {
+      "issuer_name": "富邦金",
+      "coupon_rate": 0,
+      "bond_code": "B97885",
+      "maturity_date": "2029-08-19",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G12727": {
+      "issuer_name": "土地銀行",
+      "coupon_rate": 0,
+      "bond_code": "G12727",
+      "maturity_date": "2026-07-23",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G12743": {
+      "issuer_name": "土地銀行",
+      "coupon_rate": 0,
+      "bond_code": "G12743",
+      "maturity_date": "2029-06-17",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G139AL": {
+      "issuer_name": "遠東銀",
+      "coupon_rate": 0,
+      "bond_code": "G139AL",
+      "maturity_date": "2029-10-24",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B50176": {
+      "issuer_name": "遠東新",
+      "coupon_rate": 0,
+      "bond_code": "B50176",
+      "maturity_date": "2026-07-27",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B50188": {
+      "issuer_name": "遠東新",
+      "coupon_rate": 0,
+      "bond_code": "B50188",
+      "maturity_date": "2029-12-26",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B94646": {
+      "issuer_name": "遠傳",
+      "coupon_rate": 0,
+      "bond_code": "B94646",
+      "maturity_date": "2026-06-25",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B69901": {
+      "issuer_name": "環球晶",
+      "coupon_rate": 0,
+      "bond_code": "B69901",
+      "maturity_date": "2026-05-11",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B69903": {
+      "issuer_name": "環球晶",
+      "coupon_rate": 0,
+      "bond_code": "B69903",
+      "maturity_date": "2026-08-19",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B69907": {
+      "issuer_name": "環球晶",
+      "coupon_rate": 0,
+      "bond_code": "B69907",
+      "maturity_date": "2030-05-28",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B638BD": {
+      "issuer_name": "聯電",
+      "coupon_rate": 0,
+      "bond_code": "B638BD",
+      "maturity_date": "2026-04-22",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B638BG": {
+      "issuer_name": "聯電",
+      "coupon_rate": 0,
+      "bond_code": "B638BG",
+      "maturity_date": "2026-12-17",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B644BL": {
+      "issuer_name": "鴻海",
+      "coupon_rate": 0,
+      "bond_code": "B644BL",
+      "maturity_date": "2027-01-09",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B644C5": {
+      "issuer_name": "鴻海",
+      "coupon_rate": 0,
+      "bond_code": "B644C5",
+      "maturity_date": "2026-09-30",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B644CA": {
+      "issuer_name": "鴻海",
+      "coupon_rate": 0,
+      "bond_code": "B644CA",
+      "maturity_date": "2026-12-08",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B644CU": {
+      "issuer_name": "鴻海",
+      "coupon_rate": 0,
+      "bond_code": "B644CU",
+      "maturity_date": "2026-07-05",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B644D9": {
+      "issuer_name": "鴻海",
+      "coupon_rate": 0,
+      "bond_code": "B644D9",
+      "maturity_date": "2029-04-25",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B644DC": {
+      "issuer_name": "鴻海",
+      "coupon_rate": 0,
+      "bond_code": "B644DC",
+      "maturity_date": "2029-10-16",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B644DF": {
+      "issuer_name": "鴻海",
+      "coupon_rate": 0,
+      "bond_code": "B644DF",
+      "maturity_date": "2030-01-14",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B644DK": {
+      "issuer_name": "鴻海",
+      "coupon_rate": 0,
+      "bond_code": "B644DK",
+      "maturity_date": "2030-05-09",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B644DY": {
+      "issuer_name": "鴻海",
+      "coupon_rate": 0,
+      "bond_code": "B644DY",
+      "maturity_date": "2029-05-20",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G10172": {
+      "issuer_name": "上海商銀",
+      "coupon_rate": 0,
+      "bond_code": "G10172",
+      "maturity_date": "2026-12-12",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B9A611": {
+      "issuer_name": "元大證券",
+      "coupon_rate": 0,
+      "bond_code": "B9A611",
+      "maturity_date": "2030-01-09",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B9A502": {
+      "issuer_name": "日月光投控",
+      "coupon_rate": 0,
+      "bond_code": "B9A502",
+      "maturity_date": "2026-04-26",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B9A102": {
+      "issuer_name": "台北金融大樓",
+      "coupon_rate": 0,
+      "bond_code": "B9A102",
+      "maturity_date": "2026-04-21",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B99707": {
+      "issuer_name": "台灣人壽",
+      "coupon_rate": 0,
+      "bond_code": "B99707",
+      "maturity_date": "2041-01-06",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "G102BG": {
+      "issuer_name": "玉山銀行",
+      "coupon_rate": 0,
+      "bond_code": "G102BG",
+      "maturity_date": "2030-04-14",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B99908": {
+      "issuer_name": "合迪",
+      "coupon_rate": 0,
+      "bond_code": "B99908",
+      "maturity_date": "2029-03-26",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B9AK06": {
+      "issuer_name": "凱基人壽",
+      "coupon_rate": 0,
+      "bond_code": "B9AK06",
+      "maturity_date": "2041-01-26",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B9AK08": {
+      "issuer_name": "凱基人壽",
+      "coupon_rate": 0,
+      "bond_code": "B9AK08",
+      "maturity_date": "2041-06-10",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B99508": {
+      "issuer_name": "富邦人壽",
+      "coupon_rate": 0,
+      "bond_code": "B99508",
+      "maturity_date": "2039-06-12",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B99516": {
+      "issuer_name": "富邦人壽",
+      "coupon_rate": 0,
+      "bond_code": "B99516",
+      "maturity_date": "2040-12-16",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B99518": {
+      "issuer_name": "富邦人壽",
+      "coupon_rate": 0,
+      "bond_code": "B99518",
+      "maturity_date": "2041-05-06",
+      "record_source": "manual",
+      "manual_override": true
+    },
+    "B9AT03": {
+      "issuer_name": "新鑫",
+      "coupon_rate": 0,
+      "bond_code": "B9AT03",
+      "maturity_date": "2029-06-26",
+      "record_source": "manual",
+      "manual_override": true
+    }
+  }
 }
