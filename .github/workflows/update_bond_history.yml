@@ -39,6 +39,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 90
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -52,26 +53,63 @@ jobs:
           cache: pip
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install openpyxl==3.1.5
 
-      - name: Update trade history, bond master, and merged data
+      - name: Update trade history, bond master, merged data, and Excel
         shell: bash
         run: |
           MODE="${{ github.event.inputs.mode || 'daily' }}"
           START="${{ github.event.inputs.start || '2026-01-01' }}"
           END="${{ github.event.inputs.end || '' }}"
           FORCE="${{ github.event.inputs.force || 'false' }}"
+
           CMD=(python scripts/update_bond_history.py --mode "$MODE" --start "$START")
-          if [ -n "$END" ]; then CMD+=(--end "$END"); fi
-          if [ "$FORCE" = "true" ]; then CMD+=(--force); fi
+
+          if [ -n "$END" ]; then
+            CMD+=(--end "$END")
+          fi
+
+          if [ "$FORCE" = "true" ]; then
+            CMD+=(--force)
+          fi
+
           "${CMD[@]}"
 
-      - name: Validate JSON
+      - name: Validate output files
+        shell: bash
         run: |
           python -m json.tool data/ebts_outright.json >/dev/null
           python -m json.tool data/otc_outright.json >/dev/null
           python -m json.tool data/bond_master.json >/dev/null
           python -m json.tool data/merged_outright.json >/dev/null
+
+          test -s data/merged_outright.xlsx
+
+          python - <<'PY'
+          from pathlib import Path
+          from openpyxl import load_workbook
+
+          path = Path("data/merged_outright.xlsx")
+          workbook = load_workbook(path, read_only=True, data_only=True)
+
+          required_sheets = {"Transactions", "Metadata"}
+          missing = required_sheets.difference(workbook.sheetnames)
+          if missing:
+              raise RuntimeError(f"Excel缺少工作表: {sorted(missing)}")
+
+          sheet = workbook["Transactions"]
+          if sheet.max_row < 2:
+              raise RuntimeError("Transactions工作表沒有逐筆成交資料")
+
+          print(
+              f"Excel validation passed: "
+              f"rows={sheet.max_row - 1}, columns={sheet.max_column}, "
+              f"size={path.stat().st_size} bytes"
+          )
+          PY
 
       - name: Upload debug artifacts
         if: always()
@@ -82,15 +120,32 @@ jobs:
           if-no-files-found: ignore
           retention-days: 30
 
-      - name: Commit updated data
+      - name: Upload generated Excel artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged-outright-excel-${{ github.run_id }}
+          path: data/merged_outright.xlsx
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Commit updated data and Excel
+        shell: bash
         run: |
-          if git diff --quiet -- data; then
-            echo "No data changes"
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/*.json
-          git commit -m "data: update Taiwan bond history and master"
+
+          git add data/ebts_outright.json
+          git add data/otc_outright.json
+          git add data/bond_master.json
+          git add data/merged_outright.json
+          git add data/merged_outright.xlsx
+
+          if git diff --cached --quiet; then
+            echo "No staged data changes"
+            exit 0
+          fi
+
+          git commit -m "data: update Taiwan bond history, master, and Excel"
           git pull --rebase
           git push
