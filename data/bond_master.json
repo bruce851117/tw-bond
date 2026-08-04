@@ -2,7 +2,7 @@
   "metadata": {
     "description": "TPEx 各類債券發行資料主檔，保留標準化欄位與各API原始raw資料",
     "as_of_date": "2026-08-04",
-    "updated_at": "2026-08-04T14:02:10+08:00",
+    "updated_at": "2026-08-04T14:07:30+08:00",
     "record_count": 2195,
     "source_status": {
       "bond_ISSBD1_data": {
