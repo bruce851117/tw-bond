@@ -9,6 +9,7 @@
 4. 依債券代號補上發行人、到期日、債券類型等主檔資訊。
 5. 合併兩市場至 data/merged_outright.json。
 6. 以本次執行的台北日期計算最新剩餘年期，四捨五入至小數第一位。
+7. 主檔採累積式更新，保留 API 已移除的舊券，並套用 data/manual_bond_mapping.json。
 
 正式檔名固定為 update_bond_history.py。
 """
@@ -325,16 +326,49 @@ def make_master_record(row: dict[str, Any], endpoint: str, category: str) -> dic
     }
 
 
+def load_manual_bond_mapping() -> dict[str, dict[str, Any]]:
+    """讀取人工 Mapping；此檔由使用者維護，程式只讀取、不覆寫。"""
+    path = DATA_DIR / "manual_bond_mapping.json"
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        rows = payload.get("bonds", {}) if isinstance(payload, dict) else {}
+        return {
+            normalize_bond_code(code): dict(record)
+            for code, record in rows.items()
+            if normalize_bond_code(code) and isinstance(record, dict)
+        }
+    except Exception:
+        logging.exception("人工 Mapping 讀取失敗: %s", path)
+        return {}
+
+
+def refresh_master_record(record: dict[str, Any], as_of: date) -> dict[str, Any]:
+    refreshed = dict(record)
+    refreshed["latest_remaining_years"] = remaining_years(refreshed.get("maturity_date"), as_of)
+    refreshed["maturity_status"] = maturity_status(
+        refreshed.get("maturity_date"), bool(refreshed.get("is_perpetual")), as_of
+    )
+    return refreshed
+
+
 def fetch_bond_master(session: requests.Session, as_of: date) -> dict[str, Any]:
+    """累積維護主檔：舊資料完整保留，API 只新增/更新，人工 Mapping 最後覆蓋。"""
     old_path = DATA_DIR / "bond_master.json"
     old_payload: dict[str, Any] = {}
     if old_path.exists():
         old_payload = json.loads(old_path.read_text(encoding="utf-8"))
-    old_records = old_payload.get("bonds", {})
+    old_records = old_payload.get("bonds", {}) if isinstance(old_payload, dict) else {}
 
-    records: dict[str, dict[str, Any]] = {}
+    # 先完整保留歷史主檔。API 即使成功但不再回傳舊券，也不刪除舊券。
+    records: dict[str, dict[str, Any]] = {
+        normalize_bond_code(code): refresh_master_record(dict(record), as_of)
+        for code, record in old_records.items()
+        if normalize_bond_code(code) and isinstance(record, dict)
+    }
     source_status: dict[str, Any] = {}
-    successful_endpoints: set[str] = set()
+    seen_today: set[str] = set()
 
     for endpoint, category in BOND_APIS.items():
         try:
@@ -344,38 +378,60 @@ def fetch_bond_master(session: requests.Session, as_of: date) -> dict[str, Any]:
                 record = make_master_record(row, endpoint, category)
                 if record is None:
                     continue
-                record["latest_remaining_years"] = remaining_years(record["maturity_date"], as_of)
-                record["maturity_status"] = maturity_status(
-                    record["maturity_date"], record["is_perpetual"], as_of
-                )
-                records[record["bond_code"]] = record
+                code = record["bond_code"]
+                old = records.get(code, {})
+                # 新 API 值優先；API 空值不抹除既有有效欄位。
+                merged_record = dict(old)
+                for key, value in record.items():
+                    if value not in (None, "", []):
+                        merged_record[key] = value
+                merged_record["first_seen_in_api"] = old.get("first_seen_in_api", as_of.isoformat())
+                merged_record["last_seen_in_api"] = as_of.isoformat()
+                merged_record["preserved_from_history"] = False
+                merged_record["record_source"] = "tpex_api"
+                records[code] = refresh_master_record(merged_record, as_of)
+                seen_today.add(code)
                 accepted += 1
-            successful_endpoints.add(endpoint)
             source_status[endpoint] = {"ok": True, "rows": len(rows), "accepted": accepted}
         except Exception as exc:
             logging.exception("債券主檔API失敗: %s", endpoint)
-            source_status[endpoint] = {"ok": False, "error": str(exc), "fallback": "existing bond_master.json"}
+            source_status[endpoint] = {
+                "ok": False,
+                "error": str(exc),
+                "fallback": "existing bond_master.json",
+            }
 
-    # 單一API暫時失敗時，只沿用該API舊資料，不讓其他成功來源把歷史主檔刪掉。
-    for code, old_record in old_records.items():
-        endpoint = old_record.get("source_endpoint")
-        if endpoint not in successful_endpoints and code not in records:
-            preserved = dict(old_record)
-            preserved["latest_remaining_years"] = remaining_years(preserved.get("maturity_date"), as_of)
-            preserved["maturity_status"] = maturity_status(
-                preserved.get("maturity_date"), bool(preserved.get("is_perpetual")), as_of
-            )
-            records[code] = preserved
+    for code, record in records.items():
+        if code not in seen_today and record.get("record_source") != "manual":
+            record["preserved_from_history"] = True
+
+    manual_records = load_manual_bond_mapping()
+    for code, overrides in manual_records.items():
+        base = records.get(code, {})
+        merged_record = dict(base)
+        for key, value in overrides.items():
+            if value not in (None, ""):
+                merged_record[key] = value
+        merged_record.update({
+            "bond_code": code,
+            "base_bond_code": base_bond_code(code),
+            "record_source": "manual",
+            "manual_override": True,
+            "manual_mapping_applied_at": datetime.now(TAIPEI).isoformat(timespec="seconds"),
+        })
+        records[code] = refresh_master_record(merged_record, as_of)
 
     if not records:
-        raise RuntimeError("所有債券主檔API均失敗，且沒有既有 bond_master.json 可沿用")
+        raise RuntimeError("所有債券主檔API均失敗，且沒有既有 bond_master.json 或人工 Mapping 可沿用")
 
     payload = {
         "metadata": {
-            "description": "TPEx 各類債券發行資料主檔，保留標準化欄位與各API原始raw資料",
+            "description": "TPEx 各類債券發行資料累積主檔；保留歷史券並套用人工 Mapping",
             "as_of_date": as_of.isoformat(),
             "updated_at": datetime.now(TAIPEI).isoformat(timespec="seconds"),
             "record_count": len(records),
+            "manual_mapping_count": len(manual_records),
+            "preserved_history_count": sum(bool(r.get("preserved_from_history")) for r in records.values()),
             "source_status": source_status,
         },
         "bonds": dict(sorted(records.items())),

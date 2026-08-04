@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>台灣債券成交利率矩陣</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">Taiwan Bond Market</p>
+      <h1>台灣債券成交利率矩陣</h1>
+      <p class="subtitle">依最新剩餘年期分組，整合等殖（EBTS）與處所（OTC）買賣斷成交資料</p>
+    </div>
+    <div class="header-actions">
+      <button id="refreshButton" class="button secondary" type="button">重新載入</button>
+      <button id="mappingButton" class="button primary" type="button">Mapping 管理</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="status-grid" aria-label="資料狀態">
+      <article class="status-card"><span>資料更新</span><strong id="updatedAt">載入中</strong></article>
+      <article class="status-card"><span>最新剩餘年期基準日</span><strong id="asOfDate">載入中</strong></article>
+      <article class="status-card"><span>成交明細</span><strong id="recordCount">-</strong></article>
+      <article class="status-card warning"><span>未 Mapping 券數</span><strong id="unmappedCount">-</strong></article>
+    </section>
+
+    <section class="toolbar panel">
+      <label>顯示最近
+        <select id="dayLimit">
+          <option value="10">10 個交易日</option>
+          <option value="20" selected>20 個交易日</option>
+          <option value="40">40 個交易日</option>
+          <option value="all">全部日期</option>
+        </select>
+      </label>
+      <label>搜尋券號／名稱／發行人
+        <input id="searchInput" type="search" placeholder="例如 A15202、台電">
+      </label>
+      <label class="check-label"><input id="tradedOnly" type="checkbox" checked> 隱藏期間內無成交券</label>
+      <div class="legend">
+        <span><i class="dot single"></i>單一市場</span>
+        <span><i class="dot dual"></i>等殖與處所皆成交，可點擊</span>
+        <span><i class="dot manual"></i>人工 Mapping</span>
+      </div>
+    </section>
+
+    <section id="errorBanner" class="error-banner hidden" role="alert"></section>
+    <section id="matrixRoot" aria-live="polite"></section>
+
+    <section class="panel unmapped-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Data Quality</p>
+          <h2>尚未 Mapping 的券號</h2>
+          <p>這些券無法取得到期日，因此暫時不能分入年期矩陣。按「補 Mapping」可直接填寫。</p>
+        </div>
+        <button id="openMappingFromList" class="button primary" type="button">批次補 Mapping</button>
+      </div>
+      <div id="unmappedList" class="unmapped-list"></div>
+    </section>
+  </main>
+
+  <dialog id="detailDialog" class="dialog detail-dialog">
+    <form method="dialog" class="dialog-header">
+      <div><p class="eyebrow">Trade Detail</p><h2 id="detailTitle">成交明細</h2></div>
+      <button class="icon-button" aria-label="關閉">×</button>
+    </form>
+    <div id="detailBody" class="dialog-body"></div>
+  </dialog>
+
+  <dialog id="mappingDialog" class="dialog mapping-dialog">
+    <div class="dialog-header">
+      <div>
+        <p class="eyebrow">Manual Mapping</p>
+        <h2>人工債券 Mapping 管理</h2>
+        <p>瀏覽器會合併既有人工資料，不會刪除舊紀錄。完成後下載完整 JSON，覆蓋 Repo 的 data/manual_bond_mapping.json，再執行 rebuild。</p>
+      </div>
+      <button id="closeMapping" class="icon-button" type="button" aria-label="關閉">×</button>
+    </div>
+    <div class="dialog-body mapping-layout">
+      <section>
+        <h3>單筆新增／修改</h3>
+        <form id="singleMappingForm" class="mapping-form">
+          <label>債券代號<input id="mapCode" required maxlength="12" placeholder="A15202"></label>
+          <label>到期日<input id="mapMaturity" required type="date"></label>
+          <label>債券名稱<input id="mapName" placeholder="選填"></label>
+          <label>發行人<input id="mapIssuer" placeholder="選填"></label>
+          <label>債券類型<input id="mapType" placeholder="選填，例如政府公債"></label>
+          <label>備註<input id="mapNote" placeholder="選填"></label>
+          <button class="button primary" type="submit">加入／更新 Mapping</button>
+        </form>
+      </section>
+      <section>
+        <h3>批次貼上</h3>
+        <p class="help">每行格式：券號、到期日，可用 Tab、逗號或空白分隔。</p>
+        <textarea id="batchMapping" rows="9" placeholder="A15202	2028-04-17&#10;G12727	2026-07-23"></textarea>
+        <button id="applyBatch" class="button secondary" type="button">解析並加入</button>
+      </section>
+      <section class="mapping-current">
+        <div class="section-heading compact">
+          <h3>目前人工 Mapping</h3>
+          <span id="mappingCount" class="pill">0</span>
+        </div>
+        <div id="mappingTableWrap"></div>
+      </section>
+    </div>
+    <div class="dialog-footer">
+      <label class="file-button">匯入既有 JSON<input id="mappingFile" type="file" accept="application/json,.json"></label>
+      <button id="clearLocalMapping" class="button danger" type="button">清除瀏覽器暫存</button>
+      <button id="downloadMapping" class="button primary" type="button">下載完整 Mapping JSON</button>
+    </div>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
