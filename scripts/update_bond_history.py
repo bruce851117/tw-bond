@@ -480,9 +480,27 @@ def export_merged_to_excel(
     動態原始欄位會完整保留。dict/list 會序列化為 JSON 字串，避免資料遺失。
     """
     # 放在函式內匯入，刪除整個函式後，主程式不再依賴 openpyxl。
-    from openpyxl import Workbook
-    from openpyxl.styles import Alignment, Font, PatternFill
-    from openpyxl.utils import get_column_letter
+    # 若 requirements.txt 尚未加入 openpyxl，GitHub Actions 會在此自動安裝。
+    try:
+        from openpyxl import Workbook
+        from openpyxl.styles import Alignment, Font, PatternFill
+        from openpyxl.utils import get_column_letter
+    except ModuleNotFoundError:
+        import subprocess
+        import sys
+
+        logging.warning("偵測不到 openpyxl，開始自動安裝 openpyxl==3.1.5")
+        subprocess.check_call([
+            sys.executable,
+            "-m",
+            "pip",
+            "install",
+            "--disable-pip-version-check",
+            "openpyxl==3.1.5",
+        ])
+        from openpyxl import Workbook
+        from openpyxl.styles import Alignment, Font, PatternFill
+        from openpyxl.utils import get_column_letter
 
     output_path = output_path or (DATA_DIR / "merged_outright.xlsx")
     output_path.parent.mkdir(parents=True, exist_ok=True)
