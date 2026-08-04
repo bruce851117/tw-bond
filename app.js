@@ -15,7 +15,21 @@ function recordYears(r){const m=manualFor(r.bond_code);if(m?.maturity_date)retur
 function termFor(y){return TERMS.find(t=>y>=t.min&&y<t.max)||null}
 function displayDate(s){const [y,m,d]=String(s).split('-');return `${y}/${Number(m)}/${Number(d)}`}
 function numberValue(v){if(typeof v==='number'&&Number.isFinite(v))return v;if(v==null)return null;const x=Number(String(v).replace(/[%％,]/g,'').trim());return Number.isFinite(x)?x:null}
-function yieldFrom(r){const market=String(r.market||'').toUpperCase();const entries=Object.entries(r);const exact=market==='EBTS'?['加權平均成交利率','加權平均利率','加權平均殖利率','加權平均']:['平均成交利率','平均利率','平均殖利率','平均'];for(const alias of exact){const found=entries.find(([k])=>norm(k)===norm(alias));if(found){const v=numberValue(found[1]);if(v!=null)return {value:v,field:found[0]}}}const fuzzy=entries.find(([k,v])=>/平均/.test(k)&&/(利率|殖利率)/.test(k)&&numberValue(v)!=null);if(fuzzy)return {value:numberValue(fuzzy[1]),field:fuzzy[0]};const fallback=entries.find(([k,v])=>/(利率|殖利率)/.test(k)&&numberValue(v)!=null&&!/(最高|最低|差)/.test(k));return fallback?{value:numberValue(fallback[1]),field:fallback[0]}:null}
+function flattenEntries(obj,prefix=''){const out=[];for(const [key,value] of Object.entries(obj||{})){const path=prefix?`${prefix}.${key}`:key;if(value&&typeof value==='object'&&!Array.isArray(value))out.push(...flattenEntries(value,path));else out.push([path,value])}return out}
+function yieldFrom(r){
+  const market=String(r.market||'').toUpperCase();
+  const entries=flattenEntries(r).filter(([key,value])=>numberValue(value)!=null&&!/(券號|代號|日期|年期|面額|金額|筆數|數量|價格|百元價|price|volume|amount|count|date|year)/i.test(key));
+  const scored=entries.map(([key,value])=>{const k=norm(key),lower=String(key).toLowerCase();let score=0;
+    if(/利率|殖利率|yield|rate/.test(lower))score+=60;
+    if(/加權平均|weightedaverage|volumeweightedaverage|weightedavg|vwap/.test(k))score+=market==='EBTS'?100:65;
+    if(/平均|average|avg/.test(lower))score+=market==='OTC'?90:45;
+    if(/成交|trade|transaction/.test(lower))score+=20;
+    if(/最高|最低|high|low|差額|spread/.test(lower))score-=120;
+    if(/票面|coupon/.test(lower))score-=100;
+    return {key,value:numberValue(value),score};
+  }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);
+  return scored.length?{value:scored[0].value,field:scored[0].key}:null;
+}
 function classify(r){const m=manualFor(r.bond_code),type=String(m?.bond_type||r.bond_type||''),issuer=String(m?.issuer_name||r.issuer_name||'未分類發行人'),code=String(r.bond_code||'');if(/公債|政府|國庫/.test(type)||code.startsWith('A'))return {section:'公債',issuer:'中央政府'};return {section:'公司債',issuer};}
 function buildIndex(){const index=new Map(),unmapped=new Map();for(const [date,rows] of Object.entries(merged.dates||{})){for(const r of rows||[]){const code=String(r.bond_code||'').toUpperCase();if(!code)continue;const man=manualFor(code),y=recordYears(r),term=termFor(y),mapped=Boolean(term);if(!mapped){const u=unmapped.get(code)||{code,first:date,last:date,count:0,markets:new Set(),name:r.bond_name_master||r.bond_name||''};u.first=date<u.first?date:u.first;u.last=date>u.last?date:u.last;u.count++;u.markets.add(r.market_zh||r.market||'');unmapped.set(code,u);continue}const c=classify(r),key=[c.section,c.issuer,term.key,code,date].join('|');const item=index.get(key)||{section:c.section,issuer:c.issuer,term,code,date,name:man?.bond_name||r.bond_name_master||r.bond_name||'',years:y,maturity:man?.maturity_date||r.maturity_date,manual:Boolean(man),markets:{}};const yv=yieldFrom(r);if(yv){const mk=String(r.market||'').toUpperCase()==='EBTS'?'EBTS':'OTC';(item.markets[mk]??=[]).push({value:yv.value,field:yv.field,record:r})}index.set(key,item)}}return {index,unmapped}}
 function render(){const dates=Object.keys(merged.dates||{}).sort().reverse(),limit=$('dayLimit').value;selectedDates=limit==='all'?dates:dates.slice(0,Number(limit));const {index,unmapped}=buildIndex();const query=$('searchInput').value.trim().toLowerCase();const filtered=[...index.values()].filter(x=>selectedDates.includes(x.date)&&(!query||[x.code,x.name,x.issuer].join(' ').toLowerCase().includes(query)));$('updatedAt').textContent=merged.metadata?.updated_at?.replace('T',' ').slice(0,19)||'尚無';$('asOfDate').textContent=merged.metadata?.remaining_years_as_of||'尚無';$('recordCount').textContent=Number(merged.metadata?.record_count||0).toLocaleString();$('unmappedCount').textContent=unmapped.size.toLocaleString();renderMatrices(filtered);renderUnmapped(unmapped);renderMappingTable()}
