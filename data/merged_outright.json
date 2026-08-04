@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "description": "等殖與處所買賣斷成交歷史合併資料",
+    "updated_at": null,
+    "remaining_years_as_of": null,
+    "date_count": 0,
+    "record_count": 0,
+    "market_record_counts": {
+      "EBTS": 0,
+      "OTC": 0
+    },
+    "unmapped_bond_count": 0,
+    "unmapped_bond_codes": []
+  },
+  "dates": {}
+}

@@ -1,47 +1,106 @@
 # Taiwan Bond Dashboard Data Pipeline
 
-這個 starter repo 先完成兩份櫃買中心日報表的歷史回補與每日增量更新：
+本 Repo 每日下載櫃買中心兩份買賣斷成交日報表，更新兩份原始歷史 JSON，再抓取 TPEx 各類債券發行資料 API，建立債券主檔，最後把 EBTS 與 OTC 合併成前端可直接使用的 JSON。
 
-- `BDdys01a`：等殖成交行情表（買賣斷）
-- `BDdcs001`：營業處所成交行情表（買賣斷）
+## 產出檔案
 
-## 資料輸出
+### 原始成交歷史
 
-- `data/ebts_outright.json`
-- `data/otc_outright.json`
+- `data/ebts_outright.json`：等殖成交系統 `BDdys01a`
+- `data/otc_outright.json`：營業處所議價 `BDdcs001`
 
-JSON 以日期為 key，每天保留來源網址、SHA-256、原欄位、筆數及全部券號紀錄。因此新檔案出現舊檔案沒有的券號時，會直接加入該日 `records`，不需要先建立固定券號欄位。
+### API 債券主檔
 
-## 第一次回補 2026 年以來資料
+- `data/bond_master.json`
 
-到 GitHub 的 **Actions > Update Taiwan bond history > Run workflow**：
+此檔保存 TPEx `bond_ISSBD1_data` 至 `bond_ISSBD11_data` 的資料。每檔債券包含標準化欄位，也保留 API 原始資料於 `raw`，後續可再 Mapping 發行額、流通餘額、幣別、票息及其他欄位。
 
-- mode：`bootstrap`
-- start：`2026-01-01`
-- end：可留白，或填 `2026-08-03`
-- force：`false`
+### 合併成交資料
 
-程式會嘗試每個曆日。非交易日或尚未發布的檔案通常為 404，會跳過；已存在於 JSON 的日期也會跳過。
+- `data/merged_outright.json`
 
-## 每日自動更新
+合併檔每筆資料會加入：
 
-工作流程在週一至週五台灣時間 17:30 執行。櫃買檔案若尚未上線，當天不會寫入；可稍後手動執行 `daily`。
+- `market`：`EBTS` 或 `OTC`
+- `market_zh`：`等殖` 或 `處所`
+- `bond_code`
+- `base_bond_code`
+- `issuer_name`
+- `bond_type`
+- `issue_date`
+- `maturity_date`
+- `coupon_rate`
+- `is_perpetual`
+- `latest_remaining_years`
+- `remaining_years_as_of`
+- `master_mapped`
 
-## 本機執行
+最新剩餘年期計算方式：
 
-```bash
-python -m pip install -r requirements.txt
-python scripts/update_bond_history.py --mode bootstrap --start 2026-01-01 --end 2026-08-03
-python scripts/update_bond_history.py --mode daily --date 2026-08-04
+```text
+round((到期日 - 台北執行日期).days / 365.25, 1)
 ```
 
-## Debug 與稽核
+沒有到期日的永續債保留 `latest_remaining_years: null`，並標記 `is_perpetual: true`。
 
-- 每次 HTTP 狀態、URL、下載大小與重試次數會寫入 `debug/update.log`。
-- 解析失敗時，原始 XLS 會存入 `debug/`。
-- GitHub Actions 每次執行都會上傳 debug artifact，保留30天。
-- 每筆日期資料保留來源 URL 與檔案 SHA-256，方便事後核對。
+## TPEx 發行資料 API
 
-## 注意
+程式每日抓取：
 
-若櫃買中心對 GitHub Hosted Runner 回傳 403，建議改用 self-hosted runner，或再加入官方頁面實際呼叫的下載 API。程式已先造訪櫃買頁面取得 Cookie，並使用瀏覽器 User-Agent、Referer 與退避重試。
+- `bond_ISSBD1_data`：政府公債
+- `bond_ISSBD2_data`：外國金融債
+- `bond_ISSBD3_data`：金融債券
+- `bond_ISSBD4_data`：普通公司債
+- `bond_ISSBD5_data`：轉換或交換公司債
+- `bond_ISSBD6_data`：海外轉換公司債
+- `bond_ISSBD7_data`：附認股權公司債
+- `bond_ISSBD8_data`：海外附認股權公司債
+- `bond_ISSBD9_data`：海外普通債
+- `bond_ISSBD10_data`：國際債券
+- `bond_ISSBD11_data`：國際債券外國發行人
+
+若某一API暫時失敗，程式會保留既有 `bond_master.json` 中該來源的舊資料，不會因其他API成功而把該類債券刪掉。API執行狀態會記錄在 `bond_master.json > metadata > source_status`。
+
+## 第一次回補 2026 年資料
+
+到 GitHub：
+
+```text
+Actions > Update Taiwan bond history > Run workflow
+```
+
+設定：
+
+```text
+mode: bootstrap
+start: 2026-01-01
+end: 2026-08-03
+force: false
+```
+
+## 每日更新
+
+排程於週一至週五台灣時間 17:30 執行 `daily`：
+
+1. 更新兩份原始成交 JSON。
+2. 重新抓取各類債券發行 API。
+3. 更新 `bond_master.json`。
+4. 重新產生完整 `merged_outright.json`。
+5. 驗證四份 JSON。
+6. 上傳 Debug Artifact。
+7. Commit 並 Push 回 Repo。
+
+## 只重建 Mapping 與合併檔
+
+如果原始 EBTS／OTC JSON 已存在，只想重新抓主檔 API 並重建合併檔：
+
+```bash
+python scripts/update_bond_history.py --mode rebuild
+```
+
+## Debug
+
+- 所有 HTTP URL、狀態碼、下載大小與重試次數寫入 `debug/update.log`。
+- XLS 解析失敗時保存原始檔於 `debug/`。
+- 合併檔 metadata 會列出沒有 Mapping 到主檔的券號。
+- GitHub Actions 每次執行都上傳 Debug Artifact，保留 30 天。

@@ -4,13 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: daily or bootstrap
+        description: daily, bootstrap, or rebuild
         required: true
         default: daily
         type: choice
         options:
           - daily
           - bootstrap
+          - rebuild
       start:
         description: Bootstrap start date (YYYY-MM-DD)
         required: false
@@ -20,11 +21,12 @@ on:
         required: false
         default: ''
       force:
-        description: Overwrite dates already in JSON
+        description: Overwrite dates already in raw JSON
         required: false
         default: false
         type: boolean
-
+  schedule:
+    - cron: '30 9 * * 1-5'
 
 permissions:
   contents: write
@@ -36,7 +38,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -52,7 +54,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Update data
+      - name: Update trade history, bond master, and merged data
         shell: bash
         run: |
           MODE="${{ github.event.inputs.mode || 'daily' }}"
@@ -68,6 +70,8 @@ jobs:
         run: |
           python -m json.tool data/ebts_outright.json >/dev/null
           python -m json.tool data/otc_outright.json >/dev/null
+          python -m json.tool data/bond_master.json >/dev/null
+          python -m json.tool data/merged_outright.json >/dev/null
 
       - name: Upload debug artifacts
         if: always()
@@ -87,6 +91,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/*.json
-          git commit -m "data: update Taiwan bond history"
+          git commit -m "data: update Taiwan bond history and master"
           git pull --rebase
           git push
