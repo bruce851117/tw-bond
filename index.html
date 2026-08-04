@@ -1,180 +1,72 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>台灣債券成交利率矩陣</title>
-  <style>
-:root{--navy:#10233f;--blue:#1463ff;--teal:#0f9f8f;--bg:#f4f7fb;--panel:#fff;--line:#dbe3ef;--text:#172033;--muted:#68758a;--warn:#b75d00;--warn-bg:#fff4df;--danger:#c73535;--danger-bg:#fff0f0;--manual:#7257d6;--shadow:0 10px 30px rgba(16,35,63,.08)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif}.page-header{display:flex;justify-content:space-between;gap:24px;padding:28px clamp(18px,4vw,56px);background:linear-gradient(125deg,#0d203a,#173f71);color:#fff}.page-header h1{margin:3px 0 6px;font-size:clamp(26px,4vw,42px)}.subtitle,.page-header p{margin:0;color:#dce8f7}.eyebrow{margin:0!important;text-transform:uppercase;letter-spacing:.13em;font-size:12px;font-weight:800;color:#5c7292!important}.page-header .eyebrow{color:#86b9ff!important}.header-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}main{padding:24px clamp(12px,3vw,42px) 60px}.status-grid{display:grid;grid-template-columns:repeat(4,minmax(170px,1fr));gap:14px;margin-bottom:16px}.status-card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}.status-card{padding:16px 18px}.status-card span{display:block;color:var(--muted);font-size:13px;margin-bottom:7px}.status-card strong{font-size:18px}.status-card.warning strong{color:var(--warn)}.toolbar{display:flex;align-items:end;gap:18px;padding:15px 18px;margin-bottom:18px;flex-wrap:wrap}.toolbar label,.mapping-form label{display:grid;gap:6px;color:var(--muted);font-size:13px;font-weight:700}.toolbar input,.toolbar select,input,textarea{border:1px solid #bbc8da;border-radius:8px;padding:9px 11px;background:#fff;color:var(--text);font:inherit}.toolbar input{width:min(320px,75vw)}.check-label{display:flex!important;align-items:center;gap:8px!important;padding-bottom:9px}.check-label input{width:auto}.legend{margin-left:auto;display:flex;gap:13px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--muted);padding-bottom:8px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}.dot.single{background:#8ea0b8}.dot.dual{background:var(--blue)}.dot.manual{background:var(--manual)}.button,.file-button{border:0;border-radius:9px;padding:10px 14px;font-weight:800;cursor:pointer;font:inherit;display:inline-flex;align-items:center;justify-content:center}.button.primary{background:var(--blue);color:#fff}.button.secondary,.file-button{background:#e8eef7;color:var(--navy)}.page-header .secondary{background:rgba(255,255,255,.14);color:#fff}.button.danger{background:var(--danger-bg);color:var(--danger)}.matrix-section{margin-bottom:24px}.matrix-title{display:flex;align-items:center;gap:10px;margin:0 0 8px}.matrix-title h2{margin:0;font-size:21px}.matrix-wrap{overflow:auto;background:#fff;border:1px solid #aeb9c9;border-radius:10px;box-shadow:var(--shadow);max-height:72vh}.yield-table{border-collapse:separate;border-spacing:0;min-width:100%;font-size:13px}.yield-table th,.yield-table td{padding:8px 10px;border-right:1px solid #d8dee8;border-bottom:1px solid #d8dee8;text-align:center;white-space:nowrap}.yield-table thead th{position:sticky;top:0;background:#f2f5f9;z-index:3;color:#3c4b60}.yield-table .term-head{left:0;z-index:5}.yield-table .bond-head{left:72px;z-index:5}.yield-table .term-cell{position:sticky;left:0;z-index:2;background:#f8fafc;font-weight:900;min-width:72px;border-top:2px solid #1a2638}.yield-table .bond-cell{position:sticky;left:72px;z-index:2;background:#fff;text-align:left;min-width:180px;border-top:1px solid #b8c3d2}.bond-code{font-weight:900}.bond-meta{display:block;margin-top:2px;color:var(--muted);font-size:11px;max-width:210px;overflow:hidden;text-overflow:ellipsis}.yield-cell{min-width:92px}.yield-link{border:0;background:none;color:var(--blue);font-weight:900;text-decoration:underline;text-decoration-style:dotted;cursor:pointer}.single-yield{font-weight:800}.market-note{display:block;font-size:10px;color:var(--muted);margin-top:2px}.manual-mark{color:var(--manual);font-size:10px;font-weight:800}.empty{color:#a4adba}.unmapped-panel{padding:20px;margin-top:28px}.section-heading{display:flex;justify-content:space-between;gap:18px;align-items:start}.section-heading h2,.section-heading h3{margin:4px 0}.section-heading p{margin:5px 0;color:var(--muted)}.section-heading.compact{align-items:center}.unmapped-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:10px;margin-top:16px}.unmapped-item{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #f0c98f;background:var(--warn-bg);padding:11px 12px;border-radius:9px}.unmapped-item strong{display:block}.unmapped-item small{color:#7a5a2d}.pill{display:inline-flex;padding:3px 8px;border-radius:999px;background:#e7edf6;color:#32445f;font-size:12px;font-weight:800}.error-banner{padding:13px 16px;background:var(--danger-bg);border:1px solid #efb1b1;color:#982c2c;border-radius:10px;margin-bottom:15px}.hidden{display:none!important}.dialog{width:min(920px,94vw);max-height:90vh;border:0;border-radius:16px;padding:0;box-shadow:0 30px 90px rgba(6,17,33,.32)}.dialog::backdrop{background:rgba(9,20,36,.62)}.dialog-header{display:flex;justify-content:space-between;gap:20px;padding:20px 22px;border-bottom:1px solid var(--line)}.dialog-header h2{margin:3px 0}.dialog-header p{margin:4px 0;color:var(--muted)}.icon-button{border:0;background:#edf1f7;border-radius:50%;width:36px;height:36px;font-size:24px;cursor:pointer}.dialog-body{padding:20px 22px;overflow:auto}.detail-card{border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px}.detail-card h3{margin:0 0 10px}.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}.detail-grid div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed #e0e5ec;padding-bottom:5px}.detail-grid span{color:var(--muted)}.mapping-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}.mapping-layout h3{margin-top:0}.mapping-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mapping-form .button{grid-column:1/-1}.help{font-size:12px;color:var(--muted)}textarea{width:100%;resize:vertical}.mapping-current{grid-column:1/-1}.mapping-table{width:100%;border-collapse:collapse;font-size:13px}.mapping-table th,.mapping-table td{padding:8px;border-bottom:1px solid var(--line);text-align:left}.dialog-footer{display:flex;gap:10px;justify-content:flex-end;padding:15px 22px;border-top:1px solid var(--line);flex-wrap:wrap}.file-button input{display:none}.loading{padding:36px;text-align:center;color:var(--muted)}@media(max-width:900px){.status-grid{grid-template-columns:repeat(2,1fr)}.page-header{display:block}.header-actions{margin-top:18px}.mapping-layout{grid-template-columns:1fr}.mapping-current{grid-column:auto}.legend{margin-left:0;width:100%}}@media(max-width:560px){.status-grid{grid-template-columns:1fr}.toolbar{align-items:stretch}.toolbar label{width:100%}.toolbar input{width:100%}.detail-grid,.mapping-form{grid-template-columns:1fr}.page-header{padding:22px 16px}}
-
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>台灣債券成交利率矩陣</title>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<style>
+:root{--n:#10233f;--b:#1769ff;--bg:#f4f7fb;--line:#d8e0eb;--muted:#68758a;--warn:#a95c00;--red:#c33434;--purple:#7257d6}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#182238;font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif}header{padding:26px clamp(16px,4vw,54px);background:linear-gradient(120deg,#0d2039,#18477f);color:#fff;display:flex;justify-content:space-between;gap:20px;align-items:center}h1{margin:0 0 6px;font-size:clamp(26px,4vw,40px)}header p{margin:0;color:#d8e6f7}main{padding:22px clamp(10px,3vw,40px) 60px}.panel{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:0 8px 24px rgba(16,35,63,.08)}.stats{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:12px;margin-bottom:14px}.stat{padding:14px 16px}.stat span{display:block;color:var(--muted);font-size:12px}.stat strong{display:block;margin-top:6px;font-size:18px}.toolbar{padding:14px 16px;display:flex;align-items:end;gap:13px;flex-wrap:wrap;margin-bottom:17px}.toolbar label,.form label{display:grid;gap:5px;color:var(--muted);font-size:12px;font-weight:700}.toolbar input,.toolbar select,.form input,textarea{border:1px solid #b9c6d8;border-radius:8px;padding:8px 10px;font:inherit}.custom{display:none;align-items:end;gap:8px}.custom.on{display:flex}.button{border:0;border-radius:8px;padding:9px 13px;font:inherit;font-weight:800;cursor:pointer}.primary{background:var(--b);color:#fff}.secondary{background:#e8eef7;color:var(--n)}.danger{background:#fff0f0;color:var(--red)}.notice{padding:11px 14px;border-radius:9px;margin-bottom:14px;background:#fff4df;color:#7d4c08;border:1px solid #edc783}.error{background:#fff0f0;color:#9f2b2b;border-color:#efb2b2}.hidden{display:none}.section{margin:0 0 24px}.section-head{display:flex;gap:10px;align-items:center;margin-bottom:8px}.section-head h2{margin:0;font-size:21px}.pill{padding:3px 8px;background:#e9eff7;border-radius:999px;font-size:12px;font-weight:800}.wrap{overflow:auto;max-height:72vh;border:1px solid #aeb9c9;border-radius:10px;background:#fff}.matrix{border-collapse:separate;border-spacing:0;min-width:100%;font-size:13px}.matrix th,.matrix td{padding:8px 10px;border-right:1px solid #d7dee8;border-bottom:1px solid #d7dee8;text-align:center;white-space:nowrap}.matrix thead th{position:sticky;top:0;background:#eef3f8;z-index:4}.term{position:sticky;left:0;z-index:2;background:#f8fafc!important;min-width:72px;font-weight:900;border-top:2px solid #172238!important}.bond{position:sticky;left:72px;z-index:2;background:#fff!important;text-align:left!important;min-width:190px}.matrix thead .term{z-index:6}.matrix thead .bond{z-index:6;background:#eef3f8!important}.code{font-weight:900}.meta,.market{display:block;color:var(--muted);font-size:10px;margin-top:2px}.manual{color:var(--purple);font-size:10px}.link{border:0;background:none;color:var(--b);font-weight:900;text-decoration:underline dotted;cursor:pointer}.value{font-weight:900}.empty{color:#a3acb9}.unmapped{padding:20px}.unmapped-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.unmapped-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.code-chip{border:1px solid #f0c782;background:#fff5df;border-radius:8px;padding:8px 10px;font-weight:900;cursor:pointer}.mapping-tools{display:grid;grid-template-columns:1fr 1.1fr;gap:18px;margin-top:18px}.mapping-box{border:1px solid var(--line);border-radius:10px;padding:14px}.mapping-box h3{margin:0 0 10px}.form{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form .full{grid-column:1/-1}.file{display:none}.mapping-info{font-size:12px;color:var(--muted);line-height:1.7}.mapping-current{margin-top:14px;max-height:240px;overflow:auto}.map-table{width:100%;border-collapse:collapse;font-size:12px}.map-table th,.map-table td{padding:7px;border-bottom:1px solid var(--line);text-align:left}dialog{border:0;border-radius:14px;width:min(820px,93vw);box-shadow:0 30px 90px rgba(0,0,0,.35);padding:0}dialog::backdrop{background:rgba(7,17,31,.62)}.dlg-head{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.dlg-head h2{margin:0}.close{border:0;border-radius:50%;width:34px;height:34px;font-size:22px}.dlg-body{padding:18px 20px}.detail{border:1px solid var(--line);border-radius:9px;padding:12px;margin-bottom:10px}.detail h3{margin:0 0 8px}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 16px}.detail-grid div{display:flex;justify-content:space-between;border-bottom:1px dashed #dce3ec;padding-bottom:4px}.loading{text-align:center;padding:34px;color:var(--muted)}@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.mapping-tools{grid-template-columns:1fr}}@media(max-width:560px){header{display:block}.stats{grid-template-columns:1fr}.form{grid-template-columns:1fr}.form .full{grid-column:auto}}
+</style>
 </head>
 <body>
-  <header class="page-header">
-    <div>
-      <p class="eyebrow">Taiwan Bond Market</p>
-      <h1>台灣債券成交利率矩陣</h1>
-      <p class="subtitle">依最新剩餘年期分組，整合等殖（EBTS）與處所（OTC）買賣斷成交資料</p>
-    </div>
-    <div class="header-actions">
-      <button id="refreshButton" class="button secondary" type="button">重新載入</button>
-      <button id="mappingButton" class="button primary" type="button">Mapping 管理</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="status-grid" aria-label="資料狀態">
-      <article class="status-card"><span>資料更新</span><strong id="updatedAt">載入中</strong></article>
-      <article class="status-card"><span>最新剩餘年期基準日</span><strong id="asOfDate">載入中</strong></article>
-      <article class="status-card"><span>成交明細</span><strong id="recordCount">-</strong></article>
-      <article class="status-card warning"><span>未 Mapping 券數</span><strong id="unmappedCount">-</strong></article>
-    </section>
-
-    <section class="toolbar panel">
-      <label>顯示最近
-        <select id="dayLimit">
-          <option value="10">10 個交易日</option>
-          <option value="20" selected>20 個交易日</option>
-          <option value="40">40 個交易日</option>
-          <option value="all">全部日期</option>
-        </select>
-      </label>
-      <label>搜尋券號／名稱／發行人
-        <input id="searchInput" type="search" placeholder="例如 A15202、台電">
-      </label>
-      <label class="check-label"><input id="tradedOnly" type="checkbox" checked> 隱藏期間內無成交券</label>
-      <div class="legend">
-        <span><i class="dot single"></i>單一市場</span>
-        <span><i class="dot dual"></i>等殖與處所皆成交，可點擊</span>
-        <span><i class="dot manual"></i>人工 Mapping</span>
-      </div>
-    </section>
-
-    <section id="errorBanner" class="error-banner hidden" role="alert"></section>
-    <section id="matrixRoot" aria-live="polite"></section>
-
-    <section class="panel unmapped-panel">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Data Quality</p>
-          <h2>尚未 Mapping 的券號</h2>
-          <p>這些券無法取得到期日，因此暫時不能分入年期矩陣。按「補 Mapping」可直接填寫。</p>
-        </div>
-        <button id="openMappingFromList" class="button primary" type="button">批次補 Mapping</button>
-      </div>
-      <div id="unmappedList" class="unmapped-list"></div>
-    </section>
-  </main>
-
-  <dialog id="detailDialog" class="dialog detail-dialog">
-    <form method="dialog" class="dialog-header">
-      <div><p class="eyebrow">Trade Detail</p><h2 id="detailTitle">成交明細</h2></div>
-      <button class="icon-button" aria-label="關閉">×</button>
-    </form>
-    <div id="detailBody" class="dialog-body"></div>
-  </dialog>
-
-  <dialog id="mappingDialog" class="dialog mapping-dialog">
-    <div class="dialog-header">
-      <div>
-        <p class="eyebrow">Manual Mapping</p>
-        <h2>人工債券 Mapping 管理</h2>
-        <p>瀏覽器會合併既有人工資料，不會刪除舊紀錄。完成後下載完整 JSON，覆蓋 Repo 的 data/manual_bond_mapping.json，再執行 rebuild。</p>
-      </div>
-      <button id="closeMapping" class="icon-button" type="button" aria-label="關閉">×</button>
-    </div>
-    <div class="dialog-body mapping-layout">
-      <section>
-        <h3>單筆新增／修改</h3>
-        <form id="singleMappingForm" class="mapping-form">
-          <label>債券代號<input id="mapCode" required maxlength="12" placeholder="A15202"></label>
-          <label>到期日<input id="mapMaturity" required type="date"></label>
-          <label>債券名稱<input id="mapName" placeholder="選填"></label>
-          <label>發行人<input id="mapIssuer" placeholder="選填"></label>
-          <label>債券類型<input id="mapType" placeholder="選填，例如政府公債"></label>
-          <label>備註<input id="mapNote" placeholder="選填"></label>
-          <button class="button primary" type="submit">加入／更新 Mapping</button>
-        </form>
-      </section>
-      <section>
-        <h3>批次貼上</h3>
-        <p class="help">每行格式：券號、到期日，可用 Tab、逗號或空白分隔。</p>
-        <textarea id="batchMapping" rows="9" placeholder="A15202	2028-04-17&#10;G12727	2026-07-23"></textarea>
-        <button id="applyBatch" class="button secondary" type="button">解析並加入</button>
-      </section>
-      <section class="mapping-current">
-        <div class="section-heading compact">
-          <h3>目前人工 Mapping</h3>
-          <span id="mappingCount" class="pill">0</span>
-        </div>
-        <div id="mappingTableWrap"></div>
-      </section>
-    </div>
-    <div class="dialog-footer">
-      <label class="file-button">匯入既有 JSON<input id="mappingFile" type="file" accept="application/json,.json"></label>
-      <button id="clearLocalMapping" class="button danger" type="button">清除瀏覽器暫存</button>
-      <button id="downloadMapping" class="button primary" type="button">下載完整 Mapping JSON</button>
-    </div>
-  </dialog>
-
-  <script>
+<header><div><h1>台灣債券成交利率矩陣</h1><p>等殖 EBTS 與處所 OTC 買賣斷成交利率</p></div><button id="reload" class="button secondary">重新載入</button></header>
+<main>
+<section class="stats"><div class="stat panel"><span>資料更新時間</span><strong id="updated">-</strong></div><div class="stat panel"><span>剩餘年期基準日</span><strong id="asof">-</strong></div><div class="stat panel"><span>成交明細筆數</span><strong id="records">-</strong></div><div class="stat panel"><span>有利率筆數</span><strong id="yieldRecords">-</strong></div><div class="stat panel"><span>未 Mapping 券數</span><strong id="unmappedCount">-</strong></div></section>
+<section class="toolbar panel">
+<label>顯示期間<select id="range"><option value="20">最近20交易日</option><option value="40">最近40交易日</option><option value="60">最近60交易日</option><option value="custom">自訂日期區間</option><option value="all">全部日期</option></select></label>
+<div id="customDates" class="custom"><label>起日<input id="startDate" type="date"></label><label>迄日<input id="endDate" type="date"></label><button id="applyDate" class="button primary">套用</button></div>
+<label>搜尋<input id="search" type="search" placeholder="券號、名稱、發行人"></label>
+</section>
+<div id="message" class="notice hidden"></div><div id="root"><div class="loading">載入資料中…</div></div>
+<section class="unmapped panel">
+<div class="unmapped-head"><div><h2>尚未 Mapping</h2><p class="mapping-info">清單只顯示券號。下載Excel後，A欄為券號，請在B欄填到期日，固定格式為 YYYY-MM-DD，例如 2028-04-17，再回到本頁上傳。</p></div><div><button id="downloadExcel" class="button secondary">下載未 Mapping Excel</button> <button id="uploadExcelBtn" class="button primary">上傳已填 Excel</button><input id="uploadExcel" class="file" type="file" accept=".xlsx,.xls"></div></div>
+<div id="unmappedList" class="unmapped-list"></div>
+<div class="mapping-tools">
+<div class="mapping-box"><h3>單檔補 Mapping</h3><form id="singleForm" class="form"><label>券號<input id="singleCode" required maxlength="12" placeholder="A15202"></label><label>到期日<input id="singleMaturity" required type="date"></label><button class="button primary full" type="submit">送出並套用</button></form><p class="mapping-info">按送出後會立即更新本頁與瀏覽器暫存。若要讓GitHub Pages永久保留，仍需下載完整Mapping JSON並覆蓋Repo中的 data/manual_bond_mapping.json。</p><button id="downloadJson" class="button secondary">下載完整 Mapping JSON</button></div>
+<div class="mapping-box"><h3>目前人工 Mapping</h3><div id="mappingCurrent" class="mapping-current"></div></div>
+</div>
+</section>
+</main>
+<dialog id="detail"><div class="dlg-head"><h2 id="detailTitle">成交明細</h2><button id="closeDetail" class="close">×</button></div><div id="detailBody" class="dlg-body"></div></dialog>
+<script>
 'use strict';
-const DATA_URL='data/merged_outright.json', MANUAL_URL='data/manual_bond_mapping.json', LOCAL_KEY='twBondManualMapping';
+const DATA_URL='data/merged_outright.json',MANUAL_URL='data/manual_bond_mapping.json',LOCAL_KEY='twBondManualMapping';
 const TERMS=[{key:'1Y',label:'1年',min:.5,max:1.5},{key:'2Y',label:'2年',min:1.5,max:2.5},{key:'5Y',label:'5年',min:4,max:6},{key:'7Y',label:'7年',min:6,max:8},{key:'10Y',label:'10年',min:8,max:12},{key:'20Y',label:'20年',min:15,max:25},{key:'30Y',label:'30年',min:25,max:35}];
-let merged={metadata:{},dates:{}}, manual={metadata:{},bonds:{}}, selectedDates=[];
-const $=id=>document.getElementById(id), esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const norm=v=>String(v??'').replace(/[\s_()（）%％/\-]/g,'').toLowerCase();
-function normalizeManual(payload){const bonds=payload?.bonds&&typeof payload.bonds==='object'?payload.bonds:{};return {metadata:{description:'人工補充債券主檔，更新程式不得自動覆蓋或刪除',...(payload?.metadata||{})},bonds:Object.fromEntries(Object.entries(bonds).map(([k,v])=>[String(k).trim().toUpperCase(),{...v,bond_code:String(k).trim().toUpperCase()}]))};}
-async function loadJson(url,optional=false){const r=await fetch(`${url}?v=${Date.now()}`,{cache:'no-store'});if(!r.ok){if(optional&&r.status===404)return null;throw new Error(`${url} 載入失敗（HTTP ${r.status}）`)}return r.json()}
-async function load(){showError('');$('matrixRoot').innerHTML='<div class="loading">正在載入成交資料…</div>';try{const [m,repoManual]=await Promise.all([loadJson(DATA_URL),loadJson(MANUAL_URL,true)]);merged=m;const local=localStorage.getItem(LOCAL_KEY);manual=normalizeManual(local?JSON.parse(local):(repoManual||{}));render()}catch(e){showError(`${e.message}。請確認 index.html、app.js、styles.css 位於 Repo 根目錄，且 data/merged_outright.json 已存在。`);$('matrixRoot').innerHTML=''}}
-function showError(msg){$('errorBanner').textContent=msg;$('errorBanner').classList.toggle('hidden',!msg)}
-function asDate(v){if(!v)return null;const d=new Date(`${String(v).slice(0,10)}T00:00:00`);return Number.isNaN(d.getTime())?null:d}
-function yearsTo(maturity,asOf){const a=asDate(asOf),m=asDate(maturity);return a&&m?Math.round(((m-a)/86400000/365.25)*10)/10:null}
-function manualFor(code){code=String(code||'').toUpperCase();return manual.bonds[code]||manual.bonds[code.replace(/R$/,'')]||null}
-function recordYears(r){const m=manualFor(r.bond_code);if(m?.maturity_date)return yearsTo(m.maturity_date,merged.metadata?.remaining_years_as_of||new Date().toISOString().slice(0,10));const n=Number(r.latest_remaining_years);return Number.isFinite(n)?n:null}
-function termFor(y){return TERMS.find(t=>y>=t.min&&y<t.max)||null}
-function displayDate(s){const [y,m,d]=String(s).split('-');return `${y}/${Number(m)}/${Number(d)}`}
-function numberValue(v){if(typeof v==='number'&&Number.isFinite(v))return v;if(v==null)return null;const x=Number(String(v).replace(/[%％,]/g,'').trim());return Number.isFinite(x)?x:null}
-function flattenEntries(obj,prefix=''){const out=[];for(const [key,value] of Object.entries(obj||{})){const path=prefix?`${prefix}.${key}`:key;if(value&&typeof value==='object'&&!Array.isArray(value))out.push(...flattenEntries(value,path));else out.push([path,value])}return out}
-function fieldLeaf(path){return String(path||'').split('.').pop().trim()}
-function keyCompact(value){return String(value||'').replace(/[\s　_()（）%％/\\\-]/g,'').toLowerCase()}
-function yieldFrom(r){
-  const market=String(r.market||'').toUpperCase();
-  const entries=flattenEntries(r);
-  // 只讀兩份成交報表各自真正的「利率平均」欄位，絕不以價格或百元價代替。
-  // EBTS: 加權平均 Volume-Weighted Average
-  // OTC : 平均 Volume-Weighted Average
-  const aliases=market==='EBTS'
-    ? ['加權平均Volume-WeightedAverage','加權平均VolumeWeightedAverage','加權平均']
-    : ['平均Volume-WeightedAverage','平均VolumeWeightedAverage','平均'];
-  for(const alias of aliases){
-    const target=keyCompact(alias);
-    const found=entries.find(([path,value])=>keyCompact(fieldLeaf(path))===target&&numberValue(value)!=null);
-    if(found)return {value:numberValue(found[1]),field:fieldLeaf(found[0])};
-  }
-  return null;
-}
-function classify(r){const m=manualFor(r.bond_code),type=String(m?.bond_type||r.bond_type||''),issuer=String(m?.issuer_name||r.issuer_name||'未分類發行人'),code=String(r.bond_code||'');if(/公債|政府|國庫/.test(type)||code.startsWith('A'))return {section:'公債',issuer:'中央政府'};return {section:'公司債',issuer};}
-function buildIndex(){const index=new Map(),unmapped=new Map();for(const [date,rows] of Object.entries(merged.dates||{})){for(const r of rows||[]){const code=String(r.bond_code||'').toUpperCase();if(!code)continue;const man=manualFor(code),y=recordYears(r),term=termFor(y),mapped=Boolean(term);if(!mapped){const u=unmapped.get(code)||{code,first:date,last:date,count:0,markets:new Set(),name:r.bond_name_master||r.bond_name||''};u.first=date<u.first?date:u.first;u.last=date>u.last?date:u.last;u.count++;u.markets.add(r.market_zh||r.market||'');unmapped.set(code,u);continue}const c=classify(r),key=[c.section,c.issuer,term.key,code,date].join('|');const item=index.get(key)||{section:c.section,issuer:c.issuer,term,code,date,name:man?.bond_name||r.bond_name_master||r.bond_name||'',years:y,maturity:man?.maturity_date||r.maturity_date,manual:Boolean(man),markets:{}};const yv=yieldFrom(r);if(yv){const mk=String(r.market||'').toUpperCase()==='EBTS'?'EBTS':'OTC';(item.markets[mk]??=[]).push({value:yv.value,field:yv.field,record:r})}index.set(key,item)}}return {index,unmapped}}
-function render(){const dates=Object.keys(merged.dates||{}).sort().reverse(),limit=$('dayLimit').value;selectedDates=limit==='all'?dates:dates.slice(0,Number(limit));const {index,unmapped}=buildIndex();const query=$('searchInput').value.trim().toLowerCase();const filtered=[...index.values()].filter(x=>selectedDates.includes(x.date)&&(!query||[x.code,x.name,x.issuer].join(' ').toLowerCase().includes(query)));$('updatedAt').textContent=merged.metadata?.updated_at?.replace('T',' ').slice(0,19)||'尚無';$('asOfDate').textContent=merged.metadata?.remaining_years_as_of||'尚無';$('recordCount').textContent=Number(merged.metadata?.record_count||0).toLocaleString();$('unmappedCount').textContent=unmapped.size.toLocaleString();renderMatrices(filtered);renderUnmapped(unmapped);renderMappingTable()}
-function renderMatrices(items){const root=$('matrixRoot');if(!selectedDates.length){root.innerHTML='<div class="panel loading">目前沒有成交日期資料</div>';return}const grouped=new Map();for(const x of items){const key=x.section==='公債'?'公債':`公司債｜${x.issuer}`;(grouped.get(key)??grouped.set(key,[]).get(key)).push(x)}const ordered=[...grouped.keys()].sort((a,b)=>a==='公債'?-1:b==='公債'?1:a.localeCompare(b,'zh-Hant'));root.innerHTML=ordered.length?ordered.map(k=>matrixHtml(k,grouped.get(k))).join(''):'<div class="panel loading">所選條件沒有可顯示的成交資料</div>';root.querySelectorAll('[data-detail]').forEach(btn=>btn.addEventListener('click',()=>openDetail(btn.dataset.detail)))}
-function matrixHtml(title,items){const byBond=new Map();for(const x of items){const key=`${x.term.key}|${x.code}`;const b=byBond.get(key)||{term:x.term,code:x.code,name:x.name,issuer:x.issuer,years:x.years,manual:x.manual,dates:{}};b.dates[x.date]=x;byBond.set(key,b)}const bonds=[...byBond.values()].sort((a,b)=>TERMS.findIndex(t=>t.key===a.term.key)-TERMS.findIndex(t=>t.key===b.term.key)||a.code.localeCompare(b.code));let rows='';for(const term of TERMS){const termBonds=bonds.filter(b=>b.term.key===term.key);if(!termBonds.length&&$('tradedOnly').checked)continue;const list=termBonds.length?termBonds:[{term,code:'',name:'',dates:{}}];list.forEach((b,i)=>{rows+=`<tr>${i===0?`<th class="term-cell" rowspan="${list.length}">${term.label}<span class="bond-meta">${term.min}–${term.max}Y</span></th>`:''}<td class="bond-cell">${b.code?`<span class="bond-code">${esc(b.code)}</span>${b.manual?'<span class="manual-mark"> ●人工</span>':''}<span class="bond-meta">${esc(b.name||b.issuer||'')}｜${b.years}Y</span>`:'<span class="empty">無成交</span>'}</td>${selectedDates.map(d=>cellHtml(b.dates[d])).join('')}</tr>`})}return `<section class="matrix-section"><div class="matrix-title"><h2>${esc(title)}</h2><span class="pill">${bonds.length} 檔</span></div><div class="matrix-wrap"><table class="yield-table"><thead><tr><th class="term-head">年期</th><th class="bond-head">券號／名稱</th>${selectedDates.map(d=>`<th>${displayDate(d)}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div></section>`}
-function marketAverage(rows){return rows?.length?rows.reduce((s,x)=>s+x.value,0)/rows.length:null}
-function cellHtml(x){if(!x)return '<td class="yield-cell empty">-</td>';const e=marketAverage(x.markets.EBTS),o=marketAverage(x.markets.OTC);if(e!=null&&o!=null){const avg=(e+o)/2,id=btoa(unescape(encodeURIComponent([x.section,x.issuer,x.term.key,x.code,x.date].join('|'))));return `<td class="yield-cell"><button class="yield-link" data-detail="${id}">${avg.toFixed(4)}%</button><span class="market-note">雙市場平均</span></td>`}const v=e??o;if(v==null)return '<td class="yield-cell empty">-</td>';return `<td class="yield-cell"><span class="single-yield">${v.toFixed(4)}%</span><span class="market-note">${e!=null?'等殖':'處所'}</span></td>`}
-function openDetail(encoded){const key=decodeURIComponent(escape(atob(encoded))),[section,issuer,term,code,date]=key.split('|');const {index}=buildIndex(),x=index.get([section,issuer,term,code,date].join('|'));if(!x)return;$('detailTitle').textContent=`${code}｜${displayDate(date)}｜雙市場成交`;const cards=['EBTS','OTC'].map(m=>{const rows=x.markets[m]||[],avg=marketAverage(rows);return `<article class="detail-card"><h3>${m==='EBTS'?'等殖成交（EBTS）':'處所成交（OTC）'}</h3><div class="detail-grid"><div><span>採用欄位</span><strong>${esc(rows[0]?.field||'-')}</strong></div><div><span>市場數值</span><strong>${avg==null?'-':avg.toFixed(4)+'%'}</strong></div><div><span>成交筆數</span><strong>${rows.length}</strong></div><div><span>最新剩餘年期</span><strong>${x.years}Y</strong></div></div></article>`}).join('');const e=marketAverage(x.markets.EBTS),o=marketAverage(x.markets.OTC);$('detailBody').innerHTML=`${cards}<article class="detail-card"><h3>顯示值計算</h3><p>(${e.toFixed(4)}% + ${o.toFixed(4)}%) ÷ 2 = <strong>${((e+o)/2).toFixed(4)}%</strong></p></article>`;$('detailDialog').showModal()}
-function renderUnmapped(map){const q=$('searchInput').value.trim().toLowerCase(),items=[...map.values()].filter(x=>!q||[x.code,x.name].join(' ').toLowerCase().includes(q)).sort((a,b)=>a.code.localeCompare(b.code));$('unmappedList').innerHTML=items.length?items.map(x=>`<div class="unmapped-item"><div><strong>${esc(x.code)}</strong><small>${esc(x.name||'無主檔名稱')}｜${x.count} 筆｜${esc([...x.markets].join('、'))}</small></div><button class="button secondary map-one" data-code="${esc(x.code)}">補 Mapping</button></div>`).join(''):'<p class="empty">目前沒有未 Mapping 券號。</p>';$('unmappedList').querySelectorAll('.map-one').forEach(b=>b.onclick=()=>openMapping(b.dataset.code))}
-function openMapping(code=''){if(code)$('mapCode').value=code;$('mappingDialog').showModal();renderMappingTable()}
-function saveManual(){manual.metadata.updated_at=new Date().toISOString();localStorage.setItem(LOCAL_KEY,JSON.stringify(manual));render()}
-function renderMappingTable(){const rows=Object.values(manual.bonds).sort((a,b)=>a.bond_code.localeCompare(b.bond_code));$('mappingCount').textContent=rows.length;$('mappingTableWrap').innerHTML=rows.length?`<table class="mapping-table"><thead><tr><th>券號</th><th>到期日</th><th>名稱</th><th>發行人</th><th></th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.bond_code)}</td><td>${esc(r.maturity_date||'')}</td><td>${esc(r.bond_name||'')}</td><td>${esc(r.issuer_name||'')}</td><td><button class="button danger delete-map" data-code="${esc(r.bond_code)}">刪除</button></td></tr>`).join('')}</tbody></table>`:'<p class="empty">尚無人工 Mapping。</p>';$('mappingTableWrap').querySelectorAll('.delete-map').forEach(b=>b.onclick=()=>{delete manual.bonds[b.dataset.code];saveManual()})}
-function upsert(code,maturity,extra={}){code=String(code||'').trim().toUpperCase();if(!/^[A-Z0-9]{5,12}$/.test(code))throw new Error(`券號格式錯誤：${code}`);if(!/^\d{4}-\d{2}-\d{2}$/.test(maturity)||!asDate(maturity))throw new Error(`到期日格式錯誤：${maturity}`);manual.bonds[code]={...(manual.bonds[code]||{}),bond_code:code,maturity_date:maturity,...Object.fromEntries(Object.entries(extra).filter(([,v])=>v)) ,record_source:'manual',manual_override:true}}
-function download(){const blob=new Blob([JSON.stringify(manual,null,2)+'\n'],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='manual_bond_mapping.json';a.click();URL.revokeObjectURL(a.href)}
-$('refreshButton').onclick=load;$('mappingButton').onclick=()=>openMapping();$('openMappingFromList').onclick=()=>openMapping();$('closeMapping').onclick=()=>$('mappingDialog').close();$('dayLimit').onchange=render;$('tradedOnly').onchange=render;$('searchInput').oninput=render;
-$('singleMappingForm').onsubmit=e=>{e.preventDefault();try{upsert($('mapCode').value,$('mapMaturity').value,{bond_name:$('mapName').value.trim(),issuer_name:$('mapIssuer').value.trim(),bond_type:$('mapType').value.trim(),note:$('mapNote').value.trim()});e.target.reset();saveManual()}catch(err){alert(err.message)}};
-$('applyBatch').onclick=()=>{try{let n=0;for(const line of $('batchMapping').value.split(/\r?\n/)){if(!line.trim())continue;const [code,maturity]=line.trim().split(/[\t,， ]+/);upsert(code,maturity);n++}$('batchMapping').value='';saveManual();alert(`已加入／更新 ${n} 筆 Mapping`)}catch(err){alert(err.message)}};
-$('downloadMapping').onclick=download;$('clearLocalMapping').onclick=()=>{localStorage.removeItem(LOCAL_KEY);location.reload()};$('mappingFile').onchange=async e=>{try{manual=normalizeManual(JSON.parse(await e.target.files[0].text()));saveManual()}catch(err){alert(`JSON 匯入失敗：${err.message}`)}};
-load();
-
-  </script>
-</body>
-</html>
+const ISSUER_ORDER=['台積電','台電','鴻海','富邦人壽','中油','中國輸出','中鋼','凱基人壽','元大證券','台北富邦','元大銀行','南山人壽','日月光投控','凱基證券','富邦金','中信銀','和潤企業','中租迪和'];
+let data={metadata:{},dates:{}},manual={metadata:{},bonds:{}},selectedDates=[],lastUnmapped=new Map();
+const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num=v=>{if(typeof v==='number'&&Number.isFinite(v))return v;const n=Number(String(v??'').replace(/[%％,]/g,'').trim());return Number.isFinite(n)?n:null};
+const compact=v=>String(v??'').replace(/[\s　_()（）%％/\\\-]/g,'').toLowerCase();
+const leaf=v=>String(v??'').split('.').pop().trim();
+function flatten(o,p=''){let a=[];for(const[k,v]of Object.entries(o||{})){const q=p?`${p}.${k}`:k;if(v&&typeof v==='object'&&!Array.isArray(v))a=a.concat(flatten(v,q));else a.push([q,v])}return a}
+function normalizeManual(p){const b=p?.bonds&&typeof p.bonds==='object'?p.bonds:{};return{metadata:{description:'人工補充債券主檔',...(p?.metadata||{})},bonds:Object.fromEntries(Object.entries(b).map(([k,v])=>[k.trim().toUpperCase(),{...v,bond_code:k.trim().toUpperCase()}]))}}
+async function json(url,opt=false){const r=await fetch(`${url}?v=${Date.now()}`,{cache:'no-store'});if(!r.ok){if(opt&&r.status===404)return null;throw Error(`${url} HTTP ${r.status}`)}return r.json()}
+async function load(){msg('',false);$('root').innerHTML='<div class="loading">載入資料中…</div>';try{const[d,m]=await Promise.all([json(DATA_URL),json(MANUAL_URL,true)]);data=d;const local=localStorage.getItem(LOCAL_KEY);manual=normalizeManual(local?JSON.parse(local):(m||{}));render()}catch(e){msg(`資料載入失敗：${e.message}`,true);$('root').innerHTML=''}}
+function msg(t,error){$('message').textContent=t;$('message').className='notice'+(error?' error':'')+(t?'':' hidden')}
+function dateObj(s){const d=new Date(`${String(s||'').slice(0,10)}T00:00:00`);return isNaN(d)?null:d}
+function remain(mat,asof){const m=dateObj(mat),a=dateObj(asof);return m&&a?Math.round(((m-a)/86400000/365.25)*10)/10:null}
+function manualRec(code){code=String(code||'').toUpperCase();return manual.bonds[code]||manual.bonds[code.replace(/R$/,'')]||null}
+function years(r){const m=manualRec(r.bond_code);if(m?.maturity_date)return remain(m.maturity_date,data.metadata?.remaining_years_as_of||new Date().toISOString().slice(0,10));const n=num(r.latest_remaining_years);return n}
+function term(y){return TERMS.find(t=>y>=t.min&&y<t.max)||null}
+function formatDate(s){const[y,m,d]=String(s).split('-');return `${y}/${Number(m)}/${Number(d)}`}
+function yieldValue(r){const market=String(r.market||'').toUpperCase(),entries=flatten(r);const aliases=market==='EBTS'?['加權平均Volume-WeightedAverage','加權平均VolumeWeightedAverage']:['平均Volume-WeightedAverage','平均VolumeWeightedAverage'];for(const alias of aliases){const target=compact(alias);let hits=entries.filter(([p,v])=>compact(leaf(p)).replace(/\d+$/,'')===target&&num(v)!=null);if(hits.length){/* 同名欄位若被加上_2，取最後一個，避免取到前段價格平均。 */const hit=hits[hits.length-1];return{value:num(hit[1]),field:leaf(hit[0])}}}return null}
+function classification(r){const m=manualRec(r.bond_code),type=String(m?.bond_type||r.bond_type||''),issuer=String(m?.issuer_name||r.issuer_name||'其他'),code=String(r.bond_code||'');if(code.startsWith('A')||/公債|政府|國庫/.test(type))return{section:'公債',issuer:'中央政府'};return{section:'公司債',issuer}}
+function indexData(){const idx=new Map(),unmapped=new Map();let yieldCount=0;for(const[date,rows]of Object.entries(data.dates||{}))for(const r of rows||[]){const code=String(r.bond_code||'').toUpperCase();if(!code)continue;const y=years(r),t=term(y);if(!t){unmapped.set(code,true);continue}const c=classification(r),key=[c.section,c.issuer,t.key,code,date].join('|'),x=idx.get(key)||{...c,term:t,code,date,name:manualRec(code)?.bond_name||r.bond_name_master||r.bond_name||'',years:y,manual:Boolean(manualRec(code)),markets:{}};const q=yieldValue(r);if(q){const mk=String(r.market||'').toUpperCase()==='EBTS'?'EBTS':'OTC';(x.markets[mk]??=[]).push({...q,record:r});yieldCount++}idx.set(key,x)}return{idx,unmapped,yieldCount}}
+function selectDates(){const all=Object.keys(data.dates||{}).sort().reverse(),r=$('range').value;if(r==='all')return all;if(r==='custom'){const s=$('startDate').value,e=$('endDate').value;return all.filter(d=>(!s||d>=s)&&(!e||d<=e))}return all.slice(0,Number(r))}
+function issuerRank(name){const i=ISSUER_ORDER.findIndex(x=>String(name).includes(x));return i<0?999:i}
+function render(){selectedDates=selectDates();const{idx,unmapped,yieldCount}=indexData();lastUnmapped=unmapped;$('updated').textContent=data.metadata?.updated_at?.replace('T',' ').slice(0,19)||'-';$('asof').textContent=data.metadata?.remaining_years_as_of||'-';$('records').textContent=Number(data.metadata?.record_count||0).toLocaleString();$('yieldRecords').textContent=yieldCount.toLocaleString();$('unmappedCount').textContent=unmapped.size;const q=$('search').value.trim().toLowerCase(),items=[...idx.values()].filter(x=>selectedDates.includes(x.date)&&(!q||[x.code,x.name,x.issuer].join(' ').toLowerCase().includes(q)));renderMatrix(items);renderUnmapped();renderCurrent();if(Number(data.metadata?.record_count||0)>0&&yieldCount===0)msg('成交資料已載入，但找不到指定利率欄位。請在 merged_outright.xlsx 確認欄名是否完全為「加權平均 Volume-Weighted Average」與「平均 Volume-Weighted Average」。',true)}
+function renderMatrix(items){const g=new Map();for(const x of items){const k=x.section==='公債'?'公債':`公司債｜${x.issuer}`;(g.get(k)??g.set(k,[]).get(k)).push(x)}const keys=[...g.keys()].sort((a,b)=>{if(a==='公債')return-1;if(b==='公債')return 1;const an=a.replace('公司債｜',''),bn=b.replace('公司債｜',''),d=issuerRank(an)-issuerRank(bn);return d||an.localeCompare(bn,'zh-Hant')});$('root').innerHTML=keys.length?keys.map(k=>table(k,g.get(k))).join(''):'<div class="panel loading">所選期間沒有可顯示資料</div>';$('root').querySelectorAll('[data-detail]').forEach(b=>b.onclick=()=>details(b.dataset.detail))}
+function table(title,items){const bm=new Map();for(const x of items){const k=x.term.key+'|'+x.code,b=bm.get(k)||{term:x.term,code:x.code,name:x.name,issuer:x.issuer,years:x.years,manual:x.manual,dates:{}};b.dates[x.date]=x;bm.set(k,b)}const bonds=[...bm.values()].sort((a,b)=>TERMS.findIndex(t=>t.key===a.term.key)-TERMS.findIndex(t=>t.key===b.term.key)||a.code.localeCompare(b.code));let body='';for(const t of TERMS){const bs=bonds.filter(b=>b.term.key===t.key);if(!bs.length)continue;bs.forEach((b,i)=>body+=`<tr>${i?'' : `<th class="term" rowspan="${bs.length}">${t.label}<span class="meta">${t.min}–${t.max}Y</span></th>`}<td class="bond"><span class="code">${esc(b.code)}</span>${b.manual?'<span class="manual"> ●人工</span>':''}<span class="meta">${esc(b.name||b.issuer)}｜${b.years}Y</span></td>${selectedDates.map(d=>cell(b.dates[d])).join('')}</tr>`)}return`<section class="section"><div class="section-head"><h2>${esc(title)}</h2><span class="pill">${bonds.length}檔</span></div><div class="wrap"><table class="matrix"><thead><tr><th class="term">年期</th><th class="bond">券號／名稱</th>${selectedDates.map(d=>`<th>${formatDate(d)}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div></section>`}
+function avg(a){return a?.length?a.reduce((s,x)=>s+x.value,0)/a.length:null}
+function cell(x){if(!x)return'<td class="empty">-</td>';const e=avg(x.markets.EBTS),o=avg(x.markets.OTC);if(e!=null&&o!=null){const id=btoa(unescape(encodeURIComponent([x.section,x.issuer,x.term.key,x.code,x.date].join('|'))));return`<td><button class="link" data-detail="${id}">${((e+o)/2).toFixed(4)}%</button><span class="market">雙市場平均</span></td>`}const v=e??o;return v==null?'<td class="empty">-</td>':`<td><span class="value">${v.toFixed(4)}%</span><span class="market">${e!=null?'等殖':'處所'}</span></td>`}
+function details(id){const key=decodeURIComponent(escape(atob(id))),[s,i,t,c,d]=key.split('|'),{idx}=indexData(),x=idx.get([s,i,t,c,d].join('|'));if(!x)return;const e=avg(x.markets.EBTS),o=avg(x.markets.OTC);$('detailTitle').textContent=`${c}｜${formatDate(d)}`;$('detailBody').innerHTML=['EBTS','OTC'].map(m=>{const a=x.markets[m]||[],v=avg(a);return`<div class="detail"><h3>${m==='EBTS'?'等殖 EBTS':'處所 OTC'}</h3><div class="detail-grid"><div><span>欄位</span><b>${esc(a[0]?.field||'-')}</b></div><div><span>利率</span><b>${v==null?'-':v.toFixed(4)+'%'}</b></div></div></div>`}).join('')+(e!=null&&o!=null?`<div class="detail"><b>(${e.toFixed(4)}% + ${o.toFixed(4)}%) ÷ 2 = ${((e+o)/2).toFixed(4)}%</b></div>`:'');$('detail').showModal()}
+function renderUnmapped(){$('unmappedList').innerHTML=[...lastUnmapped.keys()].sort().map(c=>`<button class="code-chip" data-code="${c}">${c}</button>`).join('')||'<span class="empty">目前沒有未 Mapping 券號</span>';$('unmappedList').querySelectorAll('[data-code]').forEach(b=>b.onclick=()=>{$('singleCode').value=b.dataset.code;$('singleMaturity').focus()})}
+function save(){manual.metadata.updated_at=new Date().toISOString();localStorage.setItem(LOCAL_KEY,JSON.stringify(manual));render()}
+function upsert(code,mat){code=String(code||'').trim().toUpperCase();if(!/^[A-Z0-9]{5,12}$/.test(code))throw Error(`券號格式錯誤：${code}`);if(!/^\d{4}-\d{2}-\d{2}$/.test(mat)||!dateObj(mat))throw Error(`到期日必須為 YYYY-MM-DD：${mat}`);manual.bonds[code]={...(manual.bonds[code]||{}),bond_code:code,maturity_date:mat,record_source:'manual',manual_override:true}}
+function renderCurrent(){const rs=Object.values(manual.bonds).sort((a,b)=>a.bond_code.localeCompare(b.bond_code));$('mappingCurrent').innerHTML=rs.length?`<table class="map-table"><tr><th>券號</th><th>到期日</th><th></th></tr>${rs.map(r=>`<tr><td>${esc(r.bond_code)}</td><td>${esc(r.maturity_date)}</td><td><button class="button danger" data-del="${esc(r.bond_code)}">刪除</button></td></tr>`).join('')}</table>`:'<span class="empty">尚無人工 Mapping</span>';$('mappingCurrent').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{delete manual.bonds[b.dataset.del];save()})}
+function downloadExcel(){if(typeof XLSX==='undefined'){alert('Excel元件載入失敗，請確認網路連線');return}const rows=[['券號','到期日（YYYY-MM-DD）'],...[...lastUnmapped.keys()].sort().map(c=>[c,''])],ws=XLSX.utils.aoa_to_sheet(rows);ws['!cols']=[{wch:16},{wch:24}];ws['!autofilter']={ref:`A1:B${rows.length}`};const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'未Mapping');XLSX.writeFile(wb,'unmapped_bonds.xlsx')}
+async function uploadExcel(file){if(typeof XLSX==='undefined')throw Error('Excel元件載入失敗');const wb=XLSX.read(await file.arrayBuffer(),{type:'array',cellDates:false}),ws=wb.Sheets[wb.SheetNames[0]],rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:''});let n=0,errors=[];for(let i=1;i<rows.length;i++){const code=String(rows[i][0]||'').trim(),raw=rows[i][1];if(!code&&!raw)continue;let mat='';if(typeof raw==='number'){const d=XLSX.SSF.parse_date_code(raw);if(d)mat=`${d.y}-${String(d.m).padStart(2,'0')}-${String(d.d).padStart(2,'0')}`}else mat=String(raw||'').trim().replaceAll('/','-');try{upsert(code,mat);n++}catch(e){errors.push(`第${i+1}列：${e.message}`)}}save();alert(`已匯入 ${n} 筆${errors.length?'\n錯誤：\n'+errors.join('\n'):''}`)}
+function downloadJson(){const blob=new Blob([JSON.stringify(manual,null,2)+'\n'],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='manual_bond_mapping.json';a.click();URL.revokeObjectURL(a.href)}
+$('range').onchange=()=>{$('customDates').classList.toggle('on',$('range').value==='custom');if($('range').value!=='custom')render()};$('applyDate').onclick=render;$('search').oninput=render;$('reload').onclick=load;$('closeDetail').onclick=()=>$('detail').close();$('downloadExcel').onclick=downloadExcel;$('uploadExcelBtn').onclick=()=>$('uploadExcel').click();$('uploadExcel').onchange=async e=>{try{await uploadExcel(e.target.files[0])}catch(err){alert(err.message)}e.target.value=''};$('singleForm').onsubmit=e=>{e.preventDefault();try{upsert($('singleCode').value,$('singleMaturity').value);e.target.reset();save()}catch(err){alert(err.message)}};$('downloadJson').onclick=downloadJson;load();
+</script>
+</body></html>
