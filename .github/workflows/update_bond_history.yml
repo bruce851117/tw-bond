@@ -1,0 +1,93 @@
+name: Update Taiwan bond history
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: daily or bootstrap
+        required: true
+        default: daily
+        type: choice
+        options:
+          - daily
+          - bootstrap
+      start:
+        description: Bootstrap start date (YYYY-MM-DD)
+        required: false
+        default: '2026-01-01'
+      end:
+        description: End date (YYYY-MM-DD); blank means today
+        required: false
+        default: ''
+      force:
+        description: Overwrite dates already in JSON
+        required: false
+        default: false
+        type: boolean
+  schedule:
+    - cron: '30 9 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-taiwan-bond-history
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Update data
+        shell: bash
+        run: |
+          MODE="${{ github.event.inputs.mode || 'daily' }}"
+          START="${{ github.event.inputs.start || '2026-01-01' }}"
+          END="${{ github.event.inputs.end || '' }}"
+          FORCE="${{ github.event.inputs.force || 'false' }}"
+          CMD=(python scripts/update_bond_history.py --mode "$MODE" --start "$START")
+          if [ -n "$END" ]; then CMD+=(--end "$END"); fi
+          if [ "$FORCE" = "true" ]; then CMD+=(--force); fi
+          "${CMD[@]}"
+
+      - name: Validate JSON
+        run: |
+          python -m json.tool data/ebts_outright.json >/dev/null
+          python -m json.tool data/otc_outright.json >/dev/null
+
+      - name: Upload debug artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bond-update-debug-${{ github.run_id }}
+          path: debug/
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Commit updated data
+        run: |
+          if git diff --quiet -- data; then
+            echo "No data changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/*.json
+          git commit -m "data: update Taiwan bond history"
+          git pull --rebase
+          git push
