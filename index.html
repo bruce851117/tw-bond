@@ -22,6 +22,7 @@
 'use strict';
 const DATA_URL='data/merged_outright.json',MANUAL_URL='data/manual_bond_mapping.json',LOCAL_KEY='twBondManualMapping';
 const WORKER_URL='https://taiwan-bond-updater.bruce851117.workers.dev';
+const WORKER_TRIGGER_KEY='fubon';
 const TERMS=[{key:'1Y',label:'1年',min:.5,max:1.5},{key:'2Y',label:'2年',min:1.5,max:2.5},{key:'5Y',label:'5年',min:4,max:6},{key:'7Y',label:'7年',min:6,max:8},{key:'10Y',label:'10年',min:8,max:12},{key:'20Y',label:'20年',min:15,max:25},{key:'30Y',label:'30年',min:25,max:35}];
 const ORDER=['台積電','台電','鴻海','富邦人壽','中油','中國輸出','中鋼','凱基人壽','元大證券','台北富邦','元大銀行','南山人壽','日月光投控','凱基證券','富邦金','中信銀','和潤企業','中租迪和'];
 let data={metadata:{},dates:{}},manual={metadata:{},bonds:{}},selectedDates=[],unmapped=new Map();
@@ -65,15 +66,13 @@ function excelDate(raw){if(typeof raw==='number'){const d=XLSX.SSF.parse_date_co
 async function uploadExcel(file){if(typeof XLSX==='undefined')throw Error('Excel元件載入失敗');const wb=XLSX.read(await file.arrayBuffer(),{type:'array',cellDates:false}),ws=wb.Sheets[wb.SheetNames[0]],rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:''});let n=0;const errors=[];for(let i=1;i<rows.length;i++){const r=rows[i],code=String(r[0]||'').trim(),maturity=excelDate(r[1]);if(!code&&!maturity)continue;try{upsert(code,maturity,{bond_name:String(r[2]||'').trim(),issuer_name:String(r[3]||'').trim(),bond_type:String(r[4]||'').trim(),issue_date:excelDate(r[5]),coupon_rate:num(r[6]),currency:String(r[7]||'').trim(),note:String(r[8]||'').trim()});n++}catch(e){errors.push(`第${i+1}列：${e.message}`)}}save();alert(`已匯入 ${n} 筆${errors.length?'\n錯誤：\n'+errors.join('\n'):''}`)}
 function downloadJson(){const blob=new Blob([JSON.stringify(manual,null,2)+'\n'],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='manual_bond_mapping.json';a.click();URL.revokeObjectURL(a.href)}
 async function triggerDailyUpdate(){
-  const triggerKey=prompt('請輸入更新密碼');
-  if(!triggerKey)return;
   const button=$('triggerDailyButton'),originalText=button.textContent;
   button.disabled=true;
   button.textContent='送出中…';
   try{
     const response=await fetch(`${WORKER_URL}/trigger/daily`,{
       method:'POST',
-      headers:{'Content-Type':'application/json','X-Trigger-Key':triggerKey},
+      headers:{'Content-Type':'application/json','X-Trigger-Key':WORKER_TRIGGER_KEY},
       body:JSON.stringify({mode:'daily',force:false})
     });
     let result={};
