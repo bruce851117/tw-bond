@@ -1,76 +1,418 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>台灣債券成交利率矩陣</title>
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-<style>
-:root{--navy:#10233f;--blue:#1769ff;--bg:#f4f7fb;--line:#d8e0eb;--muted:#69768a;--warn:#fff4df;--red:#c33434}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#182238;font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif}header{padding:25px clamp(15px,4vw,52px);background:linear-gradient(120deg,#0d2039,#18477f);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:20px}h1{margin:0 0 6px;font-size:clamp(26px,4vw,40px)}header p{margin:0;color:#d9e7f7}.header-actions{display:flex;gap:9px;flex-wrap:wrap}.button:disabled{opacity:.65;cursor:not-allowed}main{padding:20px clamp(10px,3vw,40px) 60px}.panel{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:0 8px 24px rgba(16,35,63,.08)}.button{border:0;border-radius:8px;padding:9px 13px;font:inherit;font-weight:800;cursor:pointer}.primary{background:var(--blue);color:#fff}.secondary{background:#e8eef7;color:var(--navy)}.danger{background:#fff0f0;color:var(--red)}.stats{display:grid;grid-template-columns:repeat(5,minmax(140px,1fr));gap:10px;margin-bottom:14px}.stat{padding:13px 15px}.stat span{display:block;color:var(--muted);font-size:12px}.stat strong{display:block;margin-top:5px;font-size:17px}.toolbar{display:flex;align-items:end;gap:12px;flex-wrap:wrap;padding:14px 16px;margin-bottom:16px}.check-label{display:flex!important;grid-template-columns:none!important;align-items:center;gap:7px!important;padding:8px 10px;border:1px solid #b9c6d8;border-radius:8px;background:#f8fafc;color:var(--navy)!important;font-size:13px!important;cursor:pointer}.check-label input{margin:0}.today-trades{margin-left:auto;min-width:min(100%,430px);max-width:620px}.today-trades strong{display:block;color:var(--navy);margin-bottom:5px}.today-list{display:flex;gap:6px;flex-wrap:wrap}.today-item{padding:5px 8px;border-radius:7px;background:#edf4fc;color:#233a59;font-size:12px;font-weight:800}.toolbar label,.form label{display:grid;gap:5px;color:var(--muted);font-size:12px;font-weight:700}input,select{border:1px solid #b9c6d8;border-radius:8px;padding:8px 10px;font:inherit}.custom{display:none;align-items:end;gap:8px}.custom.on{display:flex}.notice{padding:11px 14px;border-radius:9px;margin-bottom:14px;background:var(--warn);color:#7d4c08;border:1px solid #edc783}.error{background:#fff0f0;color:#9f2b2b;border-color:#efb2b2}.hidden{display:none}.section{margin-bottom:24px}.section-head{display:flex;align-items:center;gap:9px;margin-bottom:8px}.section-head h2{margin:0;font-size:21px}.pill{padding:3px 8px;background:#e9eff7;border-radius:999px;font-size:12px;font-weight:800}.wrap{overflow:auto;max-height:72vh;border:1px solid #aeb9c9;border-radius:10px;background:#fff}.matrix{border-collapse:separate;border-spacing:0;min-width:100%;font-size:13px}.matrix th,.matrix td{padding:8px 10px;border-right:1px solid #d7dee8;border-bottom:1px solid #d7dee8;text-align:center;white-space:nowrap}.matrix thead th{position:sticky;top:0;background:#eef3f8;z-index:4}.term{position:sticky;left:0;z-index:2;background:#f8fafc!important;min-width:72px;font-weight:900;border-top:2px solid #172238!important}.bond{position:sticky;left:72px;z-index:5;background:#fff!important;text-align:left!important;width:145px;min-width:145px;max-width:145px;overflow:hidden;text-overflow:ellipsis}.matrix thead .term,.matrix thead .bond{z-index:6;background:#eef3f8!important}.code{font-weight:900}.meta{display:block;color:var(--muted);font-size:10px;margin-top:2px}.market{position:absolute;right:4px;bottom:2px;display:block;color:#7b8798;font-size:8px;line-height:1;letter-spacing:.01em;pointer-events:none}.link,.value{display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:42px;font-size:20px;line-height:1;font-weight:900}.link{border:0;background:none;color:var(--blue);text-decoration:underline dotted;cursor:pointer;padding:0 2px}.value{color:#172b4d}.rate-hit{position:relative;padding:2px 4px!important;background:#f1f7ff!important;box-shadow:inset 0 0 0 1px #c9dcf6;min-width:82px;height:48px}.today-col{border-left:3px solid #111!important;border-right:3px solid #111!important}.matrix thead th.today-col{border-top:3px solid #111!important}.matrix tbody tr:last-child td.today-col{border-bottom:3px solid #111!important}.quote-head,.quote-cell{background:#fff7df!important}.quote-cell{font-size:14px;font-weight:900;line-height:1.2;min-width:118px}.quote-cell .bid{color:#b0402e}.quote-cell .ask{color:#1769ff}.quote-sep{color:#536278;padding:0 5px}.sticky-quote{position:sticky;left:217px;z-index:5;box-shadow:2px 0 0 #b8c3d1}.sticky-today-gov{position:sticky;left:335px;z-index:5}.sticky-today-plain{position:sticky;left:217px;z-index:5}.matrix thead .sticky-quote,.matrix thead .sticky-today-gov,.matrix thead .sticky-today-plain{z-index:7}.empty{color:#a3acb9}.unmapped{padding:19px}.unmapped-head{display:flex;justify-content:space-between;align-items:center;gap:14px}.unmapped-head p{margin:5px 0;color:var(--muted);font-size:13px}.unmapped-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}.chip{border:1px solid #f0c782;background:#fff5df;border-radius:8px;padding:7px 9px;font-weight:900;cursor:pointer}.mapping{display:grid;grid-template-columns:1fr 1.2fr;gap:16px;margin-top:17px}.box{border:1px solid var(--line);border-radius:10px;padding:13px}.box h3{margin:0 0 10px}.form{display:grid;grid-template-columns:1fr 1fr;gap:10px}.full{grid-column:1/-1}.help{font-size:12px;color:var(--muted);line-height:1.7}.current{max-height:250px;overflow:auto}.map-table{width:100%;border-collapse:collapse;font-size:12px}.map-table th,.map-table td{padding:7px;border-bottom:1px solid var(--line);text-align:left}.file{display:none}dialog{border:0;border-radius:14px;width:min(820px,93vw);padding:0;box-shadow:0 30px 90px rgba(0,0,0,.35)}dialog::backdrop{background:rgba(7,17,31,.62)}.dlg-head{padding:16px 19px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.dlg-head h2{margin:0}.close{border:0;border-radius:50%;width:34px;height:34px;font-size:22px}.dlg-body{padding:18px}.detail{border:1px solid var(--line);border-radius:9px;padding:12px;margin-bottom:10px}.detail h3{margin:0 0 8px}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 15px}.detail-grid div{display:flex;justify-content:space-between;border-bottom:1px dashed #dce3ec;padding-bottom:4px}.loading{text-align:center;padding:34px;color:var(--muted)}@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.mapping{grid-template-columns:1fr}}@media(max-width:560px){header{display:block}.stats{grid-template-columns:1fr}.form{grid-template-columns:1fr}.full{grid-column:auto}}
-</style>
-</head>
-<body>
-<header><div><h1>台灣債券成交利率矩陣</h1><p>等殖 EBTS（平均 Volume-Weighted Average）與處所 OTC（加權平均Volume-Weighted Average）成交利率</p></div><div class="header-actions"><button id="triggerDaily" class="button primary" type="button">Update Taiwan bond history</button><button id="triggerIntraday" class="button primary" type="button">更新盤中資料</button><button id="reload" class="button secondary" type="button">重新載入</button></div></header>
-<main>
-<section class="stats"><div class="stat panel"><span>資料更新時間</span><strong id="updated">-</strong></div><div class="stat panel"><span>剩餘年期基準日</span><strong id="asof">-</strong></div><div class="stat panel"><span>成交明細</span><strong id="records">-</strong></div><div class="stat panel"><span>成功讀取利率</span><strong id="yieldRecords">-</strong></div><div class="stat panel"><span>未 Mapping</span><strong id="unmappedCount">-</strong></div></section>
-<section class="toolbar panel"><label>顯示期間<select id="range"><option value="20">最近20交易日</option><option value="40">最近40交易日</option><option value="60">最近60交易日</option><option value="custom">自訂日期區間</option><option value="all">全部日期</option></select></label><div id="customDates" class="custom"><label>起日<input id="startDate" type="date"></label><label>迄日<input id="endDate" type="date"></label><button id="applyDate" class="button primary">套用</button></div><label>搜尋<input id="search" type="search" placeholder="券號、名稱、發行人"></label><label class="check-label"><input id="activeOnly" type="checkbox">只顯示有即時報價或今日成交</label><div class="today-trades"><strong>今日成交</strong><div id="todayTrades" class="today-list"><span class="empty">尚無資料</span></div></div></section>
-<div id="message" class="notice hidden"></div><div id="root"><div class="loading">載入資料中…</div></div>
-<section class="unmapped panel"><div class="unmapped-head"><div><h2>尚未 Mapping</h2><p>下載Excel後，A欄券號已填妥。B欄到期日為唯一必填，格式固定為 YYYY-MM-DD；其餘欄位均可選填。</p></div><div><button id="downloadExcel" class="button secondary">下載未 Mapping Excel</button> <button id="uploadExcelBtn" class="button primary">上傳已填 Excel</button><input id="uploadExcel" class="file" type="file" accept=".xlsx,.xls"></div></div><div id="unmappedList" class="unmapped-list"></div>
-<div class="mapping"><div class="box"><h3>單檔補 Mapping</h3><form id="singleForm" class="form"><label>券號<input id="singleCode" required maxlength="12" placeholder="A15202"></label><label>到期日<input id="singleMaturity" required type="date"></label><label>債券名稱<input id="singleName"></label><label>發行人<input id="singleIssuer"></label><label>債券類型<input id="singleType" placeholder="例如 政府公債"></label><label>發行日<input id="singleIssue" type="date"></label><label>票面利率（%）<input id="singleCoupon" type="number" step="0.0001"></label><label>幣別<input id="singleCurrency" placeholder="TWD"></label><label class="full">備註<input id="singleNote"></label><button class="button primary full" type="submit">送出並套用</button></form><p class="help">送出後會立即更新目前網頁與瀏覽器暫存。永久保存仍需下載完整Mapping JSON，覆蓋Repo的 data/manual_bond_mapping.json，再執行 rebuild。</p><button id="downloadJson" class="button secondary">下載完整 Mapping JSON</button> <button id="clearAllManual" class="button danger" type="button">一鍵清空目前人工 Mapping</button> <button id="clearLocal" class="button danger" type="button">清除瀏覽器暫存並重讀 Repo</button></div><div class="box"><h3>目前人工 Mapping</h3><div id="mappingCurrent" class="current"></div></div></div></section>
-</main>
-<dialog id="detail"><div class="dlg-head"><h2 id="detailTitle">成交明細</h2><button id="closeDetail" class="close">×</button></div><div id="detailBody" class="dlg-body"></div></dialog>
-<script>
+/**
+ * Taiwan Bond Updater - Cloudflare Worker
+ *
+ * Endpoints:
+ * - GET  /health
+ * - POST /trigger/daily
+ * - POST /trigger/intraday
+ */
 
-'use strict';
-const DATA_URL='data/merged_outright.json',MANUAL_URL='data/manual_bond_mapping.json',INTRADAY_URL='data/intraday/intraday_market.json',LOCAL_KEY='twBondManualMapping';
-const WORKER_URL='https://taiwan-bond-updater.bruce851117.workers.dev',TRIGGER_KEY='fubon';
-const TERMS=[{key:'1Y',label:'1年',min:.5,max:1.5},{key:'2Y',label:'2~3年',min:1.5,max:4},{key:'5Y',label:'5年',min:4,max:6},{key:'7Y',label:'7年',min:6,max:8},{key:'10Y',label:'10年',min:8,max:12},{key:'20Y',label:'20年',min:15,max:25},{key:'30Y',label:'30年',min:25,max:35}];
-const ORDER=['台積電','台電','鴻海','富邦人壽','中油','中國輸出','中鋼','凱基人壽','元大證券','台北富邦','元大銀行','南山人壽','日月光投控','凱基證券','富邦金','中信銀','和潤企業','中租迪和'];
-let data={metadata:{},dates:{}},manual={metadata:{},bonds:{}},intraday={metadata:{},government_quote:{rows:[]},government_trade:{rows:[]},company_trade:{rows:[]}},selectedDates=[],unmapped=new Map();
-const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const num=v=>{if(typeof v==='number'&&Number.isFinite(v))return v;const n=Number(String(v??'').replace(/[%％,]/g,'').trim());return Number.isFinite(n)?n:null};
-function normalizeManual(p){const b=p?.bonds&&typeof p.bonds==='object'?p.bonds:{};return{metadata:{description:'人工補充債券主檔',...(p?.metadata||{})},bonds:Object.fromEntries(Object.entries(b).map(([k,v])=>[k.trim().toUpperCase(),{...v,bond_code:k.trim().toUpperCase()}]))}}
-async function readJson(url,opt=false){const r=await fetch(`${url}?v=${Date.now()}`,{cache:'no-store'});if(!r.ok){if(opt&&r.status===404)return null;throw Error(`${url} HTTP ${r.status}`)}return r.json()}
-async function load(){show('',false);$('root').innerHTML='<div class="loading">載入資料中…</div>';try{const[d,m,i]=await Promise.all([readJson(DATA_URL),readJson(MANUAL_URL,true),readJson(INTRADAY_URL,true)]);data=d;intraday=i||intraday;const repoManual=normalizeManual(m||{}),localText=localStorage.getItem(LOCAL_KEY),localManual=localText?normalizeManual(JSON.parse(localText)):normalizeManual({});manual=normalizeManual({metadata:{...repoManual.metadata,...localManual.metadata},bonds:{...repoManual.bonds,...localManual.bonds}});render()}catch(e){show(`資料載入失敗：${e.message}`,true);$('root').innerHTML=''}}
-function show(t,error){$('message').textContent=t;$('message').className='notice'+(error?' error':'')+(t?'':' hidden')}
-function dObj(s){const d=new Date(`${String(s||'').slice(0,10)}T00:00:00`);return isNaN(d)?null:d}
-function yearsTo(maturity,asof){const m=dObj(maturity),a=dObj(asof);return m&&a?Math.round(((m-a)/86400000/365.25)*10)/10:null}
-function manualRec(code){code=String(code||'').toUpperCase();return manual.bonds[code]||manual.bonds[code.replace(/R$/,'')]||null}
-function years(r){const m=manualRec(r.bond_code);if(m?.maturity_date)return yearsTo(m.maturity_date,data.metadata?.remaining_years_as_of||new Date().toISOString().slice(0,10));return num(r.latest_remaining_years)}
-function bucket(y){return TERMS.find(t=>y>=t.min&&y<t.max)||null}
-function fDate(s){const[y,m,d]=String(s).split('-');return `${y}/${Number(m)}/${Number(d)}`}
-function allEntries(o,p=''){let out=[];for(const[k,v]of Object.entries(o||{})){const path=p?`${p}.${k}`:k;if(v&&typeof v==='object'&&!Array.isArray(v))out=out.concat(allEntries(v,path));else out.push([path,v])}return out}
-function exactRate(r){const market=String(r.market||'').toUpperCase();const wanted=market==='EBTS'?'平均 Volume-Weighted Average':'加權平均Volume-Weighted Average';
-  // 先直接讀JSON頂層的精確欄名。
-  if(Object.prototype.hasOwnProperty.call(r,wanted)&&num(r[wanted])!=null)return{value:num(r[wanted]),field:wanted};
-  // 若資料位於巢狀物件，仍只接受完全相同欄名；若重複欄位變成 _2/_3，取最後一個。
-  const hits=allEntries(r).filter(([path,v])=>{const k=path.split('.').pop();return(k===wanted||new RegExp('^'+wanted.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'_\\d+$').test(k))&&num(v)!=null});
-  if(!hits.length)return null;const h=hits[hits.length-1];return{value:num(h[1]),field:h[0].split('.').pop()};}
-function cls(r){const m=manualRec(r.bond_code),type=String(m?.bond_type||r.bond_type||''),issuer=String(m?.issuer_name||r.issuer_name||'其他'),code=String(r.bond_code||'');if(/市政債|地方政府債|地方公債/.test(type)||/(臺北市|台北市|新北市|桃園市|臺中市|台中市|臺南市|台南市|高雄市|基隆市|新竹市|嘉義市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義縣|屏東縣|宜蘭縣|花蓮縣|臺東縣|台東縣|澎湖縣|金門縣|連江縣)(政府)?$/.test(issuer))return{section:'市政債',issuer};if(code.startsWith('A')||/中央政府公債|政府公債|國庫券/.test(type))return{section:'公債',issuer:'中央政府'};return{section:'公司債',issuer}}
-function build(){const idx=new Map(),miss=new Map();let yc=0;for(const[date,rows]of Object.entries(data.dates||{}))for(const r of rows||[]){const code=String(r.bond_code||'').trim().toUpperCase();if(!code||code.startsWith('F'))continue;const y=years(r);if(y===null||y===undefined||!Number.isFinite(Number(y))){miss.set(code,true);continue}const t=bucket(Number(y));if(!t)continue;const c=cls(r),key=[c.section,c.issuer,t.key,code,date].join('|'),x=idx.get(key)||{...c,term:t,code,date,name:manualRec(code)?.bond_name||r.bond_name_master||r.bond_name||'',years:y,markets:{},intraday:false};const rate=exactRate(r);if(rate){const mk=String(r.market||'').toUpperCase()==='EBTS'?'EBTS':'OTC';(x.markets[mk]??=[]).push({...rate,record:r});yc++}idx.set(key,x)}const inject=(rows,section)=>{const date=intraday.metadata?.trade_date;if(!date)return;for(const r of rows||[]){const code=String(r.bond_code||'').trim().toUpperCase(),v=num(r.last_rate);if(!code||code.startsWith('F')||v==null)continue;const synthetic={bond_code:code,bond_name_master:r.bond_name||'',issuer_name:section==='公債'?'中央政府':(r.issuer_name||'其他'),bond_type:section==='公債'?'政府公債':'普通公司債',latest_remaining_years:r.remaining_years,maturity_date:r.maturity_date};const y=years(synthetic),t=bucket(y);if(!t)continue;const c=cls(synthetic),key=[c.section,c.issuer,t.key,code,date].join('|');if(idx.has(key))continue;const mk=section==='公債'?'EBTS':'OTC';idx.set(key,{...c,term:t,code,date,name:r.bond_name||'',years:y,markets:{[mk]:[{value:v,field:'盤中最近殖利率',record:r}]},intraday:true});yc++}};inject(intraday.government_trade?.rows,'公債');inject(intraday.company_trade?.rows,'公司債');return{idx,miss,yc}}
-function taipeiToday(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
-function dates(){const extra=intraday.metadata?.trade_date?[intraday.metadata.trade_date]:[],all=[...new Set([...Object.keys(data.dates||{}),...extra])].sort().reverse(),r=$('range').value;if(r==='all')return all;if(r==='custom'){const s=$('startDate').value,e=$('endDate').value;return all.filter(d=>(!s||d>=s)&&(!e||d<=e))}return all.slice(0,Number(r))}
-function rank(name){const i=ORDER.findIndex(x=>String(name).includes(x));return i<0?999:i}
-function render(){selectedDates=dates();const{idx,miss,yc}=build();unmapped=miss;$('updated').textContent=data.metadata?.updated_at?.replace('T',' ').slice(0,19)||'-';$('asof').textContent=data.metadata?.remaining_years_as_of||'-';$('records').textContent=Number(data.metadata?.record_count||0).toLocaleString();$('yieldRecords').textContent=yc.toLocaleString();$('unmappedCount').textContent=miss.size;const q=$('search').value.trim().toLowerCase(),allItems=[...idx.values()].filter(x=>selectedDates.includes(x.date)&&(!q||[x.code,x.name,x.issuer].join(' ').toLowerCase().includes(q)));let items=allItems;if($('activeOnly')?.checked){const qm=quoteMap(),today=taipeiToday(),activeCodes=new Set(allItems.filter(x=>qm.has(x.code)||(x.date===today&&(average(x.markets.EBTS)!=null||average(x.markets.OTC)!=null))).map(x=>x.code));items=allItems.filter(x=>activeCodes.has(x.code))}matrices(items);renderTodayTrades(items);unmappedList();current();if(Number(data.metadata?.record_count||0)>0&&yc===0)show('成交資料已載入，但精確欄名仍未命中。等殖只讀「平均 Volume-Weighted Average」，處所只讀「加權平均Volume-Weighted Average」。',true);else show('',false)}
-function matrices(items){const g=new Map();for(const x of items){const k=x.section==='公債'?'公債':x.section==='市政債'?`市政債｜${x.issuer}`:`公司債｜${x.issuer}`;(g.get(k)??g.set(k,[]).get(k)).push(x)}const keys=[...g.keys()].sort((a,b)=>{const sectionRank=k=>k==='公債'?0:k.startsWith('市政債｜')?1:2,d=sectionRank(a)-sectionRank(b);if(d)return d;if(a.startsWith('市政債｜')&&b.startsWith('市政債｜'))return a.localeCompare(b,'zh-Hant');const an=a.replace('公司債｜',''),bn=b.replace('公司債｜','');return rank(an)-rank(bn)||an.localeCompare(bn,'zh-Hant')});$('root').innerHTML=keys.length?keys.map(k=>matrix(k,g.get(k))).join(''):'<div class="panel loading">所選期間沒有可顯示資料</div>';$('root').querySelectorAll('[data-detail]').forEach(b=>b.onclick=()=>detail(b.dataset.detail))}
-function quoteMap(){return new Map((intraday.government_quote?.rows||[]).map(r=>[String(r.bond_code||'').toUpperCase(),r]))}
-function quoteCell(code){const q=quoteMap().get(code);if(!q)return'<td class="quote-cell sticky-quote empty">-</td>';const bid=num(q.bid),ask=num(q.ask);return`<td class="quote-cell sticky-quote"><span class="bid">${bid==null?'-':bid.toFixed(2)+'%'}</span><span class="quote-sep"> / </span><span class="ask">${ask==null?'-':ask.toFixed(2)+'%'}</span></td>`}
-function matrix(title,items){const isGov=title==='公債',bm=new Map();for(const x of items){const k=x.term.key+'|'+x.code,b=bm.get(k)||{term:x.term,code:x.code,name:x.name,issuer:x.issuer,years:x.years,dates:{}};b.dates[x.date]=x;bm.set(k,b)}const bonds=[...bm.values()].sort((a,b)=>TERMS.findIndex(t=>t.key===a.term.key)-TERMS.findIndex(t=>t.key===b.term.key)||a.years-b.years||a.code.localeCompare(b.code));let body='';for(const t of TERMS){const bs=bonds.filter(b=>b.term.key===t.key);if(!bs.length)continue;bs.forEach((b,i)=>body+=`<tr>${i?'':`<th class="term" rowspan="${bs.length}">${t.label}<span class="meta">${t.min}–${t.max}Y</span></th>`}<td class="bond"><span class="code">${esc(b.code)}</span><span class="meta">${esc(b.name||b.issuer)}｜${b.years}Y</span></td>${isGov?quoteCell(b.code):''}${selectedDates.map(d=>rateCell(b.dates[d],d,isGov)).join('')}</tr>`)}const quoteDate=intraday.government_quote?.date||intraday.metadata?.trade_date||taipeiToday(),md=quoteDate.split('-');return`<section class="section"><div class="section-head"><h2>${esc(title)}</h2><span class="pill">${bonds.length}檔</span></div><div class="wrap"><table class="matrix"><thead><tr><th class="term">年期</th><th class="bond">券號／名稱</th>${isGov?`<th class="quote-head sticky-quote">${Number(md[1])}月${Number(md[2])}日即時報價</th>`:''}${selectedDates.map(d=>`<th class="${d===taipeiToday()?(isGov?'today-col sticky-today-gov':'today-col sticky-today-plain'):''}">${fDate(d)}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div></section>`}
-function average(a){return a?.length?a.reduce((s,x)=>s+x.value,0)/a.length:null}
-function rateCell(x,date,isGov){const today=date===taipeiToday(),tc=today?(isGov?' today-col sticky-today-gov':' today-col sticky-today-plain'):'';if(!x)return`<td class="empty${tc}">-</td>`;const e=average(x.markets.EBTS),o=average(x.markets.OTC);if(e!=null&&o!=null){const id=btoa(unescape(encodeURIComponent([x.section,x.issuer,x.term.key,x.code,x.date].join('|'))));return`<td class="rate-hit${tc}"><button class="link" data-detail="${id}">${((e+o)/2).toFixed(2)}%</button><span class="market">${x.intraday?'盤中':'雙市場平均'}</span></td>`}const v=e??o;return v==null?`<td class="empty${tc}">-</td>`:`<td class="rate-hit${tc}"><span class="value">${v.toFixed(2)}%</span><span class="market">${x.intraday?'盤中':(e!=null?'等殖':'處所')}</span></td>`}
-function renderTodayTrades(items){const today=taipeiToday(),seen=new Set(),list=[];for(const x of items.filter(v=>v.date===today)){if(seen.has(x.code))continue;const e=average(x.markets.EBTS),o=average(x.markets.OTC),v=e!=null&&o!=null?(e+o)/2:(e??o);if(v==null)continue;seen.add(x.code);const who=x.section==='公債'?x.code:x.issuer;list.push(`${who} ${Number(x.years).toFixed(1)}y ${v.toFixed(2)}%`)}$('todayTrades').innerHTML=list.length?list.map(v=>`<span class="today-item">${esc(v)}</span>`).join(''):'<span class="empty">今日尚無成交</span>'}
-function detail(id){const key=decodeURIComponent(escape(atob(id))),[s,i,t,c,d]=key.split('|'),{idx}=build(),x=idx.get([s,i,t,c,d].join('|'));if(!x)return;const e=average(x.markets.EBTS),o=average(x.markets.OTC);$('detailTitle').textContent=`${c}｜${fDate(d)}`;$('detailBody').innerHTML=['EBTS','OTC'].map(m=>{const a=x.markets[m]||[],v=average(a);return`<div class="detail"><h3>${m==='EBTS'?'等殖 EBTS':'處所 OTC'}</h3><div class="detail-grid"><div><span>實際欄名</span><b>${esc(a[0]?.field||'-')}</b></div><div><span>利率</span><b>${v==null?'-':v.toFixed(2)+'%'}</b></div></div></div>`}).join('')+(e!=null&&o!=null?`<div class="detail"><b>(${e.toFixed(2)}% + ${o.toFixed(2)}%) ÷ 2 = ${((e+o)/2).toFixed(2)}%</b></div>`:'');$('detail').showModal()}
-function unmappedList(){$('unmappedList').innerHTML=[...unmapped.keys()].sort().map(c=>`<button class="chip" data-code="${c}">${c}</button>`).join('')||'<span class="empty">目前沒有未 Mapping 券號</span>';$('unmappedList').querySelectorAll('[data-code]').forEach(b=>b.onclick=()=>{$('singleCode').value=b.dataset.code;$('singleMaturity').focus()})}
-function collectExtra(){return{bond_name:$('singleName').value.trim(),issuer_name:$('singleIssuer').value.trim(),bond_type:$('singleType').value.trim(),issue_date:$('singleIssue').value,coupon_rate:num($('singleCoupon').value),currency:$('singleCurrency').value.trim(),note:$('singleNote').value.trim()}}
-function upsert(code,maturity,extra={}){code=String(code||'').trim().toUpperCase();if(!/^[A-Z0-9]{5,12}$/.test(code))throw Error(`券號格式錯誤：${code}`);if(!/^\d{4}-\d{2}-\d{2}$/.test(maturity)||!dObj(maturity))throw Error(`到期日必須為 YYYY-MM-DD：${maturity}`);const clean=Object.fromEntries(Object.entries(extra).filter(([,v])=>v!==''&&v!==null&&v!==undefined));manual.bonds[code]={...(manual.bonds[code]||{}),...clean,bond_code:code,maturity_date:maturity,record_source:'manual',manual_override:true}}
-function save(){manual.metadata.updated_at=new Date().toISOString();localStorage.setItem(LOCAL_KEY,JSON.stringify(manual));render()}
-function current(){const rs=Object.values(manual.bonds).filter(r=>!String(r.bond_code||'').trim().toUpperCase().startsWith('F')).sort((a,b)=>a.bond_code.localeCompare(b.bond_code));$('mappingCurrent').innerHTML=rs.length?`<table class="map-table"><tr><th>券號</th><th>到期日</th><th>名稱</th><th></th></tr>${rs.map(r=>`<tr><td>${esc(r.bond_code)}</td><td>${esc(r.maturity_date)}</td><td>${esc(r.bond_name||'')}</td><td><button class="button danger" data-del="${esc(r.bond_code)}">刪除</button></td></tr>`).join('')}</table>`:'<span class="empty">尚無人工 Mapping</span>';$('mappingCurrent').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{delete manual.bonds[b.dataset.del];save()})}
-const EXCEL_HEADERS=['券號','到期日（YYYY-MM-DD，必填）','債券名稱（選填）','發行人（選填）','債券類型（選填）','發行日（YYYY-MM-DD，選填）','票面利率%（選填）','幣別（選填）','備註（選填）'];
-function downloadExcel(){if(typeof XLSX==='undefined'){alert('Excel元件載入失敗，請確認網路連線');return}const rows=[EXCEL_HEADERS,...[...unmapped.keys()].sort().map(c=>[c,'','','','','','','',''])],ws=XLSX.utils.aoa_to_sheet(rows);ws['!cols']=[{wch:15},{wch:27},{wch:22},{wch:28},{wch:20},{wch:27},{wch:21},{wch:16},{wch:32}];ws['!autofilter']={ref:`A1:I${rows.length}`};const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'未Mapping');XLSX.writeFile(wb,'unmapped_bonds.xlsx')}
-function excelDate(raw){if(typeof raw==='number'){const d=XLSX.SSF.parse_date_code(raw);return d?`${d.y}-${String(d.m).padStart(2,'0')}-${String(d.d).padStart(2,'0')}`:''}return String(raw||'').trim().replaceAll('/','-')}
-async function uploadExcel(file){if(typeof XLSX==='undefined')throw Error('Excel元件載入失敗');const wb=XLSX.read(await file.arrayBuffer(),{type:'array',cellDates:false}),ws=wb.Sheets[wb.SheetNames[0]],rows=XLSX.utils.sheet_to_json(ws,{header:1,defval:''});let n=0;const errors=[];for(let i=1;i<rows.length;i++){const r=rows[i],code=String(r[0]||'').trim(),maturity=excelDate(r[1]);if(!code&&!maturity)continue;try{upsert(code,maturity,{bond_name:String(r[2]||'').trim(),issuer_name:String(r[3]||'').trim(),bond_type:String(r[4]||'').trim(),issue_date:excelDate(r[5]),coupon_rate:num(r[6]),currency:String(r[7]||'').trim(),note:String(r[8]||'').trim()});n++}catch(e){errors.push(`第${i+1}列：${e.message}`)}}save();alert(`已匯入 ${n} 筆${errors.length?'\n錯誤：\n'+errors.join('\n'):''}`)}
-function downloadJson(){const blob=new Blob([JSON.stringify(manual,null,2)+'\n'],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='manual_bond_mapping.json';a.click();URL.revokeObjectURL(a.href)}
-async function callWorker(path,button,message){const old=button.textContent;button.disabled=true;button.textContent='送出中…';try{const r=await fetch(`${WORKER_URL}${path}`,{method:'POST',headers:{'Content-Type':'application/json','X-Trigger-Key':TRIGGER_KEY},body:path.endsWith('/daily')?JSON.stringify({mode:'daily',force:false}):'{}'});let j={};try{j=await r.json()}catch{}if(!r.ok||!j.ok)throw Error(j.message||j.error||`HTTP ${r.status}`);button.textContent='更新已送出';alert(message);setTimeout(()=>{button.disabled=false;button.textContent=old},10000)}catch(e){alert(`更新失敗：${e.message}`);button.disabled=false;button.textContent=old}}
-$('triggerDaily').onclick=()=>callWorker('/trigger/daily',$('triggerDaily'),'日終資料更新已送出，請等 GitHub Actions 完成後重新載入。');$('triggerIntraday').onclick=()=>callWorker('/trigger/intraday',$('triggerIntraday'),'盤中資料更新已送出，請等 GitHub Actions 完成後重新載入。');$('range').onchange=()=>{$('customDates').classList.toggle('on',$('range').value==='custom');if($('range').value!=='custom')render()};$('applyDate').onclick=render;$('search').oninput=render;$('activeOnly').onchange=render;$('reload').onclick=load;$('closeDetail').onclick=()=>$('detail').close();$('downloadExcel').onclick=downloadExcel;$('uploadExcelBtn').onclick=()=>$('uploadExcel').click();$('uploadExcel').onchange=async e=>{try{await uploadExcel(e.target.files[0])}catch(err){alert(err.message)}e.target.value=''};$('singleForm').onsubmit=e=>{e.preventDefault();try{upsert($('singleCode').value,$('singleMaturity').value,collectExtra());e.target.reset();save()}catch(err){alert(err.message)}};$('downloadJson').onclick=downloadJson;$('clearAllManual').onclick=()=>{if(confirm('確定清空目前網頁上的全部人工 Mapping？\n\n清空後會立即重新計算畫面。若要永久清空 Repo，請再下載完整 Mapping JSON，覆蓋 data/manual_bond_mapping.json。')){manual=normalizeManual({metadata:{description:'人工補充債券主檔',updated_at:new Date().toISOString()},bonds:{}});localStorage.setItem(LOCAL_KEY,JSON.stringify(manual));render()}};$('clearLocal').onclick=()=>{if(confirm('確定清除瀏覽器暫存，並重新讀取 Repo 的 manual_bond_mapping.json？')){localStorage.removeItem(LOCAL_KEY);location.reload()}};load();
+const GITHUB_API_VERSION = "2022-11-28";
+const SCHEDULED_CRONS = new Set([
+  "0 9 * * *",   // 17:00 Asia/Taipei
+  "15 9 * * *",  // 17:15 Asia/Taipei
+  "0 10 * * *",  // 18:00 Asia/Taipei
+]);
 
-</script>
-</body></html>
+export default {
+  async scheduled(controller, env, ctx) {
+    ctx.waitUntil(handleScheduled(controller, env));
+  },
+
+  async fetch(request, env) {
+    try {
+      return await handleHttp(request, env);
+    } catch (error) {
+      const cors = corsHeaders(request, env);
+      console.error("Unhandled Worker error", error);
+      return jsonResponse({
+        ok: false,
+        error: "worker_internal_error",
+        message: String(error?.message || error),
+      }, 500, cors);
+    }
+  },
+};
+
+async function handleScheduled(controller, env) {
+  const cron = controller.cron;
+  const scheduledAt = new Date(controller.scheduledTime).toISOString();
+
+  if (!SCHEDULED_CRONS.has(cron)) {
+    console.log(JSON.stringify({
+      event: "cron_ignored",
+      cron,
+      scheduled_at: scheduledAt,
+    }));
+    return;
+  }
+
+  const result = await dispatchWorkflow(env, {
+    workflow: requiredEnv(env, "DAILY_WORKFLOW"),
+    inputs: {
+      mode: "daily",
+      force: "false",
+    },
+  });
+
+  console.log(JSON.stringify({
+    event: "daily_dispatch",
+    cron,
+    scheduled_at: scheduledAt,
+    ...result,
+  }));
+}
+
+async function handleHttp(request, env) {
+  const url = new URL(request.url);
+  const cors = corsHeaders(request, env);
+
+  if (request.method === "OPTIONS") {
+    if (!isAllowedOrigin(request, env)) {
+      return jsonResponse({
+        ok: false,
+        error: "origin_not_allowed",
+        request_origin: request.headers.get("Origin") || "",
+      }, 403, cors);
+    }
+    return new Response(null, { status: 204, headers: cors });
+  }
+
+  if (url.pathname === "/health" && request.method === "GET") {
+    return jsonResponse({
+      ok: true,
+      service: "taiwan-bond-updater",
+      time_utc: new Date().toISOString(),
+      schedule: {
+        timezone: "Asia/Taipei",
+        daily_times: ["17:00", "17:15", "18:00"],
+        crons_utc: [...SCHEDULED_CRONS],
+      },
+      configured: {
+        github_owner: Boolean(env.GITHUB_OWNER),
+        github_repo: Boolean(env.GITHUB_REPO),
+        github_ref: cleanValue(env.GITHUB_REF || "main"),
+        daily_workflow: cleanValue(env.DAILY_WORKFLOW || ""),
+        intraday_workflow: cleanValue(env.INTRADAY_WORKFLOW || ""),
+        allowed_origins: parseAllowedOrigins(env),
+        github_token: Boolean(env.GITHUB_TOKEN),
+        trigger_key: Boolean(env.TRIGGER_KEY),
+      },
+    }, 200, cors);
+  }
+
+  if (url.pathname === "/trigger/daily" && request.method === "POST") {
+    const blocked = authorizeBrowserRequest(request, env, cors);
+    if (blocked) return blocked;
+
+    const body = await readJsonBody(request);
+    const result = await dispatchWorkflow(env, {
+      workflow: requiredEnv(env, "DAILY_WORKFLOW"),
+      inputs: {
+        mode: sanitizeInput(body.mode, ["daily", "rebuild"], "daily"),
+        force: body.force === true ? "true" : "false",
+      },
+    });
+
+    return jsonResponse(result, result.ok ? 202 : normalizeStatus(result.status), cors);
+  }
+
+  if (url.pathname === "/trigger/intraday" && request.method === "POST") {
+    const blocked = authorizeBrowserRequest(request, env, cors);
+    if (blocked) return blocked;
+
+    const workflow = cleanValue(env.INTRADAY_WORKFLOW || "");
+    if (!workflow) {
+      return jsonResponse({
+        ok: false,
+        error: "intraday_workflow_not_configured",
+        message: "請在 Worker Variables 設定 INTRADAY_WORKFLOW。",
+      }, 503, cors);
+    }
+
+    // update_intraday_bond.yml 沒有 workflow_dispatch inputs，故只送 ref。
+    const result = await dispatchWorkflow(env, { workflow });
+    return jsonResponse(result, result.ok ? 202 : normalizeStatus(result.status), cors);
+  }
+
+  if (url.pathname === "/run-status" && request.method === "GET") {
+    const blocked = authorizeBrowserRequest(request, env, cors);
+    if (blocked) return blocked;
+
+    const runId = url.searchParams.get("run_id") || "";
+    if (!/^\d+$/.test(runId)) {
+      return jsonResponse({ ok: false, error: "invalid_run_id", message: "run_id 格式錯誤。" }, 400, cors);
+    }
+
+    const result = await getWorkflowRun(env, runId);
+    return jsonResponse(result, result.ok ? 200 : normalizeStatus(result.status), cors);
+  }
+
+  return jsonResponse({
+    ok: false,
+    error: "not_found",
+    endpoints: [
+      "GET /health",
+      "POST /trigger/daily",
+      "POST /trigger/intraday",
+      "GET /run-status?run_id={id}",
+    ],
+  }, 404, cors);
+}
+
+async function dispatchWorkflow(env, { workflow, inputs }) {
+  const owner = requiredEnv(env, "GITHUB_OWNER");
+  const repo = requiredEnv(env, "GITHUB_REPO");
+  const token = requiredEnv(env, "GITHUB_TOKEN");
+  const ref = cleanValue(env.GITHUB_REF || "main");
+  const workflowName = cleanValue(workflow);
+
+  const endpoint = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/actions/workflows/${encodeURIComponent(workflowName)}/dispatches`;
+  const payload = { ref, return_run_details: true };
+  const cleanedInputs = removeUndefined(inputs || {});
+  if (Object.keys(cleanedInputs).length > 0) {
+    payload.inputs = cleanedInputs;
+  }
+
+  let response;
+  try {
+    response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Accept": "application/vnd.github+json",
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json",
+        "User-Agent": "taiwan-bond-cloudflare-worker",
+        "X-GitHub-Api-Version": GITHUB_API_VERSION,
+      },
+      body: JSON.stringify(payload),
+    });
+  } catch (error) {
+    return {
+      ok: false,
+      status: 502,
+      error: "github_request_failed",
+      message: String(error?.message || error),
+      workflow: workflowName,
+      ref,
+    };
+  }
+
+  const responseText = await response.text();
+
+  if (response.status === 200) {
+    const details = safeParseJson(responseText) || {};
+    return {
+      ok: true,
+      status: 202,
+      message: "GitHub Actions workflow 已接受觸發請求。",
+      workflow: workflowName,
+      ref,
+      inputs: payload.inputs || {},
+      run_id: details.workflow_run_id || details.run_id || details.id || null,
+      run_url: details.workflow_run_url || details.html_url || details.url || null,
+      github_response: details,
+    };
+  }
+
+  if (response.status === 204) {
+    return {
+      ok: true,
+      status: 202,
+      message: "GitHub Actions workflow 已接受觸發請求，但 GitHub 未回傳 run_id。",
+      workflow: workflowName,
+      ref,
+      inputs: payload.inputs || {},
+      run_id: null,
+    };
+  }
+
+  const githubResponse = safeParseJson(responseText);
+  console.error("GitHub workflow dispatch rejected", JSON.stringify({
+    status: response.status,
+    workflow: workflowName,
+    ref,
+    github_response: githubResponse,
+  }));
+
+  return {
+    ok: false,
+    status: response.status,
+    error: "github_dispatch_rejected",
+    message: githubErrorMessage(githubResponse, response.status),
+    workflow: workflowName,
+    ref,
+    github_response: githubResponse,
+  };
+}
+
+async function getWorkflowRun(env, runId) {
+  const owner = requiredEnv(env, "GITHUB_OWNER");
+  const repo = requiredEnv(env, "GITHUB_REPO");
+  const token = requiredEnv(env, "GITHUB_TOKEN");
+  const endpoint = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/actions/runs/${encodeURIComponent(runId)}`;
+
+  let response;
+  try {
+    response = await fetch(endpoint, {
+      headers: {
+        "Accept": "application/vnd.github+json",
+        "Authorization": `Bearer ${token}`,
+        "User-Agent": "taiwan-bond-cloudflare-worker",
+        "X-GitHub-Api-Version": GITHUB_API_VERSION,
+      },
+    });
+  } catch (error) {
+    return { ok: false, status: 502, error: "github_request_failed", message: String(error?.message || error) };
+  }
+
+  const text = await response.text();
+  const body = safeParseJson(text);
+  if (!response.ok) {
+    return { ok: false, status: response.status, error: "github_run_status_rejected", message: githubErrorMessage(body, response.status), github_response: body };
+  }
+
+  return {
+    ok: true,
+    run_id: Number(runId),
+    status: body.status,
+    conclusion: body.conclusion,
+    html_url: body.html_url,
+    created_at: body.created_at,
+    updated_at: body.updated_at,
+  };
+}
+
+function authorizeBrowserRequest(request, env, cors) {
+  const origin = request.headers.get("Origin") || "";
+
+  if (!isAllowedOrigin(request, env)) {
+    return jsonResponse({
+      ok: false,
+      error: "origin_not_allowed",
+      message: `此網頁來源未被允許：${origin || "no-origin"}`,
+      request_origin: origin,
+      allowed_origins: parseAllowedOrigins(env),
+    }, 403, cors);
+  }
+
+  if (!env.TRIGGER_KEY) {
+    return jsonResponse({
+      ok: false,
+      error: "trigger_key_not_configured",
+      message: "Worker 尚未設定 TRIGGER_KEY。",
+    }, 503, cors);
+  }
+
+  const supplied = request.headers.get("X-Trigger-Key") || "";
+  if (!constantTimeEqual(supplied, env.TRIGGER_KEY)) {
+    return jsonResponse({
+      ok: false,
+      error: "unauthorized",
+      message: "X-Trigger-Key 不正確。",
+    }, 401, cors);
+  }
+
+  return null;
+}
+
+function parseAllowedOrigins(env) {
+  return String(env.ALLOWED_ORIGINS || "")
+    .split(",")
+    .map((item) => item.trim().replace(/\/$/, ""))
+    .filter(Boolean);
+}
+
+function isAllowedOrigin(request, env) {
+  const origin = request.headers.get("Origin");
+  if (!origin) return true;
+  return parseAllowedOrigins(env).includes(origin.replace(/\/$/, ""));
+}
+
+function corsHeaders(request, env) {
+  const origin = request.headers.get("Origin");
+  const headers = new Headers({
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, X-Trigger-Key",
+    "Access-Control-Max-Age": "86400",
+    "Cache-Control": "no-store",
+    "Vary": "Origin",
+  });
+
+  if (origin && isAllowedOrigin(request, env)) {
+    headers.set("Access-Control-Allow-Origin", origin);
+  }
+  return headers;
+}
+
+async function readJsonBody(request) {
+  const text = await request.text();
+  if (!text.trim()) return {};
+  try {
+    const value = JSON.parse(text);
+    return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+  } catch {
+    return {};
+  }
+}
+
+function jsonResponse(payload, status = 200, extraHeaders = new Headers()) {
+  const headers = new Headers(extraHeaders);
+  headers.set("Content-Type", "application/json; charset=utf-8");
+  return new Response(JSON.stringify(payload, null, 2), { status, headers });
+}
+
+function cleanValue(value) {
+  return String(value || "").trim();
+}
+
+function requiredEnv(env, name) {
+  const value = cleanValue(env[name]);
+  if (!value) throw new Error(`Missing Worker environment variable: ${name}`);
+  return value;
+}
+
+function sanitizeInput(value, allowed, fallback) {
+  return allowed.includes(value) ? value : fallback;
+}
+
+function removeUndefined(value) {
+  return Object.fromEntries(
+    Object.entries(value).filter(([, item]) => item !== undefined && item !== null && item !== "")
+  );
+}
+
+function safeParseJson(text) {
+  if (!text) return null;
+  try {
+    return JSON.parse(text);
+  } catch {
+    return text.slice(0, 2000);
+  }
+}
+
+function githubErrorMessage(response, status) {
+  if (response && typeof response === "object" && response.message) {
+    return `GitHub API ${status}: ${response.message}`;
+  }
+  if (typeof response === "string" && response) {
+    return `GitHub API ${status}: ${response}`;
+  }
+  return `GitHub API 拒絕 workflow dispatch，HTTP ${status}`;
+}
+
+function normalizeStatus(status) {
+  return Number.isInteger(status) && status >= 400 && status <= 599 ? status : 500;
+}
+
+function constantTimeEqual(a, b) {
+  const left = new TextEncoder().encode(String(a));
+  const right = new TextEncoder().encode(String(b));
+  const length = Math.max(left.length, right.length);
+  let difference = left.length ^ right.length;
+
+  for (let i = 0; i < length; i += 1) {
+    difference |= (left[i] || 0) ^ (right[i] || 0);
+  }
+  return difference === 0;
+}
