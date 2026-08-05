@@ -1,0 +1,65 @@
+name: Update Taiwan bond intraday market
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-taiwan-bond-intraday
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install requests==2.32.4
+
+      - name: Update intraday bond market
+        env:
+          TPEX_COOKIE: ${{ secrets.TPEX_COOKIE }}
+        run: python scripts/update_intraday_bond.py
+
+      - name: Validate output
+        run: |
+          python -m json.tool data/intraday/intraday_market.json >/dev/null
+          python -m json.tool data/intraday/government_quote_history.json >/dev/null
+
+      - name: Upload intraday debug artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: intraday-debug-${{ github.run_id }}
+          path: debug/intraday/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Commit intraday data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/intraday/
+          if git diff --cached --quiet; then
+            echo "No intraday data changes"
+            exit 0
+          fi
+          git commit -m "data: update Taiwan bond intraday market"
+          git pull --rebase
+          git push
