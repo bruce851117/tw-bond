@@ -20,6 +20,55 @@
 .matrix th.term{z-index:130!important}
 .matrix .sticky-today-gov>* ,
 .matrix .sticky-today-plain>*{position:relative;z-index:2;max-width:100%;overflow:hidden}
+
+/* Keep today's source label visible while preserving the opaque sticky column. */
+.matrix td.sticky-today-gov,
+.matrix td.sticky-today-plain{
+  overflow:visible!important;
+  clip-path:none!important;
+  isolation:isolate;
+}
+.matrix td.rate-hit.sticky-today-gov,
+.matrix td.rate-hit.sticky-today-plain{
+  height:56px!important;
+  min-height:56px!important;
+  padding:2px 4px 13px!important;
+  background:#f1f7ff!important;
+}
+.matrix td.sticky-today-gov::before,
+.matrix td.sticky-today-plain::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:#fff;
+  pointer-events:none;
+}
+.matrix td.rate-hit.sticky-today-gov::before,
+.matrix td.rate-hit.sticky-today-plain::before{
+  background:#f1f7ff;
+}
+.matrix td.sticky-today-gov .link,
+.matrix td.sticky-today-gov .value,
+.matrix td.sticky-today-plain .link,
+.matrix td.sticky-today-plain .value{
+  min-height:38px!important;
+  height:38px!important;
+  overflow:visible!important;
+}
+.matrix td.sticky-today-gov .market,
+.matrix td.sticky-today-plain .market{
+  display:block!important;
+  right:4px!important;
+  bottom:3px!important;
+  z-index:5!important;
+  line-height:1.2!important;
+  height:auto!important;
+  max-height:none!important;
+  overflow:visible!important;
+  white-space:nowrap!important;
+  background:transparent!important;
+}
 </style></head><body><header><div><h1>台灣債券成交利率矩陣</h1><p>等殖 EBTS（平均 Volume-Weighted Average）與處所 OTC（加權平均Volume-Weighted Average）成交利率</p></div><div class="header-actions"><button id="triggerDaily" class="button primary">Update Taiwan bond history</button><button id="triggerIntraday" class="button primary">更新盤中資料</button><button id="reload" class="button secondary">重新載入</button></div></header><main><section class="stats"><div class="stat panel"><span>資料更新時間</span><strong id="updated">-</strong></div><div class="stat panel"><span>盤中資料最近更新</span><strong id="intradayUpdated">-</strong></div><div class="stat panel"><span>剩餘年期基準日</span><strong id="asof">-</strong></div><div class="stat panel"><span>成交明細</span><strong id="records">-</strong></div><div class="stat panel"><span>成功讀取利率</span><strong id="yieldRecords">-</strong></div><div class="stat panel"><span>未 Mapping</span><strong id="unmappedCount">-</strong></div></section><section class="toolbar panel"><label>顯示期間<select id="range"><option value="20">最近20交易日</option><option value="40">最近40交易日</option><option value="60">最近60交易日</option><option value="custom">自訂日期區間</option><option value="all">全部日期</option></select></label><div id="customDates" class="custom"><label>起日<input id="startDate" type="date"></label><label>迄日<input id="endDate" type="date"></label><button id="applyDate" class="button primary">套用</button></div><label>搜尋<input id="search" type="search" placeholder="券號、名稱、發行人"></label><label class="check-label"><input id="activeOnly" type="checkbox">只顯示有即時報價或今日成交</label><div class="today-trades"><strong>今日成交</strong><div id="todayTrades" class="today-list"><span class="empty">尚無資料</span></div></div></section><div id="message" class="notice hidden"></div><div id="root"><div class="loading">載入資料中…</div></div><section class="unmapped panel"><div class="unmapped-head"><div><h2>尚未 Mapping</h2><p>下載Excel後，A欄券號已填妥。B欄到期日為唯一必填，格式固定為 YYYY-MM-DD。</p></div><div><button id="downloadExcel" class="button secondary">下載未 Mapping Excel</button> <button id="uploadExcelBtn" class="button primary">上傳已填 Excel</button><input id="uploadExcel" class="file" type="file" accept=".xlsx,.xls"></div></div><div id="unmappedList" class="unmapped-list"></div><div class="mapping"><div class="box"><h3>單檔補 Mapping</h3><form id="singleForm" class="form"><label>券號<input id="singleCode" required maxlength="12"></label><label>到期日<input id="singleMaturity" required type="date"></label><label>債券名稱<input id="singleName"></label><label>發行人<input id="singleIssuer"></label><label>債券類型<input id="singleType"></label><label>發行日<input id="singleIssue" type="date"></label><label>票面利率（%）<input id="singleCoupon" type="number" step="0.0001"></label><label>幣別<input id="singleCurrency"></label><label class="full">備註<input id="singleNote"></label><button class="button primary full" type="submit">送出並套用</button></form><button id="downloadJson" class="button secondary">下載完整 Mapping JSON</button> <button id="clearAllManual" class="button danger">一鍵清空目前人工 Mapping</button> <button id="clearLocal" class="button danger">清除瀏覽器暫存並重讀 Repo</button></div><div class="box"><h3>目前人工 Mapping</h3><div id="mappingCurrent" class="current"></div></div></div></section></main><dialog id="detail"><div class="dlg-head"><h2 id="detailTitle">成交明細</h2><button id="closeDetail" class="close">×</button></div><div id="detailBody" class="dlg-body"></div></dialog><script>
 'use strict';
 const DATA_URL='data/merged_outright.json',MANUAL_URL='data/manual_bond_mapping.json',INTRADAY_URL='data/intraday/intraday_market.json',LOCAL_KEY='twBondManualMapping';
