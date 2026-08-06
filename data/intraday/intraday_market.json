@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "updated_at": "2026-08-06T09:45:03+08:00",
+    "updated_at": "2026-08-06T10:08:10+08:00",
     "trade_date": "2026-08-06",
     "sources": {
       "government_quote": {
@@ -15,7 +15,7 @@
       },
       "company_trade": {
         "ok": true,
-        "rows": 1,
+        "rows": 3,
         "table_path": "root.tables[0]"
       }
     }
@@ -92,6 +92,50 @@
   "company_trade": {
     "date": "2026-08-06",
     "rows": [
+      {
+        "bond_code": "B20164",
+        "bond_name": "P09亞泥4B",
+        "issuer_name": "亞泥",
+        "maturity_date": "2027-12-23",
+        "remaining_years": 1.4,
+        "last_rate": 2.18,
+        "high_rate": 2.18,
+        "low_rate": 2.18,
+        "raw": {
+          "債券代號": "B20164",
+          "債券名稱": "P09亞泥4B",
+          "幣別": "TWD",
+          "發行日期": "2020/12/23",
+          "到期日期": "2027/12/23",
+          "票面利率": "0.65",
+          "最近殖利率/百元價": "2.18",
+          "最高殖利率/百元價": "2.18",
+          "最低殖利率/百元價": "2.18",
+          "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=1102&bond_kind=4&bond_yrn=109-4&bond_subn=%E4%B9%99&mature_date=&co_name=&filename="
+        }
+      },
+      {
+        "bond_code": "B20254",
+        "bond_name": "P11台泥2A",
+        "issuer_name": "台泥",
+        "maturity_date": "2027-11-25",
+        "remaining_years": 1.3,
+        "last_rate": 2.24,
+        "high_rate": 2.24,
+        "low_rate": 2.24,
+        "raw": {
+          "債券代號": "B20254",
+          "債券名稱": "P11台泥2A",
+          "幣別": "TWD",
+          "發行日期": "2022/11/25",
+          "到期日期": "2027/11/25",
+          "票面利率": "2.1",
+          "最近殖利率/百元價": "2.24",
+          "最高殖利率/百元價": "2.24",
+          "最低殖利率/百元價": "2.24",
+          "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=1101&bond_kind=4&bond_yrn=111-2&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
+        }
+      },
       {
         "bond_code": "B87702",
         "bond_name": "P15達欣工1",
