@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "updated_at": "2026-08-06T09:27:56+08:00",
+    "updated_at": "2026-08-06T09:45:03+08:00",
     "trade_date": "2026-08-06"
   },
   "rows": [
@@ -10,9 +10,9 @@
       "issuer_name": "達欣工",
       "maturity_date": "2031-08-05",
       "remaining_years": 5.0,
-      "last_rate": 2.178,
+      "last_rate": 2.177,
       "high_rate": 2.178,
-      "low_rate": 2.178,
+      "low_rate": 2.177,
       "raw": {
         "債券代號": "B87702",
         "債券名稱": "P15達欣工1",
@@ -20,9 +20,9 @@
         "發行日期": "2026/08/05",
         "到期日期": "2031/08/05",
         "票面利率": "2.18",
-        "最近殖利率/百元價": "2.178",
+        "最近殖利率/百元價": "2.177",
         "最高殖利率/百元價": "2.178",
-        "最低殖利率/百元價": "2.178",
+        "最低殖利率/百元價": "2.177",
         "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2535&bond_kind=4&bond_yrn=115-1&bond_subn=%24M00000001&mature_date=&co_name=&filename="
       }
     }
