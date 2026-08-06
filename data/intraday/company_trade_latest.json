@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "updated_at": "2026-08-06T10:20:38+08:00",
+    "updated_at": "2026-08-06T14:14:39+08:00",
     "trade_date": "2026-08-06"
   },
   "rows": [
@@ -68,6 +68,28 @@
         "最高殖利率/百元價": "2.178",
         "最低殖利率/百元價": "2.177",
         "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2535&bond_kind=4&bond_yrn=115-1&bond_subn=%24M00000001&mature_date=&co_name=&filename="
+      }
+    },
+    {
+      "bond_code": "B903YJ",
+      "bond_name": "P11台電5B",
+      "issuer_name": "台電",
+      "maturity_date": "2029-10-18",
+      "remaining_years": 3.2,
+      "last_rate": 2.15,
+      "high_rate": 2.15,
+      "low_rate": 2.15,
+      "raw": {
+        "債券代號": "B903YJ",
+        "債券名稱": "P11台電5B",
+        "幣別": "TWD",
+        "發行日期": "2022/10/18",
+        "到期日期": "2029/10/18",
+        "票面利率": "1.7",
+        "最近殖利率/百元價": "2.15",
+        "最高殖利率/百元價": "2.15",
+        "最低殖利率/百元價": "2.15",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=9963&bond_kind=4&bond_yrn=111-5&bond_subn=%E4%B9%99%E9%A1%9E&mature_date=&co_name=&filename="
       }
     }
   ]
