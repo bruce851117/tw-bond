@@ -1,7 +1,30 @@
 {
   "metadata": {
-    "updated_at": "2026-08-11T10:55:04+08:00",
+    "updated_at": "2026-08-11T15:08:04+08:00",
     "trade_date": "2026-08-11"
   },
-  "rows": []
+  "rows": [
+    {
+      "bond_code": "B618EA",
+      "bond_name": "P15台積1B",
+      "issuer_name": "台積電",
+      "maturity_date": "2036-03-31",
+      "remaining_years": 9.6,
+      "last_rate": 2.4,
+      "high_rate": 2.4,
+      "low_rate": 2.4,
+      "raw": {
+        "債券代號": "B618EA",
+        "債券名稱": "P15台積1B",
+        "幣別": "TWD",
+        "發行日期": "2026/03/31",
+        "到期日期": "2036/03/31",
+        "票面利率": "1.78",
+        "最近殖利率/百元價": "2.4",
+        "最高殖利率/百元價": "2.4",
+        "最低殖利率/百元價": "2.4",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2330&bond_kind=4&bond_yrn=115-1&bond_subn=%E4%B9%99%E9%A1%9E&mature_date=&co_name=&filename="
+      }
+    }
+  ]
 }
