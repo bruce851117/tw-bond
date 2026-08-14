@@ -1,51 +1,51 @@
 {
   "metadata": {
-    "updated_at": "2026-08-13T15:42:59+08:00",
-    "trade_date": "2026-08-13"
+    "updated_at": "2026-08-14T14:41:15+08:00",
+    "trade_date": "2026-08-14"
   },
   "rows": [
     {
-      "bond_code": "B903EI",
-      "bond_name": "P14台電4A",
-      "issuer_name": "台電",
-      "maturity_date": "2030-09-15",
-      "remaining_years": 4.1,
-      "last_rate": 1.921,
-      "high_rate": 1.921,
-      "low_rate": 1.921,
+      "bond_code": "B99416",
+      "bond_name": "P14南山3A",
+      "issuer_name": "南山人壽",
+      "maturity_date": "2035-11-25",
+      "remaining_years": 9.3,
+      "last_rate": 3.5175,
+      "high_rate": 3.5175,
+      "low_rate": 3.4921,
       "raw": {
-        "債券代號": "B903EI",
-        "債券名稱": "P14台電4A",
+        "債券代號": "B99416",
+        "債券名稱": "P14南山3A",
         "幣別": "TWD",
-        "發行日期": "2025/09/15",
-        "到期日期": "2030/09/15",
-        "票面利率": "1.7",
-        "最近殖利率/百元價": "1.921",
-        "最高殖利率/百元價": "1.921",
-        "最低殖利率/百元價": "1.921",
-        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=9963&bond_kind=4&bond_yrn=114-4&bond_subn=%E7%94%B2%E9%A1%9E&mature_date=&co_name=&filename="
+        "發行日期": "2025/11/25",
+        "到期日期": "2035/11/25",
+        "票面利率": "3.75",
+        "最近殖利率/百元價": "3.5175",
+        "最高殖利率/百元價": "3.5175",
+        "最低殖利率/百元價": "3.4921",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5874&bond_kind=4&bond_yrn=114-3&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
       }
     },
     {
-      "bond_code": "B903XQ",
-      "bond_name": "P09台電5C",
-      "issuer_name": "台電",
-      "maturity_date": "2030-12-16",
-      "remaining_years": 4.3,
-      "last_rate": 1.936,
-      "high_rate": 1.936,
-      "low_rate": 1.936,
+      "bond_code": "B99517",
+      "bond_name": "P15富壽1A",
+      "issuer_name": "富邦人壽",
+      "maturity_date": "2036-05-06",
+      "remaining_years": 9.7,
+      "last_rate": 3.4526,
+      "high_rate": 3.4526,
+      "low_rate": 3.4526,
       "raw": {
-        "債券代號": "B903XQ",
-        "債券名稱": "P09台電5C",
+        "債券代號": "B99517",
+        "債券名稱": "P15富壽1A",
         "幣別": "TWD",
-        "發行日期": "2020/12/16",
-        "到期日期": "2030/12/16",
-        "票面利率": "0.49",
-        "最近殖利率/百元價": "1.936",
-        "最高殖利率/百元價": "1.936",
-        "最低殖利率/百元價": "1.936",
-        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=9963&bond_kind=4&bond_yrn=109-5&bond_subn=%E4%B8%99%E9%A1%9E&mature_date=&co_name=&filename="
+        "發行日期": "2026/05/06",
+        "到期日期": "2036/05/06",
+        "票面利率": "3.7",
+        "最近殖利率/百元價": "3.4526",
+        "最高殖利率/百元價": "3.4526",
+        "最低殖利率/百元價": "3.4526",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5865&bond_kind=4&bond_yrn=115-1&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
       }
     }
   ]
