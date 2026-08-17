@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "等殖與處所買賣斷成交歷史合併資料",
-    "updated_at": "2026-08-17T17:16:04+08:00",
+    "updated_at": "2026-08-17T18:05:18+08:00",
     "remaining_years_as_of": "2026-08-17",
     "remaining_years_formula": "round((maturity_date - as_of_date).days / 365.25, 1)",
     "date_count": 150,
