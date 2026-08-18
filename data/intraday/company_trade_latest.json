@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "updated_at": "2026-08-18T11:55:20+08:00",
+    "updated_at": "2026-08-18T16:17:48+08:00",
     "trade_date": "2026-08-18"
   },
   "rows": [
@@ -32,7 +32,7 @@
       "issuer_name": "國泰人壽",
       "maturity_date": "2036-08-18",
       "remaining_years": 10.0,
-      "last_rate": 3.46,
+      "last_rate": 3.7,
       "high_rate": 3.85,
       "low_rate": 3.46,
       "raw": {
@@ -42,7 +42,7 @@
         "發行日期": "2026/08/18",
         "到期日期": "2036/08/18",
         "票面利率": "3.7",
-        "最近殖利率/百元價": "3.46",
+        "最近殖利率/百元價": "3.7",
         "最高殖利率/百元價": "3.85",
         "最低殖利率/百元價": "3.46",
         "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5846&bond_kind=4&bond_yrn=115-1&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
