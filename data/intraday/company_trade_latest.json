@@ -1,51 +1,95 @@
 {
   "metadata": {
-    "updated_at": "2026-08-19T15:18:30+08:00",
-    "trade_date": "2026-08-19"
+    "updated_at": "2026-08-20T14:49:23+08:00",
+    "trade_date": "2026-08-20"
   },
   "rows": [
     {
-      "bond_code": "B99607",
-      "bond_name": "P13國壽1A",
-      "issuer_name": "國泰人壽",
-      "maturity_date": "2034-04-24",
-      "remaining_years": 7.7,
-      "last_rate": 3.713,
-      "high_rate": 3.713,
-      "low_rate": 3.713,
+      "bond_code": "B618DZ",
+      "bond_name": "P14台積2A",
+      "issuer_name": "台積電",
+      "maturity_date": "2030-06-02",
+      "remaining_years": 3.8,
+      "last_rate": 2.105,
+      "high_rate": 2.105,
+      "low_rate": 2.105,
       "raw": {
-        "債券代號": "B99607",
-        "債券名稱": "P13國壽1A",
+        "債券代號": "B618DZ",
+        "債券名稱": "P14台積2A",
         "幣別": "TWD",
-        "發行日期": "2024/04/24",
-        "到期日期": "2034/04/24",
-        "票面利率": "3.7",
-        "最近殖利率/百元價": "3.713",
-        "最高殖利率/百元價": "3.713",
-        "最低殖利率/百元價": "3.713",
-        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5846&bond_kind=4&bond_yrn=113-1&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
+        "發行日期": "2025/06/02",
+        "到期日期": "2030/06/02",
+        "票面利率": "1.92",
+        "最近殖利率/百元價": "2.105",
+        "最高殖利率/百元價": "2.105",
+        "最低殖利率/百元價": "2.105",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2330&bond_kind=4&bond_yrn=114-2&bond_subn=%E7%94%B2%E9%A1%9E&mature_date=&co_name=&filename="
       }
     },
     {
-      "bond_code": "B99609",
-      "bond_name": "P15國壽1A",
-      "issuer_name": "國泰人壽",
-      "maturity_date": "2036-08-18",
-      "remaining_years": 10.0,
-      "last_rate": 3.6033,
-      "high_rate": 3.7,
-      "low_rate": 3.6033,
+      "bond_code": "B903XS",
+      "bond_name": "P10台電1B",
+      "issuer_name": "台電",
+      "maturity_date": "2028-04-19",
+      "remaining_years": 1.7,
+      "last_rate": 2.005,
+      "high_rate": 2.005,
+      "low_rate": 2.005,
       "raw": {
-        "債券代號": "B99609",
-        "債券名稱": "P15國壽1A",
+        "債券代號": "B903XS",
+        "債券名稱": "P10台電1B",
         "幣別": "TWD",
-        "發行日期": "2026/08/18",
-        "到期日期": "2036/08/18",
-        "票面利率": "3.7",
-        "最近殖利率/百元價": "3.6033",
-        "最高殖利率/百元價": "3.7",
-        "最低殖利率/百元價": "3.6033",
-        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5846&bond_kind=4&bond_yrn=115-1&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
+        "發行日期": "2021/04/19",
+        "到期日期": "2028/04/19",
+        "票面利率": "0.55",
+        "最近殖利率/百元價": "2.005",
+        "最高殖利率/百元價": "2.005",
+        "最低殖利率/百元價": "2.005",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=9963&bond_kind=4&bond_yrn=110-1&bond_subn=%E4%B9%99%E9%A1%9E&mature_date=&co_name=&filename="
+      }
+    },
+    {
+      "bond_code": "B99420",
+      "bond_name": "P15南山2A",
+      "issuer_name": "南山人壽",
+      "maturity_date": "2036-08-20",
+      "remaining_years": 10.0,
+      "last_rate": 3.75,
+      "high_rate": 3.75,
+      "low_rate": 3.5,
+      "raw": {
+        "債券代號": "B99420",
+        "債券名稱": "P15南山2A",
+        "幣別": "TWD",
+        "發行日期": "2026/08/20",
+        "到期日期": "2036/08/20",
+        "票面利率": "3.75",
+        "最近殖利率/百元價": "3.75",
+        "最高殖利率/百元價": "3.75",
+        "最低殖利率/百元價": "3.5",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5874&bond_kind=4&bond_yrn=115-2&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
+      }
+    },
+    {
+      "bond_code": "B99421",
+      "bond_name": "P15南山2B",
+      "issuer_name": "南山人壽",
+      "maturity_date": "2041-08-20",
+      "remaining_years": 15.0,
+      "last_rate": 3.8178,
+      "high_rate": 3.88,
+      "low_rate": 3.8178,
+      "raw": {
+        "債券代號": "B99421",
+        "債券名稱": "P15南山2B",
+        "幣別": "TWD",
+        "發行日期": "2026/08/20",
+        "到期日期": "2041/08/20",
+        "票面利率": "3.88",
+        "最近殖利率/百元價": "3.8178",
+        "最高殖利率/百元價": "3.88",
+        "最低殖利率/百元價": "3.8178",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5874&bond_kind=4&bond_yrn=115-2&bond_subn=%E4%B9%99&mature_date=&co_name=&filename="
       }
     }
   ]
