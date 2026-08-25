@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "updated_at": "2026-08-25T10:42:48+08:00",
+    "updated_at": "2026-08-25T14:59:17+08:00",
     "trade_date": "2026-08-25"
   },
   "rows": [
@@ -24,6 +24,28 @@
         "最高殖利率/百元價": "1.99",
         "最低殖利率/百元價": "1.99",
         "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2330&bond_kind=4&bond_yrn=111-1&bond_subn=%E4%B9%99%E9%A1%9E&mature_date=&co_name=&filename="
+      }
+    },
+    {
+      "bond_code": "B99418",
+      "bond_name": "P15南山1A",
+      "issuer_name": "南山人壽",
+      "maturity_date": "2036-04-28",
+      "remaining_years": 9.7,
+      "last_rate": 3.7331,
+      "high_rate": 3.7456,
+      "low_rate": 3.5621,
+      "raw": {
+        "債券代號": "B99418",
+        "債券名稱": "P15南山1A",
+        "幣別": "TWD",
+        "發行日期": "2026/04/28",
+        "到期日期": "2036/04/28",
+        "票面利率": "3.75",
+        "最近殖利率/百元價": "3.7331",
+        "最高殖利率/百元價": "3.7456",
+        "最低殖利率/百元價": "3.5621",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5874&bond_kind=4&bond_yrn=115-1&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
       }
     },
     {
