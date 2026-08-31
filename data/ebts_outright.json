@@ -2,7 +2,7 @@
   "metadata": {
     "dataset": "BDdys01a",
     "description": "等殖成交行情表（買賣斷）",
-    "last_updated": "2026-08-28T17:15:53+08:00"
+    "last_updated": "2026-08-31T17:15:58+08:00"
   },
   "dates": {
     "2026-01-02": {
@@ -30831,6 +30831,58 @@
           "Trading Value  (NTD$)": 97851606,
           "Total Trading Face Value (NTD$100 Mil.)": 1,
           "bond_code": "B644DV",
+          "market": "EBTS",
+          "market_zh": "等殖"
+        }
+      ]
+    },
+    "2026-08-31": {
+      "date": "2026-08-31",
+      "report": "BDdys01a",
+      "market": "EBTS",
+      "market_zh": "等殖",
+      "source_url": "https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/2026/202608/BDdys01a.20260831-C.xls",
+      "sha256": "ca00d12d4903f7149278190b8341ce4914eebb1e971407793b227030a73763e0",
+      "sheet_name": "BDdys01a",
+      "header_row_1_based": 4,
+      "columns": [
+        "代號 Code",
+        "名稱 Name",
+        "Duration",
+        "DY",
+        "最低 Low",
+        "最高 High",
+        "平均 Average",
+        "漲跌 Change",
+        "11:55 - 12:00 平均 Averaged",
+        "最高 High_2",
+        "最低 Low_2",
+        "平均 Volume-Weighted Average",
+        "漲跌 Change_2",
+        "11:55 - 12:00 平均 Volume-Weighted Average",
+        "Trading Value  (NTD$)",
+        "Total Trading Face Value (NTD$100 Mil.)"
+      ],
+      "record_count": 1,
+      "records": [
+        {
+          "代號 Code": "B702AJ",
+          "名稱 Name": "P03台化2B",
+          "Duration": 2.25,
+          "DY": 2.84,
+          "最低 Low": 99.7718,
+          "最高 High": 99.7718,
+          "平均 Average": 99.7718,
+          "漲跌 Change": -0.6108,
+          "11:55 - 12:00 平均 Averaged": "-",
+          "最高 High_2": 2.13,
+          "最低 Low_2": 2.13,
+          "平均 Volume-Weighted Average": 2.13,
+          "漲跌 Change_2": 0.27,
+          "11:55 - 12:00 平均 Volume-Weighted Average": 0,
+          "Trading Value  (NTD$)": 598630824,
+          "Total Trading Face Value (NTD$100 Mil.)": 6,
+          "bond_code": "B702AJ",
           "market": "EBTS",
           "market_zh": "等殖"
         }
