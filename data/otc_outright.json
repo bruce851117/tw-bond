@@ -2,7 +2,7 @@
   "metadata": {
     "dataset": "BDdcs001",
     "description": "營業處所成交行情表（買賣斷）",
-    "last_updated": "2026-08-31T17:15:59+08:00"
+    "last_updated": "2026-09-01T17:16:04+08:00"
   },
   "dates": {
     "2026-01-02": {
@@ -31604,6 +31604,78 @@
           "Yield  Change %": -0.0056,
           "Trading Value": 76816.6,
           "Trading Face Value": 80000,
+          "No. of Transactions": 2,
+          "bond_code": "F02281",
+          "market": "OTC",
+          "market_zh": "處所"
+        }
+      ]
+    },
+    "2026-09-01": {
+      "date": "2026-09-01",
+      "report": "BDdcs001",
+      "market": "OTC",
+      "market_zh": "處所",
+      "source_url": "https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/2026/202609/BDdcs001.20260901-C.xls",
+      "sha256": "b85ab49ea572a45357f62fdbe28eaf0c94b10ac20da8a3e8c11b65be6fce4696",
+      "sheet_name": "BDdcs01a",
+      "header_row_1_based": 4,
+      "columns": [
+        "代號 Code",
+        "名稱 Name",
+        "Currency",
+        "Duration",
+        "DY",
+        "最低 Low",
+        "最高 High",
+        "加權平均 Average",
+        "最高 High_2",
+        "最低 Low_2",
+        "加權平均Volume-Weighted Average",
+        "Yield  Change %",
+        "Trading Value",
+        "Trading Face Value",
+        "No. of Transactions",
+        "Risk Premium"
+      ],
+      "record_count": 2,
+      "records": [
+        {
+          "代號 Code": "B99517",
+          "名稱 Name": "P15富壽1A",
+          "Currency": "TWD",
+          "Duration": 7.93,
+          "DY": 9.67,
+          "最低 Low": 100.6,
+          "最高 High": 100.6,
+          "加權平均 Average": 100.6,
+          "最高 High_2": 3.6236,
+          "最低 Low_2": 3.6236,
+          "加權平均Volume-Weighted Average": 3.6236,
+          "Yield  Change %": "-",
+          "Trading Value": 61011403,
+          "Trading Face Value": 60000000,
+          "No. of Transactions": 1,
+          "Risk Premium": 174.76,
+          "bond_code": "B99517",
+          "market": "OTC",
+          "market_zh": "處所"
+        },
+        {
+          "代號 Code": "F02281",
+          "名稱 Name": "23SG4",
+          "Currency": "AUD",
+          "Duration": 4.27,
+          "DY": 5.22,
+          "最低 Low": 95.5731,
+          "最高 High": 95.8233,
+          "加權平均 Average": 95.698,
+          "最高 High_2": 6.1046,
+          "最低 Low_2": 6.0458,
+          "加權平均Volume-Weighted Average": 6.0752,
+          "Yield  Change %": 0.0719,
+          "Trading Value": 440297.2,
+          "Trading Face Value": 460000,
           "No. of Transactions": 2,
           "bond_code": "F02281",
           "market": "OTC",
