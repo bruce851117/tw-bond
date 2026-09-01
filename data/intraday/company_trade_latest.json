@@ -1,7 +1,30 @@
 {
   "metadata": {
-    "updated_at": "2026-09-01T10:26:31+08:00",
+    "updated_at": "2026-09-01T14:58:01+08:00",
     "trade_date": "2026-09-01"
   },
-  "rows": []
+  "rows": [
+    {
+      "bond_code": "B99517",
+      "bond_name": "P15富壽1A",
+      "issuer_name": "富邦人壽",
+      "maturity_date": "2036-05-06",
+      "remaining_years": 9.7,
+      "last_rate": 3.6236,
+      "high_rate": 3.6236,
+      "low_rate": 3.6236,
+      "raw": {
+        "債券代號": "B99517",
+        "債券名稱": "P15富壽1A",
+        "幣別": "TWD",
+        "發行日期": "2026/05/06",
+        "到期日期": "2036/05/06",
+        "票面利率": "3.7",
+        "最近殖利率/百元價": "3.6236",
+        "最高殖利率/百元價": "3.6236",
+        "最低殖利率/百元價": "3.6236",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5865&bond_kind=4&bond_yrn=115-1&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
+      }
+    }
+  ]
 }
