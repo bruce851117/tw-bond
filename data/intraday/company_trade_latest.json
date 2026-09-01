@@ -1,52 +1,7 @@
 {
   "metadata": {
-    "updated_at": "2026-08-31T14:45:50+08:00",
-    "trade_date": "2026-08-31"
+    "updated_at": "2026-09-01T10:26:31+08:00",
+    "trade_date": "2026-09-01"
   },
-  "rows": [
-    {
-      "bond_code": "B702AJ",
-      "bond_name": "P03台化2B",
-      "issuer_name": "台化",
-      "maturity_date": "2029-07-04",
-      "remaining_years": 2.8,
-      "last_rate": 2.135,
-      "high_rate": 2.135,
-      "low_rate": 2.135,
-      "raw": {
-        "債券代號": "B702AJ",
-        "債券名稱": "P03台化2B",
-        "幣別": "TWD",
-        "發行日期": "2014/07/04",
-        "到期日期": "2029/07/04",
-        "票面利率": "2.03",
-        "最近殖利率/百元價": "2.135",
-        "最高殖利率/百元價": "2.135",
-        "最低殖利率/百元價": "2.135",
-        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=1326&bond_kind=4&bond_yrn=103-1&bond_subn=%E4%B9%99&mature_date=&co_name=&filename="
-      }
-    },
-    {
-      "bond_code": "B9AW03",
-      "bond_name": "P14星宇航3",
-      "issuer_name": "星宇航空",
-      "maturity_date": "2030-10-29",
-      "remaining_years": 4.2,
-      "last_rate": 2.21,
-      "high_rate": 2.21,
-      "low_rate": 2.208,
-      "raw": {
-        "債券代號": "B9AW03",
-        "債券名稱": "P14星宇航3",
-        "幣別": "TWD",
-        "發行日期": "2025/10/29",
-        "到期日期": "2030/10/29",
-        "票面利率": "1.78",
-        "最近殖利率/百元價": "2.21",
-        "最高殖利率/百元價": "2.21",
-        "最低殖利率/百元價": "2.208",
-        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2646&bond_kind=4&bond_yrn=114-3&bond_subn=%24M00000001&mature_date=&co_name=&filename="
-      }
-    }
-  ]
+  "rows": []
 }
