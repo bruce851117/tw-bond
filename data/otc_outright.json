@@ -2,7 +2,7 @@
   "metadata": {
     "dataset": "BDdcs001",
     "description": "營業處所成交行情表（買賣斷）",
-    "last_updated": "2026-09-10T17:15:22+08:00"
+    "last_updated": "2026-09-11T17:15:38+08:00"
   },
   "dates": {
     "2026-01-02": {
@@ -32967,6 +32967,79 @@
           "Trading Face Value": 300000,
           "No. of Transactions": 2,
           "bond_code": "F02281",
+          "market": "OTC",
+          "market_zh": "處所"
+        }
+      ]
+    },
+    "2026-09-11": {
+      "date": "2026-09-11",
+      "report": "BDdcs001",
+      "market": "OTC",
+      "market_zh": "處所",
+      "source_url": "https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/2026/202609/BDdcs001.20260911-C.xls",
+      "sha256": "1d8723caccd2d453da70b4d9f4d36b4d9779e2526d596bd1694eee59ec3cf2d8",
+      "sheet_name": "BDdcs01a",
+      "header_row_1_based": 4,
+      "columns": [
+        "代號 Code",
+        "名稱 Name",
+        "Currency",
+        "Duration",
+        "DY",
+        "最低 Low",
+        "最高 High",
+        "加權平均 Average",
+        "最高 High_2",
+        "最低 Low_2",
+        "加權平均Volume-Weighted Average",
+        "Yield  Change %",
+        "Trading Value",
+        "Trading Face Value",
+        "No. of Transactions",
+        "Risk Premium"
+      ],
+      "record_count": 2,
+      "records": [
+        {
+          "代號 Code": "G102BL",
+          "名稱 Name": "P15玉銀1",
+          "Currency": "TWD",
+          "Duration": 4.64,
+          "DY": 4.95,
+          "最低 Low": 100.0919,
+          "最高 High": 100.1384,
+          "加權平均 Average": 100.1077,
+          "最高 High_2": 2.18,
+          "最低 Low_2": 2.17,
+          "加權平均Volume-Weighted Average": 2.1766,
+          "Yield  Change %": "-",
+          "Trading Value": 300320846,
+          "Trading Face Value": 300000000,
+          "No. of Transactions": 3,
+          "Risk Premium": 35.62,
+          "bond_code": "G102BL",
+          "market": "OTC",
+          "market_zh": "處所"
+        },
+        {
+          "代號 Code": "G13451",
+          "名稱 Name": "P15輸銀2A",
+          "Currency": "TWD",
+          "Duration": 4.58,
+          "DY": 4.86,
+          "最低 Low": 99.5851,
+          "最高 High": 99.5851,
+          "加權平均 Average": 99.5851,
+          "最高 High_2": 2.07,
+          "最低 Low_2": 2.07,
+          "加權平均Volume-Weighted Average": 2.07,
+          "Yield  Change %": "-",
+          "Trading Value": 49792915,
+          "Trading Face Value": 50000000,
+          "No. of Transactions": 1,
+          "Risk Premium": 25.3,
+          "bond_code": "G13451",
           "market": "OTC",
           "market_zh": "處所"
         }
