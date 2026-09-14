@@ -2,7 +2,7 @@
   "metadata": {
     "dataset": "BDdcs001",
     "description": "營業處所成交行情表（買賣斷）",
-    "last_updated": "2026-09-11T17:15:38+08:00"
+    "last_updated": "2026-09-14T23:57:45+08:00"
   },
   "dates": {
     "2026-01-02": {
@@ -33040,6 +33040,78 @@
           "No. of Transactions": 1,
           "Risk Premium": 25.3,
           "bond_code": "G13451",
+          "market": "OTC",
+          "market_zh": "處所"
+        }
+      ]
+    },
+    "2026-09-14": {
+      "date": "2026-09-14",
+      "report": "BDdcs001",
+      "market": "OTC",
+      "market_zh": "處所",
+      "source_url": "https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/2026/202609/BDdcs001.20260914-C.xls",
+      "sha256": "42fad728d7ce1b22b25b1f7584147fecff699eb0ce637072a1614e59626ed2d5",
+      "sheet_name": "BDdcs01a",
+      "header_row_1_based": 4,
+      "columns": [
+        "代號 Code",
+        "名稱 Name",
+        "Currency",
+        "Duration",
+        "DY",
+        "最低 Low",
+        "最高 High",
+        "加權平均 Average",
+        "最高 High_2",
+        "最低 Low_2",
+        "加權平均Volume-Weighted Average",
+        "Yield  Change %",
+        "Trading Value",
+        "Trading Face Value",
+        "No. of Transactions",
+        "Risk Premium"
+      ],
+      "record_count": 2,
+      "records": [
+        {
+          "代號 Code": "B99607",
+          "名稱 Name": "P13國壽1A",
+          "Currency": "TWD",
+          "Duration": 6.45,
+          "DY": 7.6,
+          "最低 Low": 100.5003,
+          "最高 High": 100.5003,
+          "加權平均 Average": 100.5003,
+          "最高 High_2": 3.6212,
+          "最低 Low_2": 3.6212,
+          "加權平均Volume-Weighted Average": 3.6212,
+          "Yield  Change %": -0.0001,
+          "Trading Value": 2814000,
+          "Trading Face Value": 2800000,
+          "No. of Transactions": 1,
+          "Risk Premium": 174.79,
+          "bond_code": "B99607",
+          "market": "OTC",
+          "market_zh": "處所"
+        },
+        {
+          "代號 Code": "F02281",
+          "名稱 Name": "23SG4",
+          "Currency": "AUD",
+          "Duration": 4.22,
+          "DY": 5.19,
+          "最低 Low": 94.43,
+          "最高 High": 94.6803,
+          "加權平均 Average": 94.5552,
+          "最高 High_2": 6.3842,
+          "最低 Low_2": 6.3241,
+          "加權平均Volume-Weighted Average": 6.3541,
+          "Yield  Change %": "-",
+          "Trading Value": 151320.22,
+          "Trading Face Value": 160000,
+          "No. of Transactions": 2,
+          "bond_code": "F02281",
           "market": "OTC",
           "market_zh": "處所"
         }
