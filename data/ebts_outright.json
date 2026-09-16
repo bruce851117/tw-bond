@@ -2,7 +2,7 @@
   "metadata": {
     "dataset": "BDdys01a",
     "description": "等殖成交行情表（買賣斷）",
-    "last_updated": "2026-09-15T17:16:14+08:00"
+    "last_updated": "2026-09-16T17:16:05+08:00"
   },
   "dates": {
     "2026-01-02": {
@@ -32715,6 +32715,79 @@
           "Trading Value  (NTD$)": 294284106,
           "Total Trading Face Value (NTD$100 Mil.)": 3,
           "bond_code": "B903XS",
+          "market": "EBTS",
+          "market_zh": "等殖"
+        }
+      ]
+    },
+    "2026-09-16": {
+      "date": "2026-09-16",
+      "report": "BDdys01a",
+      "market": "EBTS",
+      "market_zh": "等殖",
+      "source_url": "https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/2026/202609/BDdys01a.20260916-C.xls",
+      "sha256": "6a4c319b869b3faec5ace28d3edaf8eb4a566941bb24a38f4540baf74b724bb7",
+      "sheet_name": "BDdys01a",
+      "header_row_1_based": 4,
+      "columns": [
+        "代號 Code",
+        "名稱 Name",
+        "Duration",
+        "DY",
+        "最低 Low",
+        "最高 High",
+        "平均 Average",
+        "漲跌 Change",
+        "11:55 - 12:00 平均 Averaged",
+        "最高 High_2",
+        "最低 Low_2",
+        "平均 Volume-Weighted Average",
+        "漲跌 Change_2",
+        "11:55 - 12:00 平均 Volume-Weighted Average",
+        "Trading Value  (NTD$)",
+        "Total Trading Face Value (NTD$100 Mil.)"
+      ],
+      "record_count": 2,
+      "records": [
+        {
+          "代號 Code": "A10103",
+          "名稱 Name": "110央債甲3",
+          "Duration": 4.32,
+          "DY": 4.43,
+          "最低 Low": 93.2496,
+          "最高 High": 93.2536,
+          "平均 Average": 93.252,
+          "漲跌 Change": -0.24,
+          "11:55 - 12:00 平均 Averaged": "-",
+          "最高 High_2": 1.851,
+          "最低 Low_2": 1.85,
+          "平均 Volume-Weighted Average": 1.8504,
+          "漲跌 Change_2": 0.0603,
+          "11:55 - 12:00 平均 Volume-Weighted Average": 0,
+          "Trading Value  (NTD$)": 279755966,
+          "Total Trading Face Value (NTD$100 Mil.)": 3,
+          "bond_code": "A10103",
+          "market": "EBTS",
+          "market_zh": "等殖"
+        },
+        {
+          "代號 Code": "A15108",
+          "名稱 Name": "115央債甲8",
+          "Duration": 4.7,
+          "DY": 4.96,
+          "最低 Low": 99.4779,
+          "最高 High": 99.4826,
+          "平均 Average": 99.4808,
+          "漲跌 Change": -0.1784,
+          "11:55 - 12:00 平均 Averaged": "-",
+          "最高 High_2": 1.861,
+          "最低 Low_2": 1.86,
+          "平均 Volume-Weighted Average": 1.8604,
+          "漲跌 Change_2": 0.0381,
+          "11:55 - 12:00 平均 Volume-Weighted Average": 0,
+          "Trading Value  (NTD$)": 298442260,
+          "Total Trading Face Value (NTD$100 Mil.)": 3,
+          "bond_code": "A15108",
           "market": "EBTS",
           "market_zh": "等殖"
         }
