@@ -2,7 +2,7 @@
   "metadata": {
     "dataset": "BDdys01a",
     "description": "等殖成交行情表（買賣斷）",
-    "last_updated": "2026-09-17T17:16:07+08:00"
+    "last_updated": "2026-09-18T17:01:28+08:00"
   },
   "dates": {
     "2026-01-02": {
@@ -32903,6 +32903,79 @@
           "Trading Value  (NTD$)": 299670336,
           "Total Trading Face Value (NTD$100 Mil.)": 3,
           "bond_code": "B801AH",
+          "market": "EBTS",
+          "market_zh": "等殖"
+        }
+      ]
+    },
+    "2026-09-18": {
+      "date": "2026-09-18",
+      "report": "BDdys01a",
+      "market": "EBTS",
+      "market_zh": "等殖",
+      "source_url": "https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/2026/202609/BDdys01a.20260918-C.xls",
+      "sha256": "5f7f8d20e69ebff795e0eca8f60467bf297554eedea507d2d853f45c03d2e137",
+      "sheet_name": "BDdys01a",
+      "header_row_1_based": 4,
+      "columns": [
+        "代號 Code",
+        "名稱 Name",
+        "Duration",
+        "DY",
+        "最低 Low",
+        "最高 High",
+        "平均 Average",
+        "漲跌 Change",
+        "11:55 - 12:00 平均 Averaged",
+        "最高 High_2",
+        "最低 Low_2",
+        "平均 Volume-Weighted Average",
+        "漲跌 Change_2",
+        "11:55 - 12:00 平均 Volume-Weighted Average",
+        "Trading Value  (NTD$)",
+        "Total Trading Face Value (NTD$100 Mil.)"
+      ],
+      "record_count": 2,
+      "records": [
+        {
+          "代號 Code": "A15203",
+          "名稱 Name": "115央債乙3",
+          "Duration": 1.77,
+          "DY": 1.82,
+          "最低 Low": 99.6929,
+          "最高 High": 99.6965,
+          "平均 Average": 99.6947,
+          "漲跌 Change": 0.0703,
+          "11:55 - 12:00 平均 Averaged": "-",
+          "最高 High_2": 1.672,
+          "最低 Low_2": 1.67,
+          "平均 Volume-Weighted Average": 1.671,
+          "漲跌 Change_2": -0.0394,
+          "11:55 - 12:00 平均 Volume-Weighted Average": 0,
+          "Trading Value  (NTD$)": 598168116,
+          "Total Trading Face Value (NTD$100 Mil.)": 6,
+          "bond_code": "A15203",
+          "market": "EBTS",
+          "market_zh": "等殖"
+        },
+        {
+          "代號 Code": "B86912",
+          "名稱 Name": "P14和潤2A",
+          "Duration": 1.95,
+          "DY": 2.05,
+          "最低 Low": 99.5243,
+          "最高 High": 99.5243,
+          "平均 Average": 99.5243,
+          "漲跌 Change": 0.2568,
+          "11:55 - 12:00 平均 Averaged": "-",
+          "最高 High_2": 2.17,
+          "最低 Low_2": 2.17,
+          "平均 Volume-Weighted Average": 2.17,
+          "漲跌 Change_2": -0.13,
+          "11:55 - 12:00 平均 Volume-Weighted Average": 0,
+          "Trading Value  (NTD$)": 696670422,
+          "Total Trading Face Value (NTD$100 Mil.)": 7,
+          "bond_code": "B86912",
           "market": "EBTS",
           "market_zh": "等殖"
         }
