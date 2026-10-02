@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "updated_at": "2026-10-01T14:04:49+08:00",
-    "trade_date": "2026-10-01",
+    "updated_at": "2026-10-02T08:14:35+08:00",
+    "trade_date": "2026-10-02",
     "sources": {
       "government_quote": {
         "ok": true,
@@ -21,7 +21,7 @@
     }
   },
   "government_quote": {
-    "date": "2026-10-01",
+    "date": "2026-10-02",
     "rows": [
       {
         "bond_code": "A09106",
@@ -98,11 +98,11 @@
     ]
   },
   "government_trade": {
-    "date": "2026-10-01",
+    "date": "2026-10-02",
     "rows": []
   },
   "company_trade": {
-    "date": "2026-10-01",
+    "date": "2026-10-02",
     "rows": [
       {
         "bond_code": "B618CY",
