@@ -2,7 +2,7 @@
   "metadata": {
     "dataset": "BDdys01a",
     "description": "等殖成交行情表（買賣斷）",
-    "last_updated": "2026-10-29T17:15:40+08:00"
+    "last_updated": "2026-10-30T17:15:46+08:00"
   },
   "dates": {
     "2026-01-02": {
@@ -36496,6 +36496,36 @@
           "market_zh": "等殖"
         }
       ]
+    },
+    "2026-10-30": {
+      "date": "2026-10-30",
+      "report": "BDdys01a",
+      "market": "EBTS",
+      "market_zh": "等殖",
+      "source_url": "https://www.tpex.org.tw/storage/bond_zone/tradeinfo/govbond/2026/202610/BDdys01a.20261030-C.xls",
+      "sha256": "23c86ade6746c512cc3f1d360378af9a70be93438d764ec4045bd3e2a96e7ea8",
+      "sheet_name": "BDdys01a",
+      "header_row_1_based": 4,
+      "columns": [
+        "代號 Code",
+        "名稱 Name",
+        "Duration",
+        "DY",
+        "最低 Low",
+        "最高 High",
+        "平均 Average",
+        "漲跌 Change",
+        "11:55 - 12:00 平均 Averaged",
+        "最高 High_2",
+        "最低 Low_2",
+        "平均 Volume-Weighted Average",
+        "漲跌 Change_2",
+        "11:55 - 12:00 平均 Volume-Weighted Average",
+        "Trading Value  (NTD$)",
+        "Total Trading Face Value (NTD$100 Mil.)"
+      ],
+      "record_count": 0,
+      "records": []
     }
   }
 }
