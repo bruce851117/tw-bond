@@ -1,216 +1,217 @@
 {
   "metadata": {
-    "updated_at": "2026-11-05T15:13:56+08:00",
-    "trade_date": "2026-11-05",
+    "updated_at": "2026-11-06T11:35:45+08:00",
+    "trade_date": "2026-11-06",
     "sources": {
       "government_quote": {
         "ok": true,
-        "rows": 8,
+        "rows": 6,
         "table_path": "root.tables[0]"
       },
       "government_trade": {
         "ok": true,
-        "rows": 2,
-        "table_path": "root.tables[0]"
+        "rows": 0,
+        "table_path": "root.tables"
       },
       "company_trade": {
         "ok": true,
-        "rows": 3,
+        "rows": 6,
         "table_path": "root.tables[0]"
       }
     }
   },
   "government_quote": {
-    "date": "2026-11-05",
+    "date": "2026-11-06",
     "rows": [
       {
         "bond_code": "A15101",
         "bond_name": "115央債甲1",
         "bid": null,
-        "ask": 1.71,
+        "ask": 1.7,
         "raw": {
           "債券代號": "A15101",
           "債券名稱": "115央債甲1",
           "買進殖利率/百元價": "-",
-          "賣出殖利率/百元價": "1.7100"
-        }
-      },
-      {
-        "bond_code": "A15106",
-        "bond_name": "115央債甲6",
-        "bid": 1.905,
-        "ask": null,
-        "raw": {
-          "債券代號": "A15106",
-          "債券名稱": "115央債甲6",
-          "買進殖利率/百元價": "1.9050",
-          "賣出殖利率/百元價": "-"
+          "賣出殖利率/百元價": "1.7000"
         }
       },
       {
         "bond_code": "A15107",
         "bond_name": "115央債甲7",
-        "bid": 2.16,
-        "ask": 2.06,
+        "bid": 2.1,
+        "ask": 2.0,
         "raw": {
           "債券代號": "A15107",
           "債券名稱": "115央債甲7",
-          "買進殖利率/百元價": "2.1600",
-          "賣出殖利率/百元價": "2.0600"
+          "買進殖利率/百元價": "2.1000",
+          "賣出殖利率/百元價": "2.0000"
         }
       },
       {
         "bond_code": "A15108",
         "bond_name": "115央債甲8",
-        "bid": 1.8,
-        "ask": 1.74,
+        "bid": 1.75,
+        "ask": 1.72,
         "raw": {
           "債券代號": "A15108",
           "債券名稱": "115央債甲8",
-          "買進殖利率/百元價": "1.8000",
-          "賣出殖利率/百元價": "1.7400"
+          "買進殖利率/百元價": "1.7500",
+          "賣出殖利率/百元價": "1.7200"
         }
       },
       {
         "bond_code": "A15109",
         "bond_name": "115央債甲9",
-        "bid": 1.95,
-        "ask": 1.85,
+        "bid": 1.93,
+        "ask": 1.8,
         "raw": {
           "債券代號": "A15109",
           "債券名稱": "115央債甲9",
-          "買進殖利率/百元價": "1.9500",
-          "賣出殖利率/百元價": "1.8500"
+          "買進殖利率/百元價": "1.9300",
+          "賣出殖利率/百元價": "1.8000"
         }
       },
       {
         "bond_code": "A15109R",
         "bond_name": "115央債甲9",
-        "bid": 1.98,
-        "ask": 1.9,
+        "bid": 1.96,
+        "ask": 1.87,
         "raw": {
           "債券代號": "A15109R",
           "債券名稱": "115央債甲9",
-          "買進殖利率/百元價": "1.9800",
-          "賣出殖利率/百元價": "1.9000"
+          "買進殖利率/百元價": "1.9600",
+          "賣出殖利率/百元價": "1.8700"
         }
       },
       {
         "bond_code": "A15110",
         "bond_name": "115央甲10",
-        "bid": 2.26,
-        "ask": 2.16,
+        "bid": 2.23,
+        "ask": 2.13,
         "raw": {
           "債券代號": "A15110",
           "債券名稱": "115央甲10",
-          "買進殖利率/百元價": "2.2600",
-          "賣出殖利率/百元價": "2.1600"
-        }
-      },
-      {
-        "bond_code": "A15204",
-        "bond_name": "115央債乙4",
-        "bid": null,
-        "ask": 1.52,
-        "raw": {
-          "債券代號": "A15204",
-          "債券名稱": "115央債乙4",
-          "買進殖利率/百元價": "-",
-          "賣出殖利率/百元價": "1.5200"
+          "買進殖利率/百元價": "2.2300",
+          "賣出殖利率/百元價": "2.1300"
         }
       }
     ]
   },
   "government_trade": {
-    "date": "2026-11-05",
-    "rows": [
-      {
-        "bond_code": "A15109",
-        "bond_name": "115央債甲9",
-        "issuer_name": "",
-        "maturity_date": null,
-        "remaining_years": null,
-        "last_rate": 1.92,
-        "high_rate": 1.92,
-        "low_rate": 1.92,
-        "raw": {
-          "債券代號": "A15109",
-          "債券名稱": "115央債甲9",
-          "最近殖利率": "1.9200",
-          "變動": "0.0241",
-          "最高殖利率": "1.9200",
-          "最低殖利率": "1.9200",
-          "累計成交(萬元)": "5,000",
-          "參考殖利率*": "1.8959"
-        }
-      },
-      {
-        "bond_code": "A15204",
-        "bond_name": "115央債乙4",
-        "issuer_name": "",
-        "maturity_date": null,
-        "remaining_years": null,
-        "last_rate": 1.54,
-        "high_rate": 1.54,
-        "low_rate": 1.54,
-        "raw": {
-          "債券代號": "A15204",
-          "債券名稱": "115央債乙4",
-          "最近殖利率": "1.5400",
-          "變動": "0.0300",
-          "最高殖利率": "1.5400",
-          "最低殖利率": "1.5400",
-          "累計成交(萬元)": "5,000",
-          "參考殖利率*": "1.5100"
-        }
-      }
-    ]
+    "date": "2026-11-06",
+    "rows": []
   },
   "company_trade": {
-    "date": "2026-11-05",
+    "date": "2026-11-06",
     "rows": [
       {
-        "bond_code": "B71899",
-        "bond_name": "P10中油1B",
-        "issuer_name": "中油",
-        "maturity_date": "2028-06-17",
-        "remaining_years": 1.6,
-        "last_rate": 2.075,
-        "high_rate": 2.075,
-        "low_rate": 2.075,
+        "bond_code": "B618DX",
+        "bond_name": "P14台積1A",
+        "issuer_name": "台積電",
+        "maturity_date": "2030-03-28",
+        "remaining_years": 3.4,
+        "last_rate": 1.8187,
+        "high_rate": 1.8187,
+        "low_rate": 1.6809,
         "raw": {
-          "債券代號": "B71899",
-          "債券名稱": "P10中油1B",
+          "債券代號": "B618DX",
+          "債券名稱": "P14台積1A",
           "幣別": "TWD",
-          "發行日期": "2021/06/17",
-          "到期日期": "2028/06/17",
-          "票面利率": "0.45",
-          "最近殖利率/百元價": "2.075",
-          "最高殖利率/百元價": "2.075",
-          "最低殖利率/百元價": "2.075",
-          "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=1328&bond_kind=4&bond_yrn=110-1&bond_subn=%E4%B9%99&mature_date=&co_name=&filename="
+          "發行日期": "2025/03/28",
+          "到期日期": "2030/03/28",
+          "票面利率": "1.9",
+          "最近殖利率/百元價": "1.8187",
+          "最高殖利率/百元價": "1.8187",
+          "最低殖利率/百元價": "1.6809",
+          "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2330&bond_kind=4&bond_yrn=114-1&bond_subn=%E7%94%B2%E9%A1%9E&mature_date=&co_name=&filename="
         }
       },
       {
-        "bond_code": "B99603",
-        "bond_name": "P12國壽1A",
-        "issuer_name": "國泰人壽",
-        "maturity_date": "2033-08-01",
-        "remaining_years": 6.7,
-        "last_rate": 3.6978,
-        "high_rate": 3.6978,
-        "low_rate": 3.6978,
+        "bond_code": "B618E6",
+        "bond_name": "P14台積5A",
+        "issuer_name": "台積電",
+        "maturity_date": "2030-11-20",
+        "remaining_years": 4.0,
+        "last_rate": 2.305,
+        "high_rate": 2.305,
+        "low_rate": 2.305,
         "raw": {
-          "債券代號": "B99603",
-          "債券名稱": "P12國壽1A",
+          "債券代號": "B618E6",
+          "債券名稱": "P14台積5A",
           "幣別": "TWD",
-          "發行日期": "2023/08/01",
-          "到期日期": "2033/08/01",
+          "發行日期": "2025/11/20",
+          "到期日期": "2030/11/20",
+          "票面利率": "1.5",
+          "最近殖利率/百元價": "2.305",
+          "最高殖利率/百元價": "2.305",
+          "最低殖利率/百元價": "2.305",
+          "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2330&bond_kind=4&bond_yrn=114-5&bond_subn=%E7%94%B2%E9%A1%9E&mature_date=&co_name=&filename="
+        }
+      },
+      {
+        "bond_code": "B94170",
+        "bond_name": "P09台灣大3",
+        "issuer_name": "台灣大",
+        "maturity_date": "2030-03-24",
+        "remaining_years": 3.4,
+        "last_rate": 2.33,
+        "high_rate": 2.33,
+        "low_rate": 2.33,
+        "raw": {
+          "債券代號": "B94170",
+          "債券名稱": "P09台灣大3",
+          "幣別": "TWD",
+          "發行日期": "2020/03/24",
+          "到期日期": "2030/03/24",
+          "票面利率": "0.72",
+          "最近殖利率/百元價": "2.33",
+          "最高殖利率/百元價": "2.33",
+          "最低殖利率/百元價": "2.33",
+          "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=3045&bond_kind=4&bond_yrn=6&bond_subn=%E4%B8%99&mature_date=&co_name=&filename="
+        }
+      },
+      {
+        "bond_code": "B99519",
+        "bond_name": "P15富壽2A",
+        "issuer_name": "富邦人壽",
+        "maturity_date": "2036-10-22",
+        "remaining_years": 10.0,
+        "last_rate": 3.6753,
+        "high_rate": 3.6753,
+        "low_rate": 3.6753,
+        "raw": {
+          "債券代號": "B99519",
+          "債券名稱": "P15富壽2A",
+          "幣別": "TWD",
+          "發行日期": "2026/10/22",
+          "到期日期": "2036/10/22",
           "票面利率": "3.7",
-          "最近殖利率/百元價": "3.6978",
-          "最高殖利率/百元價": "3.6978",
-          "最低殖利率/百元價": "3.6978",
-          "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5846&bond_kind=4&bond_yrn=112-1&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
+          "最近殖利率/百元價": "3.6753",
+          "最高殖利率/百元價": "3.6753",
+          "最低殖利率/百元價": "3.6753",
+          "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5865&bond_kind=4&bond_yrn=115-2&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
+        }
+      },
+      {
+        "bond_code": "B99608",
+        "bond_name": "P13國壽1B",
+        "issuer_name": "國泰人壽",
+        "maturity_date": "2039-04-24",
+        "remaining_years": 12.5,
+        "last_rate": 3.7463,
+        "high_rate": 3.7463,
+        "low_rate": 3.7463,
+        "raw": {
+          "債券代號": "B99608",
+          "債券名稱": "P13國壽1B",
+          "幣別": "TWD",
+          "發行日期": "2024/04/24",
+          "到期日期": "2039/04/24",
+          "票面利率": "3.85",
+          "最近殖利率/百元價": "3.7463",
+          "最高殖利率/百元價": "3.7463",
+          "最低殖利率/百元價": "3.7463",
+          "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5846&bond_kind=4&bond_yrn=113-1&bond_subn=%E4%B9%99&mature_date=&co_name=&filename="
         }
       },
       {
@@ -219,9 +220,9 @@
         "issuer_name": "遠東銀",
         "maturity_date": "2028-04-27",
         "remaining_years": 1.5,
-        "last_rate": 2.5,
-        "high_rate": 2.5,
-        "low_rate": 2.5,
+        "last_rate": 2.495,
+        "high_rate": 2.495,
+        "low_rate": 2.495,
         "raw": {
           "債券代號": "G139AK",
           "債券名稱": "P10遠銀1",
@@ -229,9 +230,9 @@
           "發行日期": "2021/04/27",
           "到期日期": "2028/04/27",
           "票面利率": "0.83",
-          "最近殖利率/百元價": "2.5",
-          "最高殖利率/百元價": "2.5",
-          "最低殖利率/百元價": "2.5",
+          "最近殖利率/百元價": "2.495",
+          "最高殖利率/百元價": "2.495",
+          "最低殖利率/百元價": "2.495",
           "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2845&bond_kind=3&bond_yrn=110-1&bond_subn=%24M00000001&mature_date=&co_name=&filename="
         }
       }
