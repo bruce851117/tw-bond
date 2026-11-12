@@ -2,7 +2,7 @@
   "metadata": {
     "description": "TPEx 各類債券發行資料累積主檔；保留歷史券並套用人工 Mapping",
     "as_of_date": "2026-11-12",
-    "updated_at": "2026-11-12T16:55:44+08:00",
+    "updated_at": "2026-11-12T17:16:43+08:00",
     "record_count": 2407,
     "manual_mapping_count": 123,
     "preserved_history_count": 162,
@@ -31225,7 +31225,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "A05104",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.7,
       "maturity_status": "matured"
     },
@@ -31559,7 +31559,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A05114": {
       "bond_code": "A05114",
@@ -32617,7 +32617,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A08104": {
       "bond_code": "A08104",
@@ -32817,7 +32817,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A08108": {
       "bond_code": "A08108",
@@ -32951,7 +32951,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A08110": {
       "bond_code": "A08110",
@@ -33085,7 +33085,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A09103": {
       "bond_code": "A09103",
@@ -33153,7 +33153,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A09104": {
       "bond_code": "A09104",
@@ -33221,7 +33221,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A09105": {
       "bond_code": "A09105",
@@ -33421,7 +33421,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A09109": {
       "bond_code": "A09109",
@@ -33629,7 +33629,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "A10101",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.8,
       "maturity_status": "matured"
     },
@@ -33971,7 +33971,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "A10108",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.3,
       "maturity_status": "matured"
     },
@@ -36021,7 +36021,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A13104": {
       "bond_code": "A13104",
@@ -36155,7 +36155,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A13106": {
       "bond_code": "A13106",
@@ -36355,7 +36355,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A13109": {
       "bond_code": "A13109",
@@ -36563,7 +36563,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "A13201",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.7,
       "maturity_status": "matured"
     },
@@ -36699,7 +36699,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A14102": {
       "bond_code": "A14102",
@@ -36899,7 +36899,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A14105": {
       "bond_code": "A14105",
@@ -37165,7 +37165,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A14109": {
       "bond_code": "A14109",
@@ -37901,7 +37901,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "A15108",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": 4.8,
       "maturity_status": "outstanding",
       "bond_name": "115央債甲8",
@@ -38167,7 +38167,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "A15202",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": 1.4,
       "maturity_status": "outstanding",
       "bond_name": "115央債乙2",
@@ -38235,7 +38235,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "A15202",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": 1.4,
       "maturity_status": "outstanding"
     },
@@ -38511,7 +38511,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "A95102",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.7,
       "maturity_status": "matured"
     },
@@ -38581,7 +38581,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A96102": {
       "bond_code": "A96102",
@@ -38913,7 +38913,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A98105": {
       "bond_code": "A98105",
@@ -38981,7 +38981,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A99102": {
       "bond_code": "A99102",
@@ -39115,7 +39115,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "A99107": {
       "bond_code": "A99107",
@@ -39777,7 +39777,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B20170": {
       "bond_code": "B20170",
@@ -41437,7 +41437,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B30449",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.4,
       "maturity_status": "matured"
     },
@@ -41903,7 +41903,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B30457": {
       "bond_code": "B30457",
@@ -42367,7 +42367,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B30464": {
       "bond_code": "B30464",
@@ -42765,7 +42765,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B401DE": {
       "bond_code": "B401DE",
@@ -43427,7 +43427,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B401DV": {
       "bond_code": "B401DV",
@@ -44023,7 +44023,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B402BM": {
       "bond_code": "B402BM",
@@ -44223,7 +44223,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B402BQ": {
       "bond_code": "B402BQ",
@@ -45223,7 +45223,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B50176",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.3,
       "maturity_status": "matured"
     },
@@ -46019,7 +46019,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B50189": {
       "bond_code": "B50189",
@@ -48331,7 +48331,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B618BU": {
       "bond_code": "B618BU",
@@ -48465,7 +48465,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B618BX": {
       "bond_code": "B618BX",
@@ -49267,7 +49267,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B618CF",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.4,
       "maturity_status": "matured"
     },
@@ -49469,7 +49469,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B618CL": {
       "bond_code": "B618CL",
@@ -49669,7 +49669,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B618CQ": {
       "bond_code": "B618CQ",
@@ -49869,7 +49869,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B618CT": {
       "bond_code": "B618CT",
@@ -50795,7 +50795,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B618D9": {
       "bond_code": "B618D9",
@@ -52051,7 +52051,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B618DU": {
       "bond_code": "B618DU",
@@ -52185,7 +52185,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B618DW": {
       "bond_code": "B618DW",
@@ -52319,7 +52319,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B618DY": {
       "bond_code": "B618DY",
@@ -52585,7 +52585,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B618E3": {
       "bond_code": "B618E3",
@@ -53915,7 +53915,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B638BD",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.6,
       "maturity_status": "matured"
     },
@@ -54117,7 +54117,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B638BH": {
       "bond_code": "B638BH",
@@ -55703,7 +55703,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B644BM": {
       "bond_code": "B644BM",
@@ -56563,7 +56563,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B644C6": {
       "bond_code": "B644C6",
@@ -56829,7 +56829,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B644CB": {
       "bond_code": "B644CB",
@@ -57697,7 +57697,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B644CU",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.4,
       "maturity_status": "matured"
     },
@@ -58625,7 +58625,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B644DA": {
       "bond_code": "B644DA",
@@ -58825,7 +58825,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B644DD": {
       "bond_code": "B644DD",
@@ -59025,7 +59025,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B644DG": {
       "bond_code": "B644DG",
@@ -59291,7 +59291,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B644DL": {
       "bond_code": "B644DL",
@@ -60151,7 +60151,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B644DZ": {
       "bond_code": "B644DZ",
@@ -60813,7 +60813,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B64615": {
       "bond_code": "B64615",
@@ -61409,7 +61409,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B69003": {
       "bond_code": "B69003",
@@ -61485,7 +61485,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B69108",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.4,
       "maturity_status": "matured"
     },
@@ -62091,7 +62091,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B69901",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.5,
       "maturity_status": "matured"
     },
@@ -62161,7 +62161,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B69904": {
       "bond_code": "B69904",
@@ -62427,7 +62427,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B69908": {
       "bond_code": "B69908",
@@ -63031,7 +63031,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B6A305",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.5,
       "maturity_status": "matured"
     },
@@ -63827,7 +63827,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B712FW": {
       "bond_code": "B712FW",
@@ -64431,7 +64431,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B71898",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.4,
       "maturity_status": "matured"
     },
@@ -66151,7 +66151,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B718AR": {
       "bond_code": "B718AR",
@@ -66549,7 +66549,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B718AX": {
       "bond_code": "B718AX",
@@ -66749,7 +66749,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B718B1": {
       "bond_code": "B718B1",
@@ -66949,7 +66949,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B718B4": {
       "bond_code": "B718B4",
@@ -67149,7 +67149,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B718B7": {
       "bond_code": "B718B7",
@@ -68933,7 +68933,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B801AK": {
       "bond_code": "B801AK",
@@ -69331,7 +69331,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B801AU": {
       "bond_code": "B801AU",
@@ -72831,7 +72831,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B85414": {
       "bond_code": "B85414",
@@ -76265,7 +76265,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B86915": {
       "bond_code": "B86915",
@@ -76399,7 +76399,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B87003": {
       "bond_code": "B87003",
@@ -76995,7 +76995,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B87115": {
       "bond_code": "B87115",
@@ -77921,7 +77921,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B903AI": {
       "bond_code": "B903AI",
@@ -78187,7 +78187,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B903CI": {
       "bond_code": "B903CI",
@@ -80573,7 +80573,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B903WY",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.5,
       "maturity_status": "matured"
     },
@@ -80775,7 +80775,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B903X5": {
       "bond_code": "B903X5",
@@ -81907,7 +81907,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B903XU",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.4,
       "maturity_status": "matured"
     },
@@ -82109,7 +82109,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B903XY": {
       "bond_code": "B903XY",
@@ -82309,7 +82309,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B903Y1": {
       "bond_code": "B903Y1",
@@ -83837,7 +83837,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B903YW",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.6,
       "maturity_status": "matured"
     },
@@ -84047,7 +84047,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B903Z1",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.4,
       "maturity_status": "matured"
     },
@@ -84183,7 +84183,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B903Z4": {
       "bond_code": "B903Z4",
@@ -85109,7 +85109,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B903ZJ": {
       "bond_code": "B903ZJ",
@@ -85507,7 +85507,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B903ZQ": {
       "bond_code": "B903ZQ",
@@ -88685,7 +88685,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B94646",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.4,
       "maturity_status": "matured"
     },
@@ -92253,7 +92253,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B95151": {
       "bond_code": "B95151",
@@ -96611,7 +96611,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B97507": {
       "bond_code": "B97507",
@@ -98329,7 +98329,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B97877": {
       "bond_code": "B97877",
@@ -98925,7 +98925,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B97886": {
       "bond_code": "B97886",
@@ -99719,7 +99719,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B98613": {
       "bond_code": "B98613",
@@ -104077,7 +104077,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B99420": {
       "bond_code": "B99420",
@@ -104805,7 +104805,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B99509": {
       "bond_code": "B99509",
@@ -105335,7 +105335,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B99517": {
       "bond_code": "B99517",
@@ -105469,7 +105469,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B99519": {
       "bond_code": "B99519",
@@ -106725,7 +106725,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B99907": {
       "bond_code": "B99907",
@@ -106859,7 +106859,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B99909": {
       "bond_code": "B99909",
@@ -106935,7 +106935,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B9A102",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.6,
       "maturity_status": "matured"
     },
@@ -107013,7 +107013,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "B9A502",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.5,
       "maturity_status": "matured"
     },
@@ -107149,7 +107149,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B9A508": {
       "bond_code": "B9A508",
@@ -107943,7 +107943,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B9A612": {
       "bond_code": "B9A612",
@@ -109067,7 +109067,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B9AG02": {
       "bond_code": "B9AG02",
@@ -110191,7 +110191,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B9AK07": {
       "bond_code": "B9AK07",
@@ -110325,7 +110325,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B9AK09": {
       "bond_code": "B9AK09",
@@ -111185,7 +111185,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "B9AU01": {
       "bond_code": "B9AU01",
@@ -124563,7 +124563,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "G10173": {
       "bond_code": "G10173",
@@ -126017,7 +126017,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "G102BH": {
       "bond_code": "G102BH",
@@ -126877,7 +126877,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "G107BK": {
       "bond_code": "G107BK",
@@ -128067,7 +128067,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "G107C6": {
       "bond_code": "G107C6",
@@ -130115,7 +130115,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "G10837": {
       "bond_code": "G10837",
@@ -132427,7 +132427,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "G11468": {
       "bond_code": "G11468",
@@ -135398,7 +135398,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "G11841": {
       "bond_code": "G11841",
@@ -140028,7 +140028,7 @@
       "record_source": "manual",
       "manual_override": true,
       "base_bond_code": "G12727",
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00",
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00",
       "latest_remaining_years": -0.3,
       "maturity_status": "matured"
     },
@@ -140956,7 +140956,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "G12806": {
       "bond_code": "G12806",
@@ -144324,7 +144324,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "G13439": {
       "bond_code": "G13439",
@@ -148022,7 +148022,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "G139AM": {
       "bond_code": "G139AM",
@@ -154360,7 +154360,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "HB1503": {
       "bond_code": "HB1503",
@@ -154758,7 +154758,7 @@
       "preserved_from_history": false,
       "record_source": "manual",
       "manual_override": true,
-      "manual_mapping_applied_at": "2026-11-12T16:55:44+08:00"
+      "manual_mapping_applied_at": "2026-11-12T17:16:43+08:00"
     },
     "HE1503": {
       "bond_code": "HE1503",
