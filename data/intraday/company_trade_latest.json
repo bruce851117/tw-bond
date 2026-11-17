@@ -1,9 +1,31 @@
 {
   "metadata": {
-    "updated_at": "2026-11-17T09:39:57+08:00",
+    "updated_at": "2026-11-17T13:58:52+08:00",
     "trade_date": "2026-11-17"
   },
   "rows": [
+    {
+      "bond_code": "B618D3",
+      "bond_name": "P11台積4B",
+      "issuer_name": "台積電",
+      "maturity_date": "2027-07-27",
+      "remaining_years": 0.7,
+      "last_rate": 2.3,
+      "high_rate": 2.3,
+      "low_rate": 2.3,
+      "raw": {
+        "債券代號": "B618D3",
+        "債券名稱": "P11台積4B",
+        "幣別": "TWD",
+        "發行日期": "2022/07/27",
+        "到期日期": "2027/07/27",
+        "票面利率": "1.7",
+        "最近殖利率/百元價": "2.3",
+        "最高殖利率/百元價": "2.3",
+        "最低殖利率/百元價": "2.3",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2330&bond_kind=4&bond_yrn=111-4&bond_subn=%E4%B9%99%E9%A1%9E&mature_date=&co_name=&filename="
+      }
+    },
     {
       "bond_code": "B95471",
       "bond_name": "P15中控1",
@@ -46,6 +68,28 @@
         "最高殖利率/百元價": "3.6984",
         "最低殖利率/百元價": "3.6984",
         "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5865&bond_kind=4&bond_yrn=114-2&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
+      }
+    },
+    {
+      "bond_code": "B99603",
+      "bond_name": "P12國壽1A",
+      "issuer_name": "國泰人壽",
+      "maturity_date": "2033-08-01",
+      "remaining_years": 6.7,
+      "last_rate": 3.6976,
+      "high_rate": 3.6976,
+      "low_rate": 3.6976,
+      "raw": {
+        "債券代號": "B99603",
+        "債券名稱": "P12國壽1A",
+        "幣別": "TWD",
+        "發行日期": "2023/08/01",
+        "到期日期": "2033/08/01",
+        "票面利率": "3.7",
+        "最近殖利率/百元價": "3.6976",
+        "最高殖利率/百元價": "3.6976",
+        "最低殖利率/百元價": "3.6976",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5846&bond_kind=4&bond_yrn=112-1&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
       }
     }
   ]
