@@ -1,73 +1,51 @@
 {
   "metadata": {
-    "updated_at": "2026-11-19T11:32:56+08:00",
-    "trade_date": "2026-11-19"
+    "updated_at": "2026-11-23T14:07:23+08:00",
+    "trade_date": "2026-11-23"
   },
   "rows": [
     {
-      "bond_code": "B618DT",
-      "bond_name": "P13台積1A",
-      "issuer_name": "台積電",
-      "maturity_date": "2029-03-15",
-      "remaining_years": 2.3,
-      "last_rate": 1.9417,
-      "high_rate": 1.9417,
-      "low_rate": 1.9417,
+      "bond_code": "B85705",
+      "bond_name": "P15隆大1",
+      "issuer_name": "隆大",
+      "maturity_date": "2031-10-28",
+      "remaining_years": 4.9,
+      "last_rate": 2.327,
+      "high_rate": 2.327,
+      "low_rate": 2.327,
       "raw": {
-        "債券代號": "B618DT",
-        "債券名稱": "P13台積1A",
+        "債券代號": "B85705",
+        "債券名稱": "P15隆大1",
         "幣別": "TWD",
-        "發行日期": "2024/03/15",
-        "到期日期": "2029/03/15",
-        "票面利率": "1.64",
-        "最近殖利率/百元價": "1.9417",
-        "最高殖利率/百元價": "1.9417",
-        "最低殖利率/百元價": "1.9417",
-        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2330&bond_kind=4&bond_yrn=113-1&bond_subn=%E7%94%B2%E9%A1%9E&mature_date=&co_name=&filename="
+        "發行日期": "2026/10/28",
+        "到期日期": "2031/10/28",
+        "票面利率": "2.35",
+        "最近殖利率/百元價": "2.327",
+        "最高殖利率/百元價": "2.327",
+        "最低殖利率/百元價": "2.327",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5519&bond_kind=4&bond_yrn=115-1&bond_subn=%24M00000002&mature_date=&co_name=&filename="
       }
     },
     {
-      "bond_code": "B618E6",
-      "bond_name": "P14台積5A",
-      "issuer_name": "台積電",
-      "maturity_date": "2030-11-20",
-      "remaining_years": 4.0,
-      "last_rate": 2.0629,
-      "high_rate": 2.0629,
-      "low_rate": 2.0629,
+      "bond_code": "B94170",
+      "bond_name": "P09台灣大3",
+      "issuer_name": "台灣大",
+      "maturity_date": "2030-03-24",
+      "remaining_years": 3.3,
+      "last_rate": 2.435,
+      "high_rate": 2.435,
+      "low_rate": 2.435,
       "raw": {
-        "債券代號": "B618E6",
-        "債券名稱": "P14台積5A",
+        "債券代號": "B94170",
+        "債券名稱": "P09台灣大3",
         "幣別": "TWD",
-        "發行日期": "2025/11/20",
-        "到期日期": "2030/11/20",
-        "票面利率": "1.5",
-        "最近殖利率/百元價": "2.0629",
-        "最高殖利率/百元價": "2.0629",
-        "最低殖利率/百元價": "2.0629",
-        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2330&bond_kind=4&bond_yrn=114-5&bond_subn=%E7%94%B2%E9%A1%9E&mature_date=&co_name=&filename="
-      }
-    },
-    {
-      "bond_code": "B95361",
-      "bond_name": "P15兆豐1",
-      "issuer_name": "兆豐金",
-      "maturity_date": "2031-11-19",
-      "remaining_years": 5.0,
-      "last_rate": 2.45,
-      "high_rate": 2.45,
-      "low_rate": 2.45,
-      "raw": {
-        "債券代號": "B95361",
-        "債券名稱": "P15兆豐1",
-        "幣別": "TWD",
-        "發行日期": "2026/11/19",
-        "到期日期": "2031/11/19",
-        "票面利率": "2.45",
-        "最近殖利率/百元價": "2.45",
-        "最高殖利率/百元價": "2.45",
-        "最低殖利率/百元價": "2.45",
-        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2886&bond_kind=4&bond_yrn=115-1&bond_subn=%24M00000001&mature_date=&co_name=&filename="
+        "發行日期": "2020/03/24",
+        "到期日期": "2030/03/24",
+        "票面利率": "0.72",
+        "最近殖利率/百元價": "2.435",
+        "最高殖利率/百元價": "2.435",
+        "最低殖利率/百元價": "2.435",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=3045&bond_kind=4&bond_yrn=6&bond_subn=%E4%B8%99&mature_date=&co_name=&filename="
       }
     },
     {
@@ -76,9 +54,9 @@
       "issuer_name": "富邦人壽",
       "maturity_date": "2035-08-27",
       "remaining_years": 8.8,
-      "last_rate": 3.6984,
-      "high_rate": 3.6984,
-      "low_rate": 3.6984,
+      "last_rate": 3.6983,
+      "high_rate": 3.6983,
+      "low_rate": 3.6983,
       "raw": {
         "債券代號": "B99513",
         "債券名稱": "P14富壽2A",
@@ -86,9 +64,9 @@
         "發行日期": "2025/08/27",
         "到期日期": "2035/08/27",
         "票面利率": "3.7",
-        "最近殖利率/百元價": "3.6984",
-        "最高殖利率/百元價": "3.6984",
-        "最低殖利率/百元價": "3.6984",
+        "最近殖利率/百元價": "3.6983",
+        "最高殖利率/百元價": "3.6983",
+        "最低殖利率/百元價": "3.6983",
         "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5865&bond_kind=4&bond_yrn=114-2&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
       }
     },
@@ -98,9 +76,9 @@
       "issuer_name": "國泰人壽",
       "maturity_date": "2033-08-01",
       "remaining_years": 6.7,
-      "last_rate": 3.6976,
-      "high_rate": 3.6976,
-      "low_rate": 3.6976,
+      "last_rate": 3.5272,
+      "high_rate": 3.5272,
+      "low_rate": 3.5272,
       "raw": {
         "債券代號": "B99603",
         "債券名稱": "P12國壽1A",
@@ -108,10 +86,32 @@
         "發行日期": "2023/08/01",
         "到期日期": "2033/08/01",
         "票面利率": "3.7",
-        "最近殖利率/百元價": "3.6976",
-        "最高殖利率/百元價": "3.6976",
-        "最低殖利率/百元價": "3.6976",
+        "最近殖利率/百元價": "3.5272",
+        "最高殖利率/百元價": "3.5272",
+        "最低殖利率/百元價": "3.5272",
         "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=5846&bond_kind=4&bond_yrn=112-1&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
+      }
+    },
+    {
+      "bond_code": "B9AK09",
+      "bond_name": "P15凱基壽3A",
+      "issuer_name": "凱基人壽",
+      "maturity_date": "2036-09-18",
+      "remaining_years": 9.8,
+      "last_rate": 3.4445,
+      "high_rate": 3.4445,
+      "low_rate": 3.4445,
+      "raw": {
+        "債券代號": "B9AK09",
+        "債券名稱": "P15凱基壽3A",
+        "幣別": "TWD",
+        "發行日期": "2026/09/18",
+        "到期日期": "2036/09/18",
+        "票面利率": "3.75",
+        "最近殖利率/百元價": "3.4445",
+        "最高殖利率/百元價": "3.4445",
+        "最低殖利率/百元價": "3.4445",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2823&bond_kind=4&bond_yrn=115-3&bond_subn=%E7%94%B2&mature_date=&co_name=&filename="
       }
     }
   ]
