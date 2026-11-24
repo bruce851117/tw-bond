@@ -1,9 +1,75 @@
 {
   "metadata": {
-    "updated_at": "2026-11-24T11:15:36+08:00",
+    "updated_at": "2026-11-24T12:01:48+08:00",
     "trade_date": "2026-11-24"
   },
   "rows": [
+    {
+      "bond_code": "B618DX",
+      "bond_name": "P14台積1A",
+      "issuer_name": "台積電",
+      "maturity_date": "2030-03-28",
+      "remaining_years": 3.3,
+      "last_rate": 1.8177,
+      "high_rate": 1.8177,
+      "low_rate": 1.6967,
+      "raw": {
+        "債券代號": "B618DX",
+        "債券名稱": "P14台積1A",
+        "幣別": "TWD",
+        "發行日期": "2025/03/28",
+        "到期日期": "2030/03/28",
+        "票面利率": "1.9",
+        "最近殖利率/百元價": "1.8177",
+        "最高殖利率/百元價": "1.8177",
+        "最低殖利率/百元價": "1.6967",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2330&bond_kind=4&bond_yrn=114-1&bond_subn=%E7%94%B2%E9%A1%9E&mature_date=&co_name=&filename="
+      }
+    },
+    {
+      "bond_code": "B644BM",
+      "bond_name": "P09鴻海1D",
+      "issuer_name": "鴻海",
+      "maturity_date": "2030-01-09",
+      "remaining_years": 3.1,
+      "last_rate": 2.45,
+      "high_rate": 2.45,
+      "low_rate": 2.45,
+      "raw": {
+        "債券代號": "B644BM",
+        "債券名稱": "P09鴻海1D",
+        "幣別": "TWD",
+        "發行日期": "2020/01/09",
+        "到期日期": "2030/01/09",
+        "票面利率": "1.12",
+        "最近殖利率/百元價": "2.45",
+        "最高殖利率/百元價": "2.45",
+        "最低殖利率/百元價": "2.45",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2317&bond_kind=4&bond_yrn=108-2&bond_subn=%E4%B8%81&mature_date=&co_name=&filename="
+      }
+    },
+    {
+      "bond_code": "B644CN",
+      "bond_name": "P11鴻海3C",
+      "issuer_name": "鴻海",
+      "maturity_date": "2029-10-21",
+      "remaining_years": 2.9,
+      "last_rate": 2.45,
+      "high_rate": 2.45,
+      "low_rate": 2.45,
+      "raw": {
+        "債券代號": "B644CN",
+        "債券名稱": "P11鴻海3C",
+        "幣別": "TWD",
+        "發行日期": "2022/10/21",
+        "到期日期": "2029/10/21",
+        "票面利率": "1.8",
+        "最近殖利率/百元價": "2.45",
+        "最高殖利率/百元價": "2.45",
+        "最低殖利率/百元價": "2.45",
+        "發行資料": "https://mopsov.twse.com.tw/mops/web/t105sb10?firstin=true&TYPEK=otc&step=0&co_id=2317&bond_kind=4&bond_yrn=111-3&bond_subn=%E4%B8%99&mature_date=&co_name=&filename="
+      }
+    },
     {
       "bond_code": "B99603",
       "bond_name": "P12國壽1A",
